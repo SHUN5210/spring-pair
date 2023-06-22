@@ -31,6 +31,6 @@ CREATE TABLE chahan
 CREATE TABLE users
 (
   id SERIAL PRIMARY KEY,
-  mail TEXT,
+  email TEXT,
   password TEXT
 ); 
