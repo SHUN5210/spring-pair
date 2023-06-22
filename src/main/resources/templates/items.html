@@ -24,25 +24,25 @@
 <!--		<a href="/cart" style="padding-left: 10px;">カートを見る</a>-->
 <!--	</nav>-->
 <!--	<main>-->
-<!--		<table>-->
-<!--			<tr>-->
-<!--				<th>NO</th>-->
-<!--				<th>食材名</th>-->
-<!--				<th>商品詳細</th>-->
-<!--				<th></th>-->
-<!--			</tr>-->
-<!--			<tr th:each="item : ${items}">-->
-<!--				<td th:text="${item.id}"></td>-->
-<!--				<td th:text="${item.name}"></td>-->
-<!--				<td th:text="${item.detail}"></td>-->
-<!--				<td>-->
-<!--					<form action="/cart/add" method="post">-->
-<!--						<input type="hidden" name="itemId" th:value="${item.id}">-->
-<!--						<button>カートに追加</button>-->
-<!--					</form>-->
-<!--				</td>-->
-<!--			</tr>-->
-<!--		</table>-->
+		<table border="1">
+			<tr>
+				<th>NO</th>
+				<th>食材名</th>
+				<th>商品詳細</th>
+				<th></th>
+			</tr>
+			<tr th:each="data : ${item}">
+				<td th:text="${data.id}"></td>
+				<td th:text="${data.name}"></td>
+				<td th:text="${data.detail}"></td>
+				<td>
+					<form action="/cart/add" method="post">
+						<input type="hidden" name="itemId" th:value="${item.id}">
+						<button>カートに追加</button>
+					</form>
+				</td>
+			</tr>
+		</table>
 <!--	</main>-->
 <!--	<hr>-->
 	
