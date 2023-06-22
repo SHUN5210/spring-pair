@@ -9,21 +9,12 @@
 <body>
 
 	
-<!--	<nav>-->
-		
-<!--	<form>-->
-<!--		<input type="text"  name="keyword" placeholder="商品名" th:value="${keyword}">|-->
-<!--		<input type="text"  name="maxPrice" placeholder="価格" th:value="${maxPrice}">円以下の-->
-<!--		<button>検索</button>-->
-<!--	</form>-->
-
-<!--		<a href="/items">全商品</a>-->
-<!--		<a th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">-->
-<!--			<span th:text="${c.name}" style="padding-left: 10px;"></span>-->
-<!--		</a>-->
+		<a href="/items">全商品</a>
+		<a th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
+			<span th:text="${c.name}" style="padding-left: 10px;"></span>
+		</a>
 <!--		<a href="/cart" style="padding-left: 10px;">カートを見る</a>-->
-<!--	</nav>-->
-<!--	<main>-->
+
 		<table border="1">
 			<tr>
 				<th>NO</th>
@@ -43,8 +34,8 @@
 <!--				</td>-->
 			</tr>
 		</table>
-<!--	</main>-->
-<!--	<hr>-->
+	
+	<a></a>
 	
 </body>
 </html>
