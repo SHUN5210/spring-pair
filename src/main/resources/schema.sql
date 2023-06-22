@@ -3,6 +3,8 @@ DROP TABLE IF EXISTS chahan;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS items;
 DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS itemsList;
+
 
 	-- カテゴリーテーブル
 CREATE TABLE categories
@@ -18,7 +20,7 @@ CREATE TABLE items
    name TEXT,
    detail TEXT
 );
--- 注文テーブル
+-- メニューテーブル
 CREATE TABLE chahan
 (
   id SERIAL PRIMARY KEY,
@@ -27,10 +29,18 @@ CREATE TABLE chahan
   name2 TEXT,
   name3 TEXT
 );
--- 注文詳細テーブル
+-- アカウントテーブル
 CREATE TABLE users
 (
   id SERIAL PRIMARY KEY,
   email TEXT,
   password TEXT
 ); 
+
+-- 商品リスト
+CREATE TABLE itemsList
+(
+   id SERIAL PRIMARY KEY,
+   category_id INTEGER,
+   name TEXT
+);

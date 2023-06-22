@@ -47,4 +47,16 @@ public class itemController {
 		
 		return"items";
 	}
+	
+	@GetMapping("/items/add")
+	public String store(
+			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
+			Model m) {
+		
+		// 全カテゴリー一覧を取得
+		List<Category> categoryList = categoryRepository.findAll();
+		m.addAttribute("categories", categoryList);
+		
+		return "addItem";
+	}
 }
