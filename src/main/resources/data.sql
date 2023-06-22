@@ -22,6 +22,8 @@ INSERT INTO itemsList(category_id,name) VALUES(2,'鮭');
 INSERT INTO itemsList(category_id,name) VALUES(2,'あさり');
 INSERT INTO itemsList(category_id,name) VALUES(2,'ホタテ');
 INSERT INTO itemsList(category_id,name) VALUES(2,'じゃこ');
+INSERT INTO itemsList(category_id,name) VALUES(2,'タコ');
+INSERT INTO itemsList(category_id,name) VALUES(2,'イカゲソ');
 
 INSERT INTO itemsList(category_id,name) VALUES(3,'キムチ');
 INSERT INTO itemsList(category_id,name) VALUES(3,'納豆');
@@ -29,14 +31,18 @@ INSERT INTO itemsList(category_id,name) VALUES(3,'レタス');
 INSERT INTO itemsList(category_id,name) VALUES(3,'ネギ');
 INSERT INTO itemsList(category_id,name) VALUES(3,'しいたけ');
 INSERT INTO itemsList(category_id,name) VALUES(3,'玉ねぎ');
-INSERT INTO itemsList(category_id,name) VALUES(3,'梅肉');
 INSERT INTO itemsList(category_id,name) VALUES(3,'高菜');
 INSERT INTO itemsList(category_id,name) VALUES(3,'たくあん');
 INSERT INTO itemsList(category_id,name) VALUES(3,'コーン');
 INSERT INTO itemsList(category_id,name) VALUES(3,'たけのこ');
 INSERT INTO itemsList(category_id,name) VALUES(3,'ピーマン');
 INSERT INTO itemsList(category_id,name) VALUES(3,'ニラ');
-INSERT INTO itemsList(category_id,name) VALUES(3,'にんにく');
-INSERT INTO itemsList(category_id,name) VALUES(3,'生姜');
-INSERT INTO itemsList(category_id,name) VALUES(3,'わさび');
+
+INSERT INTO itemsList(category_id,name) VALUES(4,'にんにく');
+INSERT INTO itemsList(category_id,name) VALUES(4,'生姜');
+INSERT INTO itemsList(category_id,name) VALUES(4,'わさび');
+INSERT INTO itemsList(category_id,name) VALUES(4,'バター');
+INSERT INTO itemsList(category_id,name) VALUES(4,'チーズ');
+INSERT INTO itemsList(category_id,name) VALUES(4,'マヨネーズ');
+INSERT INTO itemsList(category_id,name) VALUES(4,'梅肉');
 --チャーハン
