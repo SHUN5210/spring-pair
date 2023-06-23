@@ -7,16 +7,13 @@
 <body>
 <h1>商品登録</h1>
 <hr>
+
+<a href="/items">全商品</a>
+		<a th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
+			<span th:text="${c.name}" style="padding-left: 10px;"></span>
+		</a>
 <form action="/items/add" method="post">
 <table border="1">
-	<tr>
-		<th>カテゴリー</th><td>
-<!--			<input type="text" name="categoryId">-->
-			<select name="categoryId">
-    		<option th:each="c:${categories}" th:value="${c.id}">[[${c.name}]]</option>
-			</select>
-		</td>
-	</tr>
 	<tr>
 		<th>食材名</th><td><input type="text" name="name"></td>
 	</tr>

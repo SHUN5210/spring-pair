@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Category;
 import com.example.demo.entity.Item;
+import com.example.demo.entity.ItemsList;
 import com.example.demo.repository.CategoryRepository;
+import com.example.demo.repository.ItemListRepository;
 import com.example.demo.repository.ItemRepository;
 
 
@@ -19,6 +21,9 @@ public class itemController {
 	
 	@Autowired
 	ItemRepository itemRepository;
+	
+	@Autowired
+	ItemListRepository itemListRepository;
 	
 	@Autowired
 	CategoryRepository categoryRepository;
@@ -53,10 +58,18 @@ public class itemController {
 			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
 			Model m) {
 		
+		List<ItemsList> list = null;
+		
 		// 全カテゴリー一覧を取得
 		List<Category> categoryList = categoryRepository.findAll();
 		m.addAttribute("categories", categoryList);
-		
+		if (categoryId == null) {
+			//categoryIdに値がないとき商品一覧情報の取得
+			
+		} else {
+			// itemsテーブルをカテゴリーIDを指定して一覧を取得
+			list = itemListRepository.findByCategoryId(categoryId);
+		}
 		return "addItem";
 	}
 }
