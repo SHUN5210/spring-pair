@@ -22,7 +22,16 @@ public class Item {
 
 	@Getter
 	private String name; // 食材名
+	
+	@Getter
+	private String today;//記入日
+	
+	@Getter
+	private String care;//賞味期限
 
+	@Getter
+	private String price;//価格
+	
 	public Item() {
 		
 	}
@@ -30,7 +39,7 @@ public class Item {
 	
 	
 	public Item(Integer categoryId, String name) {
-		super();
+	
 		this.categoryId = categoryId;
 		this.name = name;
 	
@@ -38,12 +47,24 @@ public class Item {
 
 
 
-	public Item(String name) {
+	public Item(Integer categoryId, String name, String care) {
 		
+		this.categoryId = categoryId;
 		this.name = name;
+		this.care = care;
 	}
 
 
+
+	public Item(Integer categoryId, String name, String today, String care, String price) {
+		super();
+		this.categoryId = categoryId;
+		this.name = name;
+		this.today = today;
+		this.care = care;
+		this.price = price;
+	}
+	
 	
 
 }

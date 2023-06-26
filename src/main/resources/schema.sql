@@ -18,7 +18,10 @@ CREATE TABLE items
 (
    id SERIAL PRIMARY KEY,
    category_id INTEGER,
-   name TEXT
+   name TEXT,
+   today TEXT,
+   care TEXT,
+   price TEXT
 );
 -- メニューテーブル
 CREATE TABLE chahan

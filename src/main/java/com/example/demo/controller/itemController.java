@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,8 @@ public class itemController {
 			item = itemRepository.findByCategoryId(categoryId);
 		}
 		
+		
+		
 		m.addAttribute("item",item);
 		
 		return"items";
@@ -58,11 +61,17 @@ public class itemController {
 	public String update(
 			@RequestParam(name="name", required=false) String name,
 			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
+			@RequestParam(name = "care", defaultValue = "") String care,
+			@RequestParam(name = "today", defaultValue = "") String today,
+			@RequestParam(name = "price", defaultValue = "") String price,
 			Model m) {
-		Item item=new Item(categoryId,name);
+		Item item=new Item(categoryId,name,today,care,price);
+		
 		itemRepository.save(item);
 		return "redirect:/items";
 	}
+	
+	
 	
 	@GetMapping("/items/add")
 	public String store(
@@ -75,7 +84,7 @@ public class itemController {
 		List<Category> categoryList = categoryRepository.findAll();
 		m.addAttribute("categories", categoryList);
 		
-		
+		LocalDate data= LocalDate.now();
 		
 		if (categoryId == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
@@ -84,7 +93,7 @@ public class itemController {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
 			list = itemListRepository.findByCategoryId(categoryId);
 		}
-//		
+		m.addAttribute("data",data);
 		m.addAttribute("list",list);
 		return "addItem";
 	}
@@ -94,6 +103,7 @@ public class itemController {
 			@RequestParam(name = "care", defaultValue = "") String care,
 			@RequestParam(name = "price", defaultValue = "") String price,
 			@RequestParam(name="detail", defaultValue = "") String detail,
+			@RequestParam(name = "today", defaultValue = "") String today,
 			Model m
 			) {
 		
@@ -105,6 +115,7 @@ public class itemController {
 		m.addAttribute("care",care);
 		m.addAttribute("price",price);
 		m.addAttribute("detail",detail);
+		m.addAttribute("today",today);
 		
 		return "confirm";
 	}
