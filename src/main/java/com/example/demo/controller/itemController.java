@@ -12,8 +12,8 @@ import com.example.demo.entity.Category;
 import com.example.demo.entity.Item;
 import com.example.demo.entity.ItemsList;
 import com.example.demo.repository.CategoryRepository;
-import com.example.demo.repository.ItemListRepository;
 import com.example.demo.repository.ItemRepository;
+import com.example.demo.repository.ItemsListRepository;
 
 
 @Controller
@@ -23,7 +23,7 @@ public class itemController {
 	ItemRepository itemRepository;
 	
 	@Autowired
-	ItemListRepository itemListRepository;
+	ItemsListRepository itemsListRepository;
 	
 	@Autowired
 	CategoryRepository categoryRepository;
@@ -60,16 +60,22 @@ public class itemController {
 		
 		List<ItemsList> list = null;
 		
-		// 全カテゴリー一覧を取得
+//		// 全カテゴリー一覧を取得
 		List<Category> categoryList = categoryRepository.findAll();
 		m.addAttribute("categories", categoryList);
+		
+		
+		
 		if (categoryId == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
-			
-		} else {
+			list=itemsListRepository.findAll();
+			} else {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
-			list = itemListRepository.findByCategoryId(categoryId);
+			list = itemsListRepository.findByCategoryId(categoryId);
 		}
+//		
+		m.addAttribute("list",list);
+		
 		return "addItem";
 	}
 }

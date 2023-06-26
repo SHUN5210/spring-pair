@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 
 @Entity
-@Table(name = "items")
+@Table(name = "items_list")
 public class ItemsList {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,19 +21,15 @@ public class ItemsList {
 	private Integer categoryId; // カテゴリーID
 
 	@Getter
-	private String name; // 食材名
-
+	private String name;
 	
-
+	public ItemsList() {
+		
+	}
 	public ItemsList(Integer categoryId, String name) {
-		super();
 		this.categoryId = categoryId;
 		this.name = name;
-		
+	} // 食材名
+	
+	
 	} 
-
-	
-
-	
-
-}
