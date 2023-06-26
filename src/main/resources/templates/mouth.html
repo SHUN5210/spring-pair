@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>ああああ</h1>
+<table border="1">
+			<tr>
+				<th>NO</th>
+				<th>食材名</th>
+				<th>賞味期限</th>
+			</tr>
+			<tr th:each="data : ${list}">
+				<td th:text="${data.id}"></td>
+				<td th:text="${data.name}"></td>
+				<td th:text="${data.care}"></td>
+			</tr>
+		</table>
+	
+</body>
+</html>

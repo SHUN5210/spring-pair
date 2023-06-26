@@ -86,6 +86,7 @@ public class itemController {
 		
 		LocalDate data= LocalDate.now();
 		
+		
 		if (categoryId == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
 			list=itemListRepository.findAll();
