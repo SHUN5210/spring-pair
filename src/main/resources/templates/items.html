@@ -7,37 +7,27 @@
 
 </head>
 <body>
-
 	
 		<a href="/items">全商品</a>
 		<a th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
-
-
+<form>
 		<table border="1">
 			<tr>
 				<th>NO</th>
 				<th>食材名</th>
-<!--				<th>商品詳細</th>-->
-<!--				<th></th>-->
+				<th>賞味期限</th>
 			</tr>
 			<tr th:each="data : ${item}">
 				<td th:text="${data.id}"></td>
 				<td th:text="${data.name}"></td>
-<!--				<td th:text="${data.detail}"></td>-->
-				
-				
-<!--				<td>-->
-<!--					<form action="/cart/add" method="post">-->
-<!--						<input type="hidden" name="itemId" th:value="${item.id}">-->
-<!--						<button>カートに追加</button>-->
-<!--					</form>-->
-<!--				</td>-->
+				<td th:text="${data.care}"></td>
 			</tr>
 		</table>
 	
-	<a href="/items/add">保存</a>
-	
+	<a href="/items/add">食品の追加</a>
+	<button>エンゲル係数</button>
+</form>
 </body>
 </html>

@@ -16,6 +16,11 @@
 <form action="/items/confirm" method="post">
 <table border="1">
 	<tr>
+		<th>入力日</th><td>[[${data}]]</td>
+		<input type="hidden" name="today" th:value="${data}">
+	</tr>
+	<
+	<tr>
 		<th>食材名</th><td>
 			<select name="categoryId">
     		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>

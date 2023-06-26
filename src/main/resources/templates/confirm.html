@@ -10,6 +10,10 @@
 	<form action="/items" method="post">
 	<table border="1">
 		<input type="hidden" name="categoryId" th:value="${data.categoryId}">
+		<tr>
+		<th>入力日</th><td>[[${today}]]</td>
+		<input type="hidden" name="today" th:value="${today}">
+	</tr>
 	<tr>
 		<th>食材名</th><td>[[${data.name}]]
 			<input type="hidden" name="name" th:value="${data.name}">
