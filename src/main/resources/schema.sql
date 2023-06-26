@@ -1,8 +1,9 @@
 -- テーブル削除
-DROP TABLE IF EXISTS chahan;
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS items;
 DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS items;
+DROP TABLE IF EXISTS chahan;
+DROP TABLE IF EXISTS element;
+DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS items_list;
 
 
@@ -24,7 +25,7 @@ CREATE TABLE items
 CREATE TABLE chahan
 (
   id SERIAL PRIMARY KEY,
-  menu TEXT,
+  menu TEXT
 );
 -- メニュー素材テーブル
 CREATE TABLE element
