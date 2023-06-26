@@ -23,7 +23,9 @@ public class ItemsList {
 	@Getter
 	private String name; // 食材名
 
-	
+	public ItemsList() {
+		
+	}
 
 	public ItemsList(Integer categoryId, String name) {
 		super();

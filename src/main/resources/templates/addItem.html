@@ -9,7 +9,7 @@
 <hr>
 
 <a href="/items">全商品</a>
-		<a th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
+		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
 <form action="/items/add" method="post">
