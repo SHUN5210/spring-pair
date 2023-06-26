@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>登録確認</title>
+</head>
+<body>
+	<h1>登録確認</h1>
+	<hr>
+	<form>
+	<table border="1">
+	<tr>
+		<th>食材名</th><td>[[${data.name}]]
+			<input type="hidden" name="name" th:value="${data.name}">
+		</td>
+	</tr>
+	<tr>
+		<th>賞味期限</th><td>[[${care}]]</td>
+		<input type="hidden" name="care" th:value="${care}">
+	</tr>
+	<tr>
+		<th>価格</th><td>[[${price}]]円</td>
+		<input type="hidden" name="price" th:value="${price}">
+	</tr>
+	<tr>
+		<th>コメント</th><td>[[${detail}]]</td>
+		<input type="hidden" name="detail" th:value="${detail}">
+	</tr>
+	</table>
+	
+	<form action="/items/add" method="post">
+	<input type="submit" value="登録内容変更">
+	</form>
+	<form action="/items" method="post">
+	<input type="submit" value="登録完了">
+	</form>
+	</form>
+</body>
+</html>

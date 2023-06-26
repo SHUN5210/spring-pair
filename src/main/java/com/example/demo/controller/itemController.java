@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Category;
@@ -39,7 +40,6 @@ public class itemController {
 		
 		List<Item> item = null;
 		
-		
 		if (categoryId == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
 			item=itemRepository.findAll();
@@ -47,11 +47,10 @@ public class itemController {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
 			item = itemRepository.findByCategoryId(categoryId);
 		}
-		
 		m.addAttribute("item",item);
-		
 		return"items";
 	}
+	
 	
 	@GetMapping("/items/add")
 	public String store(
@@ -77,4 +76,26 @@ public class itemController {
 		m.addAttribute("list",list);
 		return "addItem";
 	}
+	
+	@PostMapping("/items/confirm")
+	public String confirm(
+			@RequestParam(name = "categoryId", defaultValue = "") Integer categoryId,
+			@RequestParam(name = "care", defaultValue = "") String care,
+			@RequestParam(name = "price", defaultValue = "") String price,
+			@RequestParam(name="detail", defaultValue = "") String detail,
+			Model m
+			) {
+		
+		ItemsList data = itemListRepository.findById(categoryId).get();
+		
+		
+		
+		m.addAttribute("data",data);
+		m.addAttribute("care",care);
+		m.addAttribute("price",price);
+		m.addAttribute("detail",detail);
+		
+		return "confirm";
+	}
+	
 }

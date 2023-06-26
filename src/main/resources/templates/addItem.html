@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 <meta charset="UTF-8">
 <title>商品登録</title>
@@ -12,7 +13,7 @@
 		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
-<form action="/items/add" method="post">
+<form action="/items/confirm" method="post">
 <table border="1">
 	<tr>
 		<th>食材名</th><td>
@@ -22,7 +23,13 @@
 		</td>
 	</tr>
 	<tr>
-		<th>商品詳細</th><td><input type="text" name="detail"></td>
+		<th>賞味期限</th><td><input type="date" name="care"></td>
+	</tr>
+	<tr>
+		<th>価格</th><td><input type="text" name="price" >円</td>
+	</tr>
+	<tr>
+		<th>コメント</th><td><textarea name="detail"></textarea></td>
 	</tr>
 </table>
 <input type="submit" value="登録">
