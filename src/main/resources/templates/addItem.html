@@ -15,7 +15,11 @@
 <form action="/items/add" method="post">
 <table border="1">
 	<tr>
-		<th>食材名</th><td><input type="text" name="name"></td>
+		<th>食材名</th><td>
+			<select name="categoryId">
+    		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>
+			</select></td>
+		</td>
 	</tr>
 	<tr>
 		<th>商品詳細</th><td><input type="text" name="detail"></td>
