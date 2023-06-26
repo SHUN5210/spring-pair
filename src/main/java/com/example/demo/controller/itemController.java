@@ -19,7 +19,6 @@ import com.example.demo.repository.ItemRepository;
 
 @Controller
 public class itemController {
-	
 	@Autowired
 	ItemRepository itemRepository;
 	
@@ -40,6 +39,7 @@ public class itemController {
 		
 		List<Item> item = null;
 		
+		
 		if (categoryId == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
 			item=itemRepository.findAll();
@@ -47,10 +47,11 @@ public class itemController {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
 			item = itemRepository.findByCategoryId(categoryId);
 		}
+		
 		m.addAttribute("item",item);
+		
 		return"items";
 	}
-	
 	
 	@GetMapping("/items/add")
 	public String store(
@@ -59,7 +60,7 @@ public class itemController {
 		
 	List<ItemsList> list = null;
 		
-		// 全カテゴリー一覧を取得
+//		// 全カテゴリー一覧を取得
 		List<Category> categoryList = categoryRepository.findAll();
 		m.addAttribute("categories", categoryList);
 		
@@ -76,7 +77,6 @@ public class itemController {
 		m.addAttribute("list",list);
 		return "addItem";
 	}
-	
 	@PostMapping("/items/confirm")
 	public String confirm(
 			@RequestParam(name = "categoryId", defaultValue = "") Integer categoryId,
