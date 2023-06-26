@@ -58,18 +58,23 @@ public class itemController {
 			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
 			Model m) {
 		
-		List<ItemsList> list = null;
+	List<ItemsList> list = null;
 		
-		// 全カテゴリー一覧を取得
+//		// 全カテゴリー一覧を取得
 		List<Category> categoryList = categoryRepository.findAll();
 		m.addAttribute("categories", categoryList);
+		
+		
+		
 		if (categoryId == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
-			
-		} else {
+			list=itemListRepository.findAll();
+			} else {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
 			list = itemListRepository.findByCategoryId(categoryId);
 		}
+//		
+		m.addAttribute("list",list);
 		return "addItem";
 	}
 }
