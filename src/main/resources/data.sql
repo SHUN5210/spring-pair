@@ -204,3 +204,5 @@ INSERT INTO element(name1,name2,name3) VALUES('さつま揚げ','梅肉','レタ
 INSERT INTO element(name1,name2,name3) VALUES('もやし','厚揚げ','豚こま切れ肉');
 INSERT INTO element(name1,name2,name3) VALUES('イカ','エビ','玉ねぎ');
 
+--items
+INSERT INTO items(category_id,name,today,care,price) VALUES(1,'吉田','2023-05-15','2023-06-28',500);

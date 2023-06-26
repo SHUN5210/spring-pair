@@ -12,7 +12,7 @@
 		<a th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
-<form>
+<form action="/items/enn" method="post">
 		<table border="1">
 			<tr>
 				<th>NO</th>
@@ -27,6 +27,9 @@
 		</table>
 	
 	<a href="/items/add">食品の追加</a>
+	
+	<input type="hidden" name="today" th:value="${today}">
+	
 	<button>エンゲル係数</button>
 </form>
 </body>
