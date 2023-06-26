@@ -23,14 +23,13 @@ public class Item {
 	@Getter
 	private String name; // 食材名
 
-	@Getter
-	private String detail;
+	
 
-	public Item(Integer categoryId, String name, String detail) {
+	public Item(Integer categoryId, String name) {
 		super();
 		this.categoryId = categoryId;
 		this.name = name;
-		this.detail = detail;
+	
 	} // 商品詳細
 
 	
