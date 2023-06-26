@@ -3,13 +3,13 @@
 
 <head>
 <meta charset="UTF-8">
-<title>商品登録</title>
+<title>食材登録</title>
 </head>
 <body>
-<h1>商品登録</h1>
+<h1>食材登録</h1>
 <hr>
 
-<a href="/items/add">全商品</a>
+<a href="/items/add">全食材</a>
 		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
