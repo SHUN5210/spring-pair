@@ -8,7 +8,7 @@
 <h1>商品登録</h1>
 <hr>
 
-<a href="/items">全商品</a>
+<a href="/items/add">全商品</a>
 		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
