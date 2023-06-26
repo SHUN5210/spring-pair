@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.entity.Customer;
-import com.example.demo.repository.CustomerRepository;
+import com.example.demo.entity.Users;
+import com.example.demo.repository.UsersRepository;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -19,6 +19,9 @@ public class AccountController {
 
 	@Autowired
 	HttpSession session;
+	
+	@Autowired
+	UsersRepository usersRepository;
 
 	// ログイン画面を表示
 	@GetMapping({ "/", "/login", "/logout" })
@@ -28,10 +31,10 @@ public class AccountController {
 		// セッション情報を全てクリアする
 		session.invalidate();
 		
-		// エラーパラメータのチェック
-		if (error.equals("notLoggedIn")) {
-			model.addAttribute("message", "ログインしてください");
-		}
+//		// エラーパラメータのチェック
+//		if (error.equals("notLoggedIn")) {
+//			model.addAttribute("message", "ログインしてください");
+//		}
 
 		return "login";
 	}
@@ -43,16 +46,16 @@ public class AccountController {
 			@RequestParam("password") String password,
 			Model model) {
 		//ログインチェック
-		Customer customer = null;
+		Users users = null;
 		
-		Optional<Customer> record = CustomerRepository.findByEmailAndPassword(email, password);
+		Optional<Users> record = usersRepository.findByEmailAndPassword(email, password);
 		
 		if (record.isEmpty() == false) {
-			customer = record.get();
+			users = record.get();
 		}
 		
 		// 名前が空の場合にエラーとする
-		if (customer == null) {
+		if (users == null) {
 			model.addAttribute("message", "メールアドレスとパスワードが一致しませんでした");
 			return "login";
 		}

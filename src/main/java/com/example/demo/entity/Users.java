@@ -12,8 +12,8 @@ import lombok.Data;
 @Data
 @Entity
 @Component
-@Table(name = "customers")
-public class Customer {
+@Table(name = "users")
+public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String email; // メールアドレス
@@ -21,11 +21,11 @@ public class Customer {
 	private String password; // パスワード
 
 	// コンストラクタ
-	public Customer() {
+	public Users() {
 		
 	}
 
-	public Customer(String email, String password) {
+	public Users(String email, String password) {
 		this.email = email;
 		this.password = password;
 	} 
