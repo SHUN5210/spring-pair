@@ -59,7 +59,7 @@ public class itemController {
 		
 	List<ItemsList> list = null;
 		
-//		// 全カテゴリー一覧を取得
+		// 全カテゴリー一覧を取得
 		List<Category> categoryList = categoryRepository.findAll();
 		m.addAttribute("categories", categoryList);
 		
