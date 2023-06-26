@@ -23,16 +23,26 @@ public class Item {
 	@Getter
 	private String name; // 食材名
 
+	public Item() {
+		
+	}
 	
-
+	
+	
 	public Item(Integer categoryId, String name) {
 		super();
 		this.categoryId = categoryId;
 		this.name = name;
 	
-	} // 商品詳細
+	}
 
-	
+
+
+	public Item(String name) {
+		
+		this.name = name;
+	}
+
 
 	
 

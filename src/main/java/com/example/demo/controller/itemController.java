@@ -28,6 +28,8 @@ public class itemController {
 	@Autowired
 	CategoryRepository categoryRepository;
 	
+
+	
 	@GetMapping("/items")
 	public String index(
 			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
@@ -38,7 +40,6 @@ public class itemController {
 		m.addAttribute("categories", categoryList);
 		
 		List<Item> item = null;
-		
 		
 		if (categoryId == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
@@ -51,6 +52,16 @@ public class itemController {
 		m.addAttribute("item",item);
 		
 		return"items";
+	}
+	
+	@PostMapping("/items")
+	public String update(
+			@RequestParam(name="name", required=false) String name,
+			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
+			Model m) {
+		Item item=new Item(categoryId,name);
+		itemRepository.save(item);
+		return "redirect:/items";
 	}
 	
 	@GetMapping("/items/add")

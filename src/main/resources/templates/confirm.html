@@ -7,8 +7,9 @@
 <body>
 	<h1>登録確認</h1>
 	<hr>
-	<form>
+	<form action="/items" method="post">
 	<table border="1">
+		<input type="hidden" name="categoryId" th:value="${data.categoryId}">
 	<tr>
 		<th>食材名</th><td>[[${data.name}]]
 			<input type="hidden" name="name" th:value="${data.name}">
@@ -28,12 +29,12 @@
 	</tr>
 	</table>
 	
-	<form action="/items/add" method="post">
-	<input type="submit" value="登録内容変更">
-	</form>
-	<form action="/items" method="post">
+<!--	<form action="/items/add" method="post">-->
+<!--	<input type="submit" value="登録内容変更">-->
+<!--	</form>-->
+	
 	<input type="submit" value="登録完了">
 	</form>
-	</form>
+<!--	</form>-->
 </body>
 </html>
