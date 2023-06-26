@@ -65,6 +65,7 @@ INSERT INTO chahan(menu,name1) VALUES('たくあんチャーハン','たくあ�
 INSERT INTO chahan(menu,name1) VALUES('なすチャーハン','なす');
 INSERT INTO chahan(menu,name1) VALUES('ガーリックチャーハン','にんにく');
 INSERT INTO chahan(menu,name1) VALUES('生姜チャーハン','生姜');
+INSERT INTO chahan(menu,name1) VALUES('レタスチャーハン','レタス');
 INSERT INTO chahan(menu,name1,name2) VALUES('マッシュルームチャーハン','マッシュルーム','バター');
 INSERT INTO chahan(menu,name1,name2) VALUES('うなぎにんにくチャーハン','うなぎ','にんにく');
 INSERT INTO chahan(menu,name1,name2) VALUES('納豆チャーハン','納豆','ネギ');
@@ -80,6 +81,7 @@ INSERT INTO chahan(menu,name1,name2) VALUES('明太ガーリックチャーハ�
 INSERT INTO chahan(menu,name1,name2) VALUES('明太バターチャーハン','明太子','バター');
 INSERT INTO chahan(menu,name1,name2) VALUES('マッシュルームチャーハン','マッシュルーム','バター');
 INSERT INTO chahan(menu,name1,name2) VALUES('じゃこチャーハン','じゃこ','ネギ');
+INSERT INTO chahan(menu,name1,name2) VALUES('じゃことニンニクのカリカリチャーハン','じゃこ','にんにく');
 INSERT INTO chahan(menu,name1,name2) VALUES('麦ごはんのシンプルチャーハン','じゃこ','高菜');
 INSERT INTO chahan(menu,name1,name2) VALUES('イカわたガーリックチャーハン','イカ','にんにく');
 INSERT INTO chahan(menu,name1,name2) VALUES('中華おこわ風チャーハン','たけのこ','にんじん');
