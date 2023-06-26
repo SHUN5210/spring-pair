@@ -25,6 +25,11 @@ CREATE TABLE chahan
 (
   id SERIAL PRIMARY KEY,
   menu TEXT,
+);
+-- メニュー素材テーブル
+CREATE TABLE element
+(
+  id SERIAL PRIMARY KEY,
   name1 TEXT,
   name2 TEXT,
   name3 TEXT
