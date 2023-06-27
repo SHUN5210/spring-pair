@@ -6,6 +6,13 @@
 </head>
 <body>
 	<h1>ああああ</h1>
+
+	<a href="/items/enn">全商品</a>
+		<a th:each="c:${month}" th:href="'/items/enn?month1='+${c}">
+			<span th:text="${c}" style="padding-left: 10px;"></span>
+		</a>
+<!--		<input type="hidden" name="month" th:value="${month}">-->
+		
 <table border="1">
 			<tr>
 				<th>NO</th>
@@ -18,6 +25,6 @@
 				<td th:text="${data.care}"></td>
 			</tr>
 		</table>
-	
+	<a href="/items">戻る</a>
 </body>
 </html>
