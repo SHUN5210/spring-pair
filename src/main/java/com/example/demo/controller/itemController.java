@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,12 +63,46 @@ public class itemController {
 	public String update(
 			@RequestParam(name="name", required=false) String name,
 			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
-			@RequestParam(name = "care", defaultValue = "") String care,
-			@RequestParam(name = "today", defaultValue = "") String today,
-			@RequestParam(name = "price", defaultValue = "") String price,
+			@RequestParam(name = "care", required=false) String care,
+			@RequestParam(name = "today", required=false) String today,
+			@RequestParam(name = "price", required=false) String price,
 			Model m) {
-		Item item=new Item(categoryId,name,today,care,price);
 		
+		List <String> err = new ArrayList<>();
+		if(care.equals(null)) {
+			err.add("賞味期限を選択してください");
+		}
+		
+		if(price.equals(null)) {
+			err.add("金額を入力してください");
+		}
+		
+		final String FORMAT = "yyyy-MM-dd";
+		LocalDate date1 = LocalDate.parse
+				(today, DateTimeFormatter.ofPattern(FORMAT));
+		LocalDate date2 = LocalDate.parse
+				(care, DateTimeFormatter.ofPattern(FORMAT));
+		
+		boolean d2 = date1.isBefore(date2);
+		if(d2==false) {
+			err.add("賞味期限が切れています。");
+		}
+		
+		try {
+			Integer.parseInt(price);
+		} catch (NumberFormatException e) {
+			err.add("数値を入力してください");
+		}
+		
+		 
+		 if(err.isEmpty()==false) {
+			m.addAttribute("err",err);
+			 return "redirect:/items/add";
+		 }
+		
+		
+		
+		Item item=new Item(categoryId,name,today,care,price);
 		itemRepository.save(item);
 		return "redirect:/items";
 	}
