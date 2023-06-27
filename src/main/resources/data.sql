@@ -206,3 +206,4 @@ INSERT INTO element(name1,name2,name3) VALUES('イカ','エビ','玉ねぎ');
 
 --items
 INSERT INTO items(category_id,name,today,care,price) VALUES(1,'吉田','2023-05-15','2023-06-28',500);
+INSERT INTO items(category_id,name,today,care,price) VALUES(1,'吉田2','2023-12-15','2023-12-28',500);

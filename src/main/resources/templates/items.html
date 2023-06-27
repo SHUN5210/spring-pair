@@ -12,7 +12,7 @@
 		<a th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
-<form action="/items/enn" method="post">
+<form action="/items/enn" method="get">
 		<table border="1">
 			<tr>
 				<th>NO</th>
