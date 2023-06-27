@@ -8,6 +8,7 @@
 <body>
 <h1>商品登録</h1>
 <hr>
+	<p th:each="err:${err}">[[${err}]]</p>
 
 <a href="/items/add">全商品</a>
 		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
