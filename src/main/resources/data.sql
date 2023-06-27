@@ -9,10 +9,8 @@ INSERT INTO categories(name) VALUES('調味料');
 
 --食材
 INSERT INTO items_list(category_id,name) VALUES(1,'豚バラ');
-INSERT INTO items_list(category_id,name) VALUES(1,'肩ロース');
 INSERT INTO items_list(category_id,name) VALUES(1,'ひき肉');
 INSERT INTO items_list(category_id,name) VALUES(1,'ベーコン');
-INSERT INTO items_list(category_id,name) VALUES(1,'チャーシュー');
 INSERT INTO items_list(category_id,name) VALUES(1,'ハム');
 INSERT INTO items_list(category_id,name) VALUES(1,'ささみ');
 INSERT INTO items_list(category_id,name) VALUES(1,'ソーセージ');
@@ -27,12 +25,12 @@ INSERT INTO items_list(category_id,name) VALUES(2,'あさり');
 INSERT INTO items_list(category_id,name) VALUES(2,'ホタテ');
 INSERT INTO items_list(category_id,name) VALUES(2,'じゃこ');
 INSERT INTO items_list(category_id,name) VALUES(2,'タコ');
-INSERT INTO items_list(category_id,name) VALUES(2,'イカゲソ');
 INSERT INTO items_list(category_id,name) VALUES(2,'うなぎ');
 INSERT INTO items_list(category_id,name) VALUES(2,'ちくわ');
 INSERT INTO items_list(category_id,name) VALUES(2,'ツナ');
 INSERT INTO items_list(category_id,name) VALUES(2,'さつま揚げ');
 INSERT INTO items_list(category_id,name) VALUES(2,'アンチョビ');
+INSERT INTO items_list(category_id,name) VALUES(2,'イカ');
 
 INSERT INTO items_list(category_id,name) VALUES(3,'キムチ');
 INSERT INTO items_list(category_id,name) VALUES(3,'納豆');
@@ -67,7 +65,6 @@ INSERT INTO items_list(category_id,name) VALUES(3,'もやし');
 
 INSERT INTO items_list(category_id,name) VALUES(4,'にんにく');
 INSERT INTO items_list(category_id,name) VALUES(4,'生姜');
-INSERT INTO items_list(category_id,name) VALUES(4,'わさび');
 INSERT INTO items_list(category_id,name) VALUES(4,'バター');
 INSERT INTO items_list(category_id,name) VALUES(4,'チーズ');
 INSERT INTO items_list(category_id,name) VALUES(4,'マヨネーズ');
@@ -141,68 +138,197 @@ INSERT INTO chahan(menu) VALUES('もやしのアジアンチャーハン');
 INSERT INTO chahan(menu) VALUES('イカの塩辛チャーハン');
 
 --チャーハン
-INSERT INTO element(name1) VALUES('たくあん');
-INSERT INTO element(name1) VALUES('なす');
-INSERT INTO element(name1) VALUES('にんにく');
-INSERT INTO element(name1) VALUES('生姜');
-INSERT INTO element(name1) VALUES('レタス');
-INSERT INTO element(name1) VALUES('まいたけ');
-INSERT INTO element(name1) VALUES('カニ');
-INSERT INTO element(name1) VALUES('とんかつ');
-INSERT INTO element(name1,name2) VALUES('マッシュルーム','バター');
-INSERT INTO element(name1,name2) VALUES('うなぎ','にんにく');
-INSERT INTO element(name1,name2) VALUES('納豆','ネギ');
-INSERT INTO element(name1,name2) VALUES('キムチ','豚バラ');
-INSERT INTO element(name1,name2) VALUES('キムチ','ニラ');
-INSERT INTO element(name1,name2) VALUES('ネギ','豚バラ');
-INSERT INTO element(name1,name2) VALUES('タコ','にんにく');
-INSERT INTO element(name1,name2) VALUES('あさり','大葉');
-INSERT INTO element(name1,name2) VALUES('梅肉','大葉');
-INSERT INTO element(name1,name2) VALUES('ひき肉','にんにく');
-INSERT INTO element(name1,name2) VALUES('ひき肉','コーン');
-INSERT INTO element(name1,name2) VALUES('明太子','にんにく');
-INSERT INTO element(name1,name2) VALUES('明太子','バター');
-INSERT INTO element(name1,name2) VALUES('マッシュルーム','バター');
-INSERT INTO element(name1,name2) VALUES('じゃこ','ネギ');
-INSERT INTO element(name1,name2) VALUES('じゃこ','にんにく');
-INSERT INTO element(name1,name2) VALUES('鮭','ネギ');
-INSERT INTO element(name1,name2) VALUES('じゃこ','高菜');
-INSERT INTO element(name1,name2) VALUES('イカ','にんにく');
-INSERT INTO element(name1,name2) VALUES('たけのこ','にんじん');
-INSERT INTO element(name1,name2) VALUES('ハム','ピーマン');
-INSERT INTO element(name1,name2) VALUES('キャベツ','ひき肉');
-INSERT INTO element(name1,name2) VALUES('キャベツ','ちくわ');
-INSERT INTO element(name1,name2) VALUES('ホウレンソウ','にんにく');
-INSERT INTO element(name1,name2) VALUES('ゴボウ','ソーセージ');
-INSERT INTO element(name1,name2) VALUES('タコ','イカ');
-INSERT INTO element(name1,name2) VALUES('エビ','にんにく');
-INSERT INTO element(name1,name2) VALUES('豚バラ','キムチ');
-INSERT INTO element(name1,name2) VALUES('豚バラ','キャベツ');
-INSERT INTO element(name1,name2) VALUES('ベーコン','玉ねぎ');
-INSERT INTO element(name1,name2) VALUES('ホタテ','カイワレ大根');
-INSERT INTO element(name1,name2) VALUES('なす','トマト');
-INSERT INTO element(name1,name2) VALUES('イカ','アンチョビ');
-INSERT INTO element(name1,name2,name3) VALUES('豚バラ','ネギ','ピーマン');
-INSERT INTO element(name1,name2,name3) VALUES('ささみ','ハム','しいたけ');
-INSERT INTO element(name1,name2,name3) VALUES('みそ','玉ねぎ','ひき肉');
-INSERT INTO element(name1,name2,name3) VALUES('レタス','チーズ','トマト');
-INSERT INTO element(name1,name2,name3) VALUES('しいたけ','しめじ','えのき');
-INSERT INTO element(name1,name2,name3) VALUES('鮭','小松菜','バター');
-INSERT INTO element(name1,name2,name3) VALUES('キムチ','チーズ','ニラ');
-INSERT INTO element(name1,name2,name3) VALUES('キムチ','コーン','豚バラ');
-INSERT INTO element(name1,name2,name3) VALUES('明太子','オクラ','しいたけ');
-INSERT INTO element(name1,name2,name3) VALUES('塩昆布','ひき肉','ニラ');
-INSERT INTO element(name1,name2,name3) VALUES('ベーコン','にんじん','玉ねぎ');
-INSERT INTO element(name1,name2,name3) VALUES('エビ','ひき肉','カイワレ大根');
-INSERT INTO element(name1,name2,name3) VALUES('カレー粉','たけのこ','しいたけ');
-INSERT INTO element(name1,name2,name3) VALUES('鮭','小松菜','塩昆布');
-INSERT INTO element(name1,name2,name3) VALUES('カレー粉','トマト','ソーセージ');
-INSERT INTO element(name1,name2,name3) VALUES('カレー粉','ツナ','カリフラワー');
-INSERT INTO element(name1,name2,name3) VALUES('枝豆','ネギ','にんじん');
-INSERT INTO element(name1,name2,name3) VALUES('ツナ','しめじ','マヨネーズ');
-INSERT INTO element(name1,name2,name3) VALUES('さつま揚げ','梅肉','レタス');
-INSERT INTO element(name1,name2,name3) VALUES('もやし','厚揚げ','豚こま切れ肉');
-INSERT INTO element(name1,name2,name3) VALUES('イカ','エビ','玉ねぎ');
+INSERT INTO element(chahan_id,name) VALUES(1,29);
+INSERT INTO element(chahan_id,name) VALUES(2,35);
+INSERT INTO element(chahan_id,name) VALUES(3,52);
+INSERT INTO element(chahan_id,name) VALUES(4,53);
+INSERT INTO element(chahan_id,name) VALUES(5,24);
+INSERT INTO element(chahan_id,name) VALUES(6,45);
+INSERT INTO element(chahan_id,name) VALUES(7,10);
+INSERT INTO element(chahan_id,name) VALUES(8,7);
+
+INSERT INTO element(chahan_id,name) VALUES(9,40);
+INSERT INTO element(chahan_id,name) VALUES(9,54);
+
+INSERT INTO element(chahan_id,name) VALUES(10,17);
+INSERT INTO element(chahan_id,name) VALUES(10,52);
+
+INSERT INTO element(chahan_id,name) VALUES(11,23);
+INSERT INTO element(chahan_id,name) VALUES(11,25);
+
+INSERT INTO element(chahan_id,name) VALUES(12,22);
+INSERT INTO element(chahan_id,name) VALUES(12,1);
+
+INSERT INTO element(chahan_id,name) VALUES(13,22);
+INSERT INTO element(chahan_id,name) VALUES(13,33);
+
+INSERT INTO element(chahan_id,name) VALUES(14,25);
+INSERT INTO element(chahan_id,name) VALUES(14,1);
+
+INSERT INTO element(chahan_id,name) VALUES(15,16);
+INSERT INTO element(chahan_id,name) VALUES(15,52);
+
+INSERT INTO element(chahan_id,name) VALUES(16,13);
+INSERT INTO element(chahan_id,name) VALUES(16,34);
+
+INSERT INTO element(chahan_id,name) VALUES(17,57);
+INSERT INTO element(chahan_id,name) VALUES(17,34);
+
+INSERT INTO element(chahan_id,name) VALUES(18,2);
+INSERT INTO element(chahan_id,name) VALUES(18,52);
+
+INSERT INTO element(chahan_id,name) VALUES(19,2);
+INSERT INTO element(chahan_id,name) VALUES(19,30);
+
+INSERT INTO element(chahan_id,name) VALUES(20,9);
+INSERT INTO element(chahan_id,name) VALUES(20,52);
+
+INSERT INTO element(chahan_id,name) VALUES(21,9);
+INSERT INTO element(chahan_id,name) VALUES(21,54);
+
+INSERT INTO element(chahan_id,name) VALUES(22,40);
+INSERT INTO element(chahan_id,name) VALUES(22,54);
+
+INSERT INTO element(chahan_id,name) VALUES(23,15);
+INSERT INTO element(chahan_id,name) VALUES(23,25);
+
+INSERT INTO element(chahan_id,name) VALUES(24,15);
+INSERT INTO element(chahan_id,name) VALUES(24,52);
+
+INSERT INTO element(chahan_id,name) VALUES(25,12);
+INSERT INTO element(chahan_id,name) VALUES(25,25);
+
+INSERT INTO element(chahan_id,name) VALUES(26,15);
+INSERT INTO element(chahan_id,name) VALUES(26,28);
+
+INSERT INTO element(chahan_id,name) VALUES(27,61);
+INSERT INTO element(chahan_id,name) VALUES(27,52);
+
+INSERT INTO element(chahan_id,name) VALUES(28,31);
+INSERT INTO element(chahan_id,name) VALUES(28,39);
+
+INSERT INTO element(chahan_id,name) VALUES(29,4);
+INSERT INTO element(chahan_id,name) VALUES(29,32);
+
+INSERT INTO element(chahan_id,name) VALUES(30,42);
+INSERT INTO element(chahan_id,name) VALUES(30,2);
+
+INSERT INTO element(chahan_id,name) VALUES(31,42);
+INSERT INTO element(chahan_id,name) VALUES(31,18);
+
+INSERT INTO element(chahan_id,name) VALUES(32,46);
+INSERT INTO element(chahan_id,name) VALUES(32,52);
+
+INSERT INTO element(chahan_id,name) VALUES(33,47);
+INSERT INTO element(chahan_id,name) VALUES(33,6);
+
+INSERT INTO element(chahan_id,name) VALUES(34,16);
+INSERT INTO element(chahan_id,name) VALUES(34,61);
+
+INSERT INTO element(chahan_id,name) VALUES(35,11);
+INSERT INTO element(chahan_id,name) VALUES(35,52);
+
+INSERT INTO element(chahan_id,name) VALUES(36,1);
+INSERT INTO element(chahan_id,name) VALUES(36,22);
+
+INSERT INTO element(chahan_id,name) VALUES(37,1);
+INSERT INTO element(chahan_id,name) VALUES(37,42);
+
+INSERT INTO element(chahan_id,name) VALUES(38,3);
+INSERT INTO element(chahan_id,name) VALUES(38,27);
+
+INSERT INTO element(chahan_id,name) VALUES(39,14);
+INSERT INTO element(chahan_id,name) VALUES(39,44);
+
+INSERT INTO element(chahan_id,name) VALUES(40,35);
+INSERT INTO element(chahan_id,name) VALUES(40,36);
+
+INSERT INTO element(chahan_id,name) VALUES(41,61);
+INSERT INTO element(chahan_id,name) VALUES(41,21);
+
+INSERT INTO element(chahan_id,name) VALUES(42,1);
+INSERT INTO element(chahan_id,name) VALUES(42,25);
+INSERT INTO element(chahan_id,name) VALUES(42,32);
+
+INSERT INTO element(chahan_id,name) VALUES(43,5);
+INSERT INTO element(chahan_id,name) VALUES(43,4);
+INSERT INTO element(chahan_id,name) VALUES(43,26);
+
+INSERT INTO element(chahan_id,name) VALUES(44,59);
+INSERT INTO element(chahan_id,name) VALUES(44,27);
+INSERT INTO element(chahan_id,name) VALUES(44,2);
+
+INSERT INTO element(chahan_id,name) VALUES(45,24);
+INSERT INTO element(chahan_id,name) VALUES(45,55);
+INSERT INTO element(chahan_id,name) VALUES(45,36);
+
+INSERT INTO element(chahan_id,name) VALUES(46,26);
+INSERT INTO element(chahan_id,name) VALUES(46,37);
+INSERT INTO element(chahan_id,name) VALUES(46,38);
+
+INSERT INTO element(chahan_id,name) VALUES(47,12);
+INSERT INTO element(chahan_id,name) VALUES(47,41);
+INSERT INTO element(chahan_id,name) VALUES(47,54);
+
+INSERT INTO element(chahan_id,name) VALUES(48,22);
+INSERT INTO element(chahan_id,name) VALUES(48,55);
+INSERT INTO element(chahan_id,name) VALUES(48,33);
+
+INSERT INTO element(chahan_id,name) VALUES(49,22);
+INSERT INTO element(chahan_id,name) VALUES(49,30);
+INSERT INTO element(chahan_id,name) VALUES(49,1);
+
+INSERT INTO element(chahan_id,name) VALUES(50,9);
+INSERT INTO element(chahan_id,name) VALUES(50,43);
+INSERT INTO element(chahan_id,name) VALUES(50,26);
+
+INSERT INTO element(chahan_id,name) VALUES(51,58);
+INSERT INTO element(chahan_id,name) VALUES(51,2);
+INSERT INTO element(chahan_id,name) VALUES(51,33);
+
+INSERT INTO element(chahan_id,name) VALUES(52,3);
+INSERT INTO element(chahan_id,name) VALUES(52,39);
+INSERT INTO element(chahan_id,name) VALUES(52,27);
+
+INSERT INTO element(chahan_id,name) VALUES(53,11);
+INSERT INTO element(chahan_id,name) VALUES(53,2);
+INSERT INTO element(chahan_id,name) VALUES(53,44);
+
+INSERT INTO element(chahan_id,name) VALUES(54,60);
+INSERT INTO element(chahan_id,name) VALUES(54,31);
+INSERT INTO element(chahan_id,name) VALUES(54,26);
+
+INSERT INTO element(chahan_id,name) VALUES(55,12);
+INSERT INTO element(chahan_id,name) VALUES(55,41);
+INSERT INTO element(chahan_id,name) VALUES(55,58);
+
+INSERT INTO element(chahan_id,name) VALUES(56,60);
+INSERT INTO element(chahan_id,name) VALUES(56,36);
+INSERT INTO element(chahan_id,name) VALUES(56,6);
+
+INSERT INTO element(chahan_id,name) VALUES(57,60);
+INSERT INTO element(chahan_id,name) VALUES(57,19);
+INSERT INTO element(chahan_id,name) VALUES(57,48);
+
+INSERT INTO element(chahan_id,name) VALUES(58,49);
+INSERT INTO element(chahan_id,name) VALUES(58,25);
+INSERT INTO element(chahan_id,name) VALUES(58,39);
+
+INSERT INTO element(chahan_id,name) VALUES(59,19);
+INSERT INTO element(chahan_id,name) VALUES(59,37);
+INSERT INTO element(chahan_id,name) VALUES(59,56);
+
+INSERT INTO element(chahan_id,name) VALUES(60,20);
+INSERT INTO element(chahan_id,name) VALUES(60,57);
+INSERT INTO element(chahan_id,name) VALUES(60,24);
+
+INSERT INTO element(chahan_id,name) VALUES(61,51);
+INSERT INTO element(chahan_id,name) VALUES(61,50);
+INSERT INTO element(chahan_id,name) VALUES(61,8);
+
+INSERT INTO element(chahan_id,name) VALUES(62,61);
+INSERT INTO element(chahan_id,name) VALUES(62,11);
+INSERT INTO element(chahan_id,name) VALUES(62,27);
 
 --items
 INSERT INTO items(category_id,name,today,care,price) VALUES(1,'吉田','2023-05-15','2023-06-28',500);

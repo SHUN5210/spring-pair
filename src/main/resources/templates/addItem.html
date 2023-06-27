@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
 <meta charset="UTF-8">
-<title>商品登録</title>
+<title>食材登録</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-<h1>商品登録</h1>
+<h1>食材登録</h1>
 <hr>
 	<p th:each="err:${err}">[[${err}]]</p>
 
-<a href="/items/add">全商品</a>
-		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
+<a href="/items/add">全食材</a>
+		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">\
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
 <form action="/items/confirm" method="post">
@@ -20,7 +20,6 @@
 		<th>入力日</th><td>[[${data}]]</td>
 		<input type="hidden" name="today" th:value="${data}">
 	</tr>
-	
 	<tr>
 		<th>食材名</th><td>
 			<select name="categoryId">
