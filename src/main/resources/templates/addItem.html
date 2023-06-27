@@ -11,7 +11,7 @@
 	<p th:each="err:${err}">[[${err}]]</p>
 
 <a href="/items/add">全食材</a>
-		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">\
+		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
 <form action="/items/confirm" method="post">
