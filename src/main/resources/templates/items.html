@@ -1,108 +1,89 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <style>
-	@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
-.menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background: #ffbc00;
+	.design16 {
+ width: 100%;
+ text-align: center;
+ border-collapse: collapse;
+ border-spacing: 0;
 }
-.menu li a{
-    display:block;
-    height:em;
-    width:5em;
-    text-indent:-500em;
-    line-height:5em;
-    text-align:center;
-    color: #ffffff;
-    background: #ffbc00;
-    position: relative;
-    border-bottom: 1px solid #ffe2e3;
-    transition: background 0.3s ease-in-out;
+.design16 th {
+ padding: 10px;
+ border: solid 1px #ffffff;
 }
-.menu li a:before {
-  font-family: FontAwesome;
-  speak: none;
-  text-indent: 0em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-size: 1.4em;
+.design16 th:nth-child(1) {
+ background: #fd9644;
 }
-.menu li a.search:before {
-  content: "\f002";
+.design16 th:nth-child(2) {
+ background: #fed330;
 }
-.menu li a.archive:before {
-  content: "\f187";
+.design16 th:nth-child(3) {
+ background: #26de81;
 }
-.menu li a.pencil:before {
-  content: "\f040";
+.design16 td {
+ padding: 10px;
+ border: solid 1px #ffffff;
 }
-.menu li a.contact:before {
-  content: "\f003";
+.design16 td:nth-child(1) {
+ background: #fec598;
 }
-.menu li a.about:before {
-  content: "\f007";
+.design16 td:nth-child(2) {
+ background: #fee585;
 }
-.menu li a.home:before {
-  content: "\f015";
+.design16 td:nth-child(3) {
+ background: #70e9ac;
 }
-.menu li a:hover{
-  background: #ffbc00;
-  color: #fff;
+
+.tab-001 {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
 }
-.menu li.current a {
-  background: #ffbc00;
-  color: #fff;
+
+.tab-001 > label {
+    flex: 1 1;
+    order: -1;
+    min-width: 70px;
+    padding: .7em 1em .5em;
+    border-bottom: 1px solid #f0f0f0;
+    border-radius: 0;
+    background-color: #e9f0f6;
+    color: #535353;
+    font-size: .9em;
+    text-align: center;
+    cursor: pointer;
 }
-.menu li a.active {
-  background: #ff5e5e;
-  color: #fff;
+
+.tab-001 > label:hover {
+    opacity: .8;
 }
-.menu li a.active:after{
-    position:absolute;
-    left:5em;
-    top:0;
-    content:"";
-    border:2.5em solid transparent;
-    border-left-color:#ffbc00;
-    border-width: 2.5em 1em
+
+.tab-001 input {
+    display: none;
 }
-.menu li{
-    position:relative;
+
+.tab-001 > div {
+    display: none;
+    width: 100%;
+    padding: 1.5em 1em;
+    background-color: #fff;
 }
-.menu li:after{
-    content: attr(title);
-    position:absolute;
-    left:5em;
-    top:0;
-    height:5em;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    text-transform:uppercase;
-    background:#ffbc00;
-    padding:2em;
-    transition: all 0.3s ease-in-out;
-    visibility:hidden;
-    opacity:0;
+
+.tab-001 label:has(:checked) {
+    background-color: #fff;
+    border-color: #2589d0 #f0f0f0 #fff;
+    border-style: solid;
+    border-width: 4px 1px 1px;
+    border-radius: 5px;
+    color: #333333;
 }
-.menu li:hover:after{
-    visibility:visible;
-    opacity:1;
+
+.tab-001 label:has(:checked) + div {
+    display: block;
 }
-@media screen and (max-height: 34em){
-  .menu li{
-    font-size:70%;
-  }
-}
+
+
+
 </style>
 <head>
 <meta charset="UTF-8">
@@ -113,13 +94,24 @@
 </head>
 <body>
   
-	
+
+		
+		<div class="tab-001">
+	<label>
 		<a href="/items">全商品</a>
-		<a th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
+    </label>
+    <label th:each="c:${categories}">
+		
+        <a th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
-<form action="/items/enn" method="get">
-		<table border="1">
+		
+    </label>
+</div>
+		
+		
+		<form action="/items/enn" method="get">
+		<table border="1" class="design16">
 			<tr>
 				<th>NO</th>
 				<th>食材名</th>
