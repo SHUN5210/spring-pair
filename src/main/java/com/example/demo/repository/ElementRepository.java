@@ -8,7 +8,7 @@ import com.example.demo.entity.Element;
 
 public interface ElementRepository extends JpaRepository<Element, Integer> {
 	// SELECT * FROM items WHERE category_id = ?
-	List<Element> findByChahanId(Integer chahanId);
+	List<Element> findByName(Integer name);
 
 	
 }
