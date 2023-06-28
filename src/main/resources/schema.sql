@@ -19,6 +19,7 @@ CREATE TABLE items
    id SERIAL PRIMARY KEY,
    category_id INTEGER,
    name TEXT,
+   item_id INTEGER,
    today TEXT,
    care TEXT,
    price TEXT
