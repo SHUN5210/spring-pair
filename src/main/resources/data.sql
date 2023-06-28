@@ -331,5 +331,8 @@ INSERT INTO element(chahan_id,name) VALUES(62,11);
 INSERT INTO element(chahan_id,name) VALUES(62,27);
 
 --items
-INSERT INTO items(category_id,name,today,care,price) VALUES(1,'吉田','2023-05-15','2023-06-28',500);
-INSERT INTO items(category_id,name,today,care,price) VALUES(1,'吉田2','2023-12-15','2023-12-28',500);
+INSERT INTO items(category_id,name,today,care,price) VALUES(1,'豚バラ','2023-05-15','2023-06-28',500);
+INSERT INTO items(category_id,name,today,care,price) VALUES(2,'ツナ','2023-03-15','2023-12-28',500);
+INSERT INTO items(category_id,name,today,care,price) VALUES(3,'たくあん','2023-04-10','2023-08-22',500);
+INSERT INTO items(category_id,name,today,care,price) VALUES(3,'キムチ','2023-06-1','2023-08-30',500);
+INSERT INTO items(category_id,name,today,care,price) VALUES(4,'にんにく','2023-05-15','2023-07-12',500);
