@@ -55,9 +55,9 @@ public class ChahanController {
 			@PathVariable("id") Integer id,
 			Model m) {
 		
+		
 		return"search";
 	}
 	
-			
 	
 }
