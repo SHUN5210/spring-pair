@@ -113,13 +113,13 @@
 		<form action="/items/enn" method="get">
 		<table border="1" class="design16">
 			<tr>
-				<th>NO</th>
 				<th>食材名</th>
+				<th>購入日</th>
 				<th>賞味期限</th>
 			</tr>
 			<tr th:each="data : ${item}">
-				<td th:text="${data.id}"></td>
 				<td th:text="${data.name}"></td>
+				<td th:text="${data.today}"></td>
 				<td th:text="${data.care}"></td>
 			</tr>
 		</table>

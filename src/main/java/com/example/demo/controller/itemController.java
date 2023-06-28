@@ -69,35 +69,52 @@ public class itemController {
 			Model m) {
 		
 		List <String> err = new ArrayList<>();
-		if(care.equals(null)) {
+		if(care.equals("")) {
 			err.add("賞味期限を選択してください");
+		}else {
+			final String FORMAT = "yyyy-MM-dd";
+			LocalDate date1 = LocalDate.parse
+					(today, DateTimeFormatter.ofPattern(FORMAT));
+			LocalDate date2 = LocalDate.parse
+					(care, DateTimeFormatter.ofPattern(FORMAT));
+			
+			boolean d2 = date1.isBefore(date2);
+			if(d2==false) {
+				err.add("賞味期限が切れています。");
+			}
 		}
 		
-		if(price.equals(null)) {
+		if(price.equals("")) {
 			err.add("金額を入力してください");
+		}else {
+			try {
+				Integer.parseInt(price);
+			} catch (NumberFormatException e) {
+				err.add("数値を入力してください");
+				
+			}
 		}
-		
-		final String FORMAT = "yyyy-MM-dd";
-		LocalDate date1 = LocalDate.parse
-				(today, DateTimeFormatter.ofPattern(FORMAT));
-		LocalDate date2 = LocalDate.parse
-				(care, DateTimeFormatter.ofPattern(FORMAT));
-		
-		boolean d2 = date1.isBefore(date2);
-		if(d2==false) {
-			err.add("賞味期限が切れています。");
-		}
-		
-		try {
-			Integer.parseInt(price);
-		} catch (NumberFormatException e) {
-			err.add("数値を入力してください");
-		}
-		
 		 
 		 if(err.isEmpty()==false) {
 			m.addAttribute("err",err);
-			 return "redirect:/items/add";
+			
+			// 全カテゴリー一覧を取得
+			List<Category> categoryList = categoryRepository.findAll();
+			m.addAttribute("categories", categoryList);
+			
+			LocalDate data= LocalDate.now();
+			
+			List<ItemsList> list =null;
+			if (categoryId == null) {
+				//categoryIdに値がないとき商品一覧情報の取得
+				list=itemListRepository.findAll();
+				} else {
+				// itemsテーブルをカテゴリーIDを指定して一覧を取得
+				list = itemListRepository.findByCategoryId(categoryId);
+			}
+			m.addAttribute("data",data);
+			m.addAttribute("list",list);
+			 return "addItem";
 		 }
 		
 		
