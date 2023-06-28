@@ -34,8 +34,8 @@ CREATE TABLE chahan
 CREATE TABLE element
 (
   id SERIAL PRIMARY KEY,
-  chahan_id TEXT,
-  name TEXT
+  chahan_id INTEGER,
+  name INTEGER
 );
 -- アカウントテーブル
 CREATE TABLE users

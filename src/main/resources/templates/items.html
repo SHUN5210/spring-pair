@@ -110,29 +110,35 @@
 </div>
 		
 		
-		<form action="/items/enn" method="get">
+		
 		<table border="1" class="design16">
 			<tr>
 				<th>食材名</th>
 				<th>購入日</th>
 				<th>賞味期限</th>
+				<th>詳細</th>
 			</tr>
 			<tr th:each="data : ${item}">
 				<td th:text="${data.name}"></td>
 				<td th:text="${data.today}"></td>
 				<td th:text="${data.care}"></td>
+				
+				<form th:action="|/items/${data.id}/detail|" method="get">
+				<td>
+				<input type="submit" value="詳細">
+				</form>
+				</td>
 			</tr>
 		</table>
 	
 	<a href="/items/add">食品の追加</a>
 	
 	<input type="hidden" name="today" th:value="${today}">
-	
+    <form action="/items/enn" method="get">	
 	<button>エンゲル係数</button>
-	
-	<br>
+    </form>
 	
 	<a href="/items/search">メニュー検索</a>
-</form>
+
 </body>
 </html>

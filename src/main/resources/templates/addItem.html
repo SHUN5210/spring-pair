@@ -34,6 +34,23 @@
 		<th>価格</th><td><input type="text" name="price" >円</td>
 	</tr>
 	<tr>
+		<th>保存場所</th>
+		<td>
+			<input type="radio" name="save" value="1" checked>冷蔵庫<br>
+			<input type="radio" name="save" value="2">冷凍庫<br>
+			<input type="radio" name="save" value="3">野菜室<br>
+			<input type="radio" name="save" value="4">常温<br>
+		</td>
+	</tr>
+	<tr>
+		<th>残量</th>
+		<td>
+			0%<input type="range" name="quan" 
+			min="0" max="100" value="90" step="10">100%
+			
+		</td>
+	</tr>
+	<tr>
 		<th>コメント</th><td><textarea name="detail"></textarea></td>
 	</tr>
 </table>
