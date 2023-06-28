@@ -56,7 +56,7 @@ public class ChahanController {
 	public String cook (
 			@PathVariable("id") Integer id,
 			Model m) {
-m
+
 //		Item item =itemRepository.findById(id).get();
 //		Item item =itemRepository.findById(id).get()
 		Item item = null;
