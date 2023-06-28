@@ -56,7 +56,7 @@ public class ChahanController {
 			@PathVariable("id") Integer id,
 			Model m) {
 //		Item item =itemRepository.findById(id).get();
-//		Item item =itemRepository.findById(id).get();
+//		Item item =itemRepository.findById(id).get()
 		Item item = null;
 		item =itemRepository.findById(id).get();
 		
