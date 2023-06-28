@@ -20,7 +20,7 @@
 </div>
 		
 		
-		<table border="1" class="design16">
+		<table border="1">
 			<tr>
 				<th>食材名</th>
 				<th>購入日</th>
@@ -32,11 +32,6 @@
 				<td th:text="${data.today}"></td>
 				<td th:text="${data.care}"></td>
 				
-<!--				<form th:action="|/item/${data.id}/search|" method="get">-->
-<!--				<td>-->
-<!--					<button>検索</button>-->
-<!--				</td>-->
-<!--				</form>-->
 			<form th:action="|/items/${data.id}/search|" method="post">
 				<td>
 				<input type="submit" value="検索">
@@ -45,7 +40,19 @@
 			</tr>
 		</table>
 		
-		
+		<table border="1">
+			<tr>
+				
+				<th>ca</th>
+				<th>it</th>
+				
+			</tr>
+			<tr th:each="data : ${list}">
+				<td th:text="${data.chahanId}"></td>
+				<td th:text="${data.name}"></td>
+				
+			</tr>
+		</table>
 		
 </body>
 </html>

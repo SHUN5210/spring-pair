@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Category;
+import com.example.demo.entity.Element;
 import com.example.demo.entity.Item;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ElementRepository;
@@ -50,12 +51,20 @@ public class ChahanController {
 		return "search";
 	}
 	
-	@PostMapping("/item/{id}/search")
+	@PostMapping("/items/{id}/search")
 	public String cook (
 			@PathVariable("id") Integer id,
 			Model m) {
+//		Item item =itemRepository.findById(id).get();
+//		Item item =itemRepository.findById(id).get();
+		Item item = null;
+		item =itemRepository.findById(id).get();
 		
-		
+		System.out.println(item.getItemId());
+		List<Element> list=null;
+		list =elementRepository.findByName(item.getItemId());
+		System.out.println(list);
+		m.addAttribute("list",list);
 		return"search";
 	}
 	
