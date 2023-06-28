@@ -56,26 +56,7 @@ public class ChahanController {
 	public String cook (
 			@PathVariable("id") Integer id,
 			Model m) {
-//		Item item =itemRepository.findById(id).get();
-//		Item item =itemRepository.findById(id).get();
-		Item item = null;
-		item =itemRepository.findById(id).get();
-		
-		Element element = elementRepository.findByName(id).get(id);
-		
-//		List<Element> element = null;
-//		
-//		if (id == null) {
-//			element = elementRepository.findAll();
-//		} else {
-//			element = elementRepository.findByName(id);
-//		}
-		
-		m.addAttribute("element", element);
-		
-		return "search";
-
-		System.out.println(item.getItemId());
+		Item item=itemRepository.findById(id).get();
 		List<Element> list=null;
 		list =elementRepository.findByName(item.getItemId());
 		System.out.println(list);
