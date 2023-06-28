@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>詳細</title>
+</head>
+<body>
+<h1>詳細</h1>
+<table border="1">
+	<tr>
+		<th>食材</th><td>[[${item.name}]]</td>
+	</tr>
+	
+	<tr>
+		<th>購入日</th><td><input type="text" name="name" th:value="${item.today}"></td>
+	</tr>
+	<tr>
+		<th>賞味期限</th><td><input type="text" name="care" th:value="${item.care}"></td>
+	</tr>
+	<tr>
+		<th>値段</th><td><input type="text" name="price" th:value="${item.price}"></td>
+	</tr>
+</table>
+
+</body>
+</html>
