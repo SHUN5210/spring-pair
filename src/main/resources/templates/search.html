@@ -5,8 +5,47 @@
 <title>メニュー検索</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-<body>
 	<h1>メニュー検索</h1>
-	
+<div class="tab-001">
+	<label>
+		<a href="/items">全商品</a>
+    </label>
+    <label th:each="c:${categories}">
+		
+        <a th:href="'/items?categoryId='+${c.id}">
+			<span th:text="${c.name}" style="padding-left: 10px;"></span>
+		</a>
+		
+    </label>
+</div>
+		
+		
+		<table border="1" class="design16">
+			<tr>
+				<th>食材名</th>
+				<th>購入日</th>
+				<th>賞味期限</th>
+				<th></th>
+			</tr>
+			<tr th:each="data : ${item}">
+				<td th:text="${data.name}"></td>
+				<td th:text="${data.today}"></td>
+				<td th:text="${data.care}"></td>
+				
+<!--				<form th:action="|/item/${data.id}/search|" method="get">-->
+<!--				<td>-->
+<!--					<button>検索</button>-->
+<!--				</td>-->
+<!--				</form>-->
+			<form th:action="|/items/${data.id}/search|" method="post">
+				<td>
+				<input type="submit" value="検索">
+				</td>
+				</form>
+			</tr>
+		</table>
+		
+		
+		
 </body>
 </html>
