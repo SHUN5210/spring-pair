@@ -63,6 +63,7 @@ public class itemController {
 	public String update(
 			@RequestParam(name="name", required=false) String name,
 			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
+			@RequestParam(value = "itemId", defaultValue = "") Integer itemId,
 			@RequestParam(name = "care", required=false) String care,
 			@RequestParam(name = "today", required=false) String today,
 			@RequestParam(name = "price", required=false) String price,
@@ -119,7 +120,7 @@ public class itemController {
 		
 		
 		
-		Item item=new Item(categoryId,name,today,care,price);
+		Item item=new Item(categoryId,name,itemId,today,care,price);
 		itemRepository.save(item);
 		return "redirect:/items";
 	}

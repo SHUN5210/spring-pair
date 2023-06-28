@@ -23,6 +23,10 @@ public class Item {
 	@Getter
 	private String name; // 食材名
 	
+	@Column(name = "item_id")
+	@Getter
+	private Integer itemId; //食品ID
+	
 	@Getter
 	private String today;//記入日
 	
@@ -56,10 +60,11 @@ public class Item {
 
 
 
-	public Item(Integer categoryId, String name, String today, String care, String price) {
+	public Item(Integer categoryId, String name,Integer itemId, String today, String care, String price) {
 		super();
 		this.categoryId = categoryId;
 		this.name = name;
+		this.itemId = itemId;
 		this.today = today;
 		this.care = care;
 		this.price = price;

@@ -11,6 +11,7 @@
 	<form action="/items" method="post">
 	<table border="1">
 		<input type="hidden" name="categoryId" th:value="${data.categoryId}">
+		<input type="hidden" name="itemId" th:value="${data.id}">
 		<tr>
 		<th>入力日</th><td>[[${today}]]</td>
 		<input type="hidden" name="today" th:value="${today}">
