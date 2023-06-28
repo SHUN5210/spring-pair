@@ -11,14 +11,14 @@
 		<a href="/items">全商品</a>
     </label>
     <label th:each="c:${categories}">
-		
         <a th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
-		
     </label>
 </div>
 		
+		<table border="1" class="design16">
+
 		
 		<table border="1">
 			<tr>
@@ -40,6 +40,12 @@
 			</tr>
 		</table>
 		
+		<br>
+		
+		<tr th:each="element : ${element}">
+		<th:text="${element.element}"></th:text>
+		</tr>
+
 		<table border="1">
 			<tr>
 				
@@ -53,6 +59,5 @@
 				
 			</tr>
 		</table>
-		
 </body>
 </html>

@@ -17,6 +17,7 @@ import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ElementRepository;
 import com.example.demo.repository.ItemRepository;
 
+
 @Controller
 public class ChahanController {
 	@Autowired
@@ -55,12 +56,14 @@ public class ChahanController {
 	public String cook (
 			@PathVariable("id") Integer id,
 			Model m) {
+m
 //		Item item =itemRepository.findById(id).get();
 //		Item item =itemRepository.findById(id).get()
 		Item item = null;
 		item =itemRepository.findById(id).get();
 		
 		System.out.println(item.getItemId());
+
 		List<Element> list=null;
 		list =elementRepository.findByName(item.getItemId());
 		System.out.println(list);
