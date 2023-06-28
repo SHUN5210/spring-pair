@@ -11,14 +11,11 @@
 		<a href="/items">全商品</a>
     </label>
     <label th:each="c:${categories}">
-		
         <a th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
-		
     </label>
 </div>
-		
 		
 		<table border="1" class="design16">
 			<tr>
@@ -32,11 +29,6 @@
 				<td th:text="${data.today}"></td>
 				<td th:text="${data.care}"></td>
 				
-<!--				<form th:action="|/item/${data.id}/search|" method="get">-->
-<!--				<td>-->
-<!--					<button>検索</button>-->
-<!--				</td>-->
-<!--				</form>-->
 			<form th:action="|/items/${data.id}/search|" method="post">
 				<td>
 				<input type="submit" value="検索">
@@ -45,7 +37,10 @@
 			</tr>
 		</table>
 		
+		<br>
 		
-		
+		<tr th:each="element : ${element}">
+		<th:text="${element.element}"></th:text>
+		</tr>
 </body>
 </html>
