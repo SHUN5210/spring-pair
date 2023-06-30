@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
 body {
   margin: 0;
   font-family: "Futura", Helvetica, sans-serif;
@@ -30,6 +32,7 @@ body {
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
   transform: scale(1, 0);
   transform-origin: top;
+  font-family: 'Exo', sans-serif;
 }
 
 /* Hamburger menu button */
@@ -145,4 +148,5 @@ body {
   color: #ddd;
   letter-spacing: 4px;
   font-size: 20px;
+  font-family: 'Exo', sans-serif;
 }
