@@ -55,7 +55,7 @@ public class ItemAdminController {
 		m.addAttribute("categories", categoryList);
 		return"/admin/addItem";
 	}
-
+	//追加
 	@PostMapping("/admin/items/add")
 	public String create(
 			@RequestParam(name = "categoryId", required=false) Integer categoryId,
