@@ -1,5 +1,6 @@
 --アカウント情報
 INSERT INTO users(email, password) VALUES('shuijinhan@chahan.jp', 'pairchahan');
+INSERT INTO users(email, password) VALUES('masterChahan', 'himitu');
 
 -- カテゴリーテーブルデータ
 INSERT INTO categories(name) VALUES('肉');

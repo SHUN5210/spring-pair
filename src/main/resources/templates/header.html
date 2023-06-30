@@ -3,41 +3,49 @@
 <!--	<a href="/logout">ログアウト</a>-->
 <!--</header>-->
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Headers - 8</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/css/reset.min.css" />
-    <link rel="stylesheet" href="/css/style1.css" />
-    <link rel="stylesheet" href="/css/header-8.css" />
-  </head>
-  <body>
-    <!-- Header Start -->
-    <header class="site-header">
-      <div class="wrapper site-header__wrapper">
-        <div class="site-header__start">
-          <a href="#" class="brand">一人暮らしに捧げるチャーハンサイト</a>
-        </div>
-        <div class="site-header__middle">
-          <nav class="nav">
-            <button class="nav__toggle" aria-expanded="false" type="button">
-              menu
-            </button>
-            <ul class="nav__wrapper">
-              <li class="nav__item"><a href="/items">ホーム</a></li>
-              <li class="nav__item"><a href="/items/add">登録</a></li>
-              <li class="nav__item"><a href="/items/search">レシピ</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="site-header__end">
-          <a href="/logout">ログアウト</a>
-        </div>
-      </div>
-    </header>
-    <!-- Header End -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ヘッダー</title>
+<link rel="stylesheet" href="/css/Header3.css" />
 
-    <script src="/js/header-8.js"></script>
-  </body>
+
+
+<html>
+<!--<body>-->
+<!--   <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>-->
+<!--   <label for="drawer-toggle" id="drawer-toggle-label"></label>-->
+<!--   <header>Eternal Fridge and FriedRice</header>-->
+<!--   <nav id="drawer">-->
+<!--      <ul>-->
+<!--         <li><a href="/items">ホーム</a></li>-->
+<!--          <li><a href="/items/add">登録</a></li>-->
+<!--          <li><a href="/items/search">レシピ</a></li>-->
+<!--          <li> <a href="/logout">ログアウト</a></li>-->
+<!--      </ul>-->
+<!--   </nav>-->
+<!--   <div id="page-content">-->
+<!--      <p>Page Content</p>-->
+<!--   </div>-->
+<!--</body>-->
+<!--</html>-->
+
+<body>
+  <header class="header">
+    <div class="navtext-container">
+      <div class="navtext">Eternal Fridge and FriedRice</div>
+    </div>
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li class="top"><a href="/items">ホーム</a></li>
+          <li><a href="/items/add">登録</a></li>
+          <li><a href="/items/search">レシピ</a></li>
+          <li> <a href="/logout">ログアウト</a></li>
+    </ul>
+
+  </header>
+
+</body>
+
 </html>
