@@ -37,7 +37,7 @@
 				<td th:text="${data.categoryId}"></td>
 				<td th:text="${data.name}"></td>
 				
-				<form th:action="|/admin/items/${data.id}/detail|" method="get">
+				<form th:action="|/items/${data.id}/detail|" method="get">
 				<td>
 				<input type="submit" value="削除">
 				</form>

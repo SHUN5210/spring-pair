@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Category;
@@ -45,55 +47,31 @@ public class ItemAdminController {
 		return "/admin/items";
 	}
 	
-//	@GetMapping("/admin/items/add")
-//	public String create(
-//			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
-//			Model m) {
-//		List<Category> categoryList = categoryRepository.findAll();
-//		m.addAttribute("categories", categoryList);
-//		return"/admin/addItem";
-//	}
-//	
-//	@PostMapping("/admin/items/add")
-//	public String create(
-//			@RequestParam(name = "categoryId", required=false) Integer categoryId,
-//			@RequestParam(name = "name", required=false) String name,
-//			Model m) {
-//		Item item=new Item(categoryId,name);
-//		itemRepository.save(item);
-//		return "redirect:/admin/items";
-//	}
-//	@GetMapping("/admin/items/{id}/edit")
-//	public String edit(@PathVariable("id") Integer id,
-//			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
-//			Model m) {
-//		
-//		List<Category> categoryList = categoryRepository.findAll();
-//		m.addAttribute("categories", categoryList);
-//			
-//		System.err.println(id);
-//		Item item =itemRepository.findById(id).get();
-//		m.addAttribute("item",item);
-//		return "/admin/editItem";
-//	}
-//	@PostMapping("/admin/items/{id}/edit")
-//	public String update
-//			(@PathVariable("id") Integer id,
-//			@RequestParam(name = "categoryId", required=false) Integer categoryId,
-//			@RequestParam(name = "name", required=false) String name,
-//			Model m) {
-//		Item item=new Item(id,categoryId,name);
-//		itemRepository.save(item);
-//		return "redirect:/admin/items";
-//	}
-//	
-//	@GetMapping("/admin/items/{id}/delete")
-//	public String delete(@PathVariable("id") Integer id, Model m) {
-//		itemRepository.deleteById(id);
-//		return "redirect:/admin/items";
-//	}
-//	
+	@GetMapping("/admin/items/add")
+	public String create(
+			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
+			Model m) {
+		List<Category> categoryList = categoryRepository.findAll();
+		m.addAttribute("categories", categoryList);
+		return"/admin/addItem";
+	}
 
-	
+	@PostMapping("/admin/items/add")
+	public String create(
+			@RequestParam(name = "categoryId", required=false) Integer categoryId,
+			@RequestParam(name = "name", required=false) String name,
+			Model m) {
+		ItemsList item=new ItemsList(categoryId,name);
+		itemListRepository.save(item);
+		return "redirect:/admin/items";
+	}
+
+	//削除
+	@GetMapping("/admin/items/{id}/detail")
+	public String delete(@PathVariable("id") Integer id, Model m) {
+		itemListRepository.deleteById(id);
+		return "redirect:/admin/items";
+	}
+
 	
 }

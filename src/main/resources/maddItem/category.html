@@ -11,28 +11,31 @@
 <h1>食材一覧</h1>
 
 </head>
-<body>	
-		<table border="1" >
+<body>
+
+		<table border="1" class="design16">
 			<tr>
-				<th>メニューID</th>
-				<th>メニュー名</th>
+			
+				
+				<th>カテゴリーID</th>
+				<th>カテゴリー名</th>
 				<th>削除</th>
 				
 			</tr>
-			<tr th:each="data:${chahan}">
+			<tr th:each="data:${categories}">
 				<td th:text="${data.id}"></td>
-				<td th:text="${data.menu}"></td>
+				<td th:text="${data.name}"></td>
 				
-				<form th:action="|/admin/menu/${data.id}/detail|" method="get">
+				<form th:action="|/items/${data.id}/detail|" method="get">
 				<td>
 				<input type="submit" value="削除">
-				</td>
 				</form>
+				</td>
 			</tr>
 		</table>
 	
-	<a href="/admin/menu/add">メニューの追加</a>
+	<a href="/admin/category/add">カテゴリーの追加</a>
 	<a href="/admin/items">食材一覧</a>
-	<a href="/admin/categroy">カテゴリー一覧</a>
+	<a href="/admin/menu">メニュー一覧</a>
 </body>
 </html>
