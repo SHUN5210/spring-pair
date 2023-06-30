@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Category;
+import com.example.demo.entity.Chahan;
 import com.example.demo.entity.Element;
 import com.example.demo.entity.Item;
 import com.example.demo.repository.CategoryRepository;
+import com.example.demo.repository.ChahanRepository;
 import com.example.demo.repository.ElementRepository;
 import com.example.demo.repository.ItemRepository;
 
@@ -28,6 +31,9 @@ public class ChahanController {
 	
 	@Autowired
 	ItemRepository itemRepository;
+	
+	@Autowired
+	ChahanRepository chahanRepository;
 	
 	
 	@GetMapping("/items/search")
@@ -62,12 +68,21 @@ public class ChahanController {
 		Item item = null;
 		item =itemRepository.findById(id).get();
 		
+		
 		System.out.println(item.getItemId());
-
 		List<Element> list=null;
 		list =elementRepository.findByName(item.getItemId());
-		System.out.println(list);
-		m.addAttribute("list",list);
+		
+		List<Integer> idList = new ArrayList<>();
+		
+		for(Element data:list) {
+//		
+		Integer cid = data.getChahanId();
+		 idList.add(cid);
+		 
+		}
+		List<Chahan>  chahan =chahanRepository.findByIdIn(idList);
+		m.addAttribute("list",chahan);
 		return"search";
 	}
 	
