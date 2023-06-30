@@ -69,6 +69,15 @@ public class Item {
 		this.care = care;
 		this.price = price;
 	}
+
+
+
+	public Item(Integer id, Integer categoryId, String name) {
+		super();
+		this.id = id;
+		this.categoryId = categoryId;
+		this.name = name;
+	}
 	
 	
 

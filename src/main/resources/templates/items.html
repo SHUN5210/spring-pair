@@ -3,6 +3,7 @@
 <style>
 
 
+
 table {
   border-collapse: collapse;
   width:100%;
@@ -38,38 +39,22 @@ tr:hover {
 <head>
 <meta charset="UTF-8">
 <title>食材一覧</title>
+
+<!--<header th:replace="header"></header>-->
+
+
 <header th:replace="header"></header>
+
 <h1>食材一覧</h1>
 
 </head>
 <body>
   
-  <nav>
-	  <a href="/items" class="active">全商品</a>
+    <a href="/items" class="active">全商品</a>
 	     <a  th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
-  
-  <div class="clear"></div>
-</nav>
-
-		
-<!--		<div class="tab-001">-->
-<!--	<label>-->
-<!--		<a href="/items">全商品</a>-->
-<!--    </label>-->
-<!--    <label th:each="c:${categories}">-->
-		
-<!--        <a th:href="'/items?categoryId='+${c.id}">-->
-<!--			<span th:text="${c.name}" style="padding-left: 10px;"></span>-->
-<!--		</a>-->
-		
-<!--    </label>-->
-<!--</div>-->
-		
-		
-		
-		<table border="1">
+<table border="1">
 			<tr>
 				
 				<th>食材名</th>
