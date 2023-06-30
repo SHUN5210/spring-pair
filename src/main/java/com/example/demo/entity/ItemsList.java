@@ -32,10 +32,6 @@ public class ItemsList {
 		this.categoryId = categoryId;
 		this.name = name;
 		
-	} 
-
-	
-
-	
+	}
 
 }

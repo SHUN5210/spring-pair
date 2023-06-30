@@ -57,7 +57,7 @@ hr {
 }
 /* メイン */
 main {
-	background-color: #FFFFFF;
+	background-color: yellow;
 	min-height: 50px;
 	padding: 20px;
 }
@@ -73,7 +73,7 @@ table {
 }
 /* 表見出しセル */
 table th {
-	background: #7d8bae;
+	background: hotpink;
 	color: #ffffff;
 }
 /* 送信ボタン */
