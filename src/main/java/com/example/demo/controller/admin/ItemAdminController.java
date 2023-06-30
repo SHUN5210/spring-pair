@@ -66,7 +66,7 @@ public class ItemAdminController {
 		return "redirect:/admin/items";
 	}
 
-	
+	//削除
 	@GetMapping("/admin/items/{id}/detail")
 	public String delete(@PathVariable("id") Integer id, Model m) {
 		itemListRepository.deleteById(id);
