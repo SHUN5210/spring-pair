@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Category;
@@ -33,7 +35,26 @@ public class CategoryAdminController {
 		
 		return "/admin/category";
 	}
+	@GetMapping("/admin/category/add")
+	public String create() {
+		
+		return"/admin/addCategory";
+	}
+
+	@PostMapping("/admin/category/add")
+	public String create(
+			@RequestParam(name = "name", required=false) String name,
+			Model m) {
+		Category	item=new Category(name);
+		categoryRepository.save(item);
+		return "redirect:/admin/categroy";
+	}
 	
+	@GetMapping("/admin/category/{id}/detail")
+	public String delete(@PathVariable("id") Integer id, Model m) {
+		categoryRepository.deleteById(id);
+		return "redirect:/admin/categroy";
+	}
 
 
 	

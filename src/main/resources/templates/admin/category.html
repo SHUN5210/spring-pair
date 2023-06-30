@@ -6,23 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>食材一覧</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+
 
 <h1>食材一覧</h1>
 
 </head>
 <body>
-		<div class="tab-001">
-	<label>
-		<a href="/admin/items">全商品</a>
-    </label>
-    <label th:each="c:${categories}">
-		
-        
-		
-    </label>
-</div>
-		
+
 		<table border="1" class="design16">
 			<tr>
 			
@@ -36,16 +26,16 @@
 				<td th:text="${data.id}"></td>
 				<td th:text="${data.name}"></td>
 				
-				<form th:action="|/items/${data.id}/detail|" method="get">
+				<form th:action="|/admin/category/${data.id}/detail|" method="get">
 				<td>
 				<input type="submit" value="削除">
-				</form>
 				</td>
+				</form>
 			</tr>
 		</table>
 	
-	<a href="/admin/items/add">カテゴリーの追加</a>
+	<a href="/admin/category/add">カテゴリーの追加</a>
 	<a href="/admin/items">食材一覧</a>
-	<a href="/admin/items/menu">メニュー一覧</a>
+	<a href="/admin/menu">メニュー一覧</a>
 </body>
 </html>

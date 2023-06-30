@@ -188,6 +188,6 @@ public class itemController {
 	
 	@GetMapping("/header")
 	public String a() {
-		return"header";
+		return"header2";
 	}
 }

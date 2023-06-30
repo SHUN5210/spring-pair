@@ -17,7 +17,14 @@ public class Chahan {
 	private Integer id; // カテゴリーID
 
 	@Getter
-	private String menu; // カテゴリー名
+	private String menu;
+	public Chahan() {
+		
+	}
+	public Chahan(String menu) {
+		
+		this.menu = menu;
+	} // カテゴリー名
 	
 
 }

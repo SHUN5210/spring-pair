@@ -14,6 +14,8 @@
 <body>	
 		<table border="1" >
 			<tr>
+			
+				
 				<th>メニューID</th>
 				<th>メニュー名</th>
 				<th>削除</th>
@@ -23,15 +25,15 @@
 				<td th:text="${data.id}"></td>
 				<td th:text="${data.menu}"></td>
 				
-				<form th:action="|/admin/menu/${data.id}/detail|" method="get">
+				<form th:action="|/items/${data.id}/detail|" method="get">
 				<td>
 				<input type="submit" value="削除">
-				</td>
 				</form>
+				</td>
 			</tr>
 		</table>
 	
-	<a href="/admin/menu/add">メニューの追加</a>
+	<a href="/admin/items/add">カテゴリーの追加</a>
 	<a href="/admin/items">食材一覧</a>
 	<a href="/admin/categroy">カテゴリー一覧</a>
 </body>
