@@ -32,14 +32,13 @@ th, td {
 }
 
 tr {
-  background: sandybrown;
+  background: wheat;
 }
 .price{
   text-align: center;
   color: #000;
   font-weight: bold;
 }
-
 </style>
 <head>
 <meta charset="UTF-8">
@@ -52,7 +51,7 @@ tr {
 </head>
 <body>
   
-    <a href="/items" class="active">全商品</a>
+    <a href="/items" class="active">All</a>
 	     <a  th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
@@ -78,10 +77,10 @@ tr {
 		</table>
 	
 	
-	<input type="hidden" name="today" th:value="${today}">
-    <form action="/items/enn" method="get">	
-	<button>消費額</button>
-    </form>
+<!--	<input type="hidden" name="today" th:value="${today}">-->
+<!--    <form action="/items/enn" method="get">	-->
+<!--	<button>消費額</button>-->
+<!--    </form>-->
 	
 
 </body>

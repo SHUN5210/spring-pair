@@ -1,8 +1,9 @@
 /* 全体 */
 body {
-	background-image: url(/css/MyHomeRef.jpg);
+	background-image: url(/css/refrigerator.jpg);
+	background-size: cover;
 	text-align: center; /* 中央寄せ */
-    min-width: 900px; /* 最小幅 */
+    min-width: 100%; /* 最小幅 */
 }
 /* ヘッダー、ナビゲーションメニュー、フッター */
 header, nav, footer {
