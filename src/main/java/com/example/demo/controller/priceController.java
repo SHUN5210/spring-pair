@@ -34,6 +34,9 @@ public class priceController {
 		String num;
 		String num2;
 		
+//		int sum = 
+//		list.stream().mapToInt(Integer::intValue).sum();
+		
 		List<String> month = new ArrayList<>();
 		
 		for(int i = 1;i<=12;i++) {
@@ -64,8 +67,20 @@ public class priceController {
 			}
 		
 		all = itemRepository.findAll();
+		
+		String totalPrice = "0";
+		
+		for (Item a : all) {
+			
+			
+			totalPrice = totalPrice + Integer.parseInt(a.getPrice());;
+			
+		}
+		m.addAttribute("totalPrice", totalPrice);
 		m.addAttribute("month",month);
 		m.addAttribute("list",all);
+		
+		System.out.println(totalPrice);
 		
 		return"mouth";
 	}

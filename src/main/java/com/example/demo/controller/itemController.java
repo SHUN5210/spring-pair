@@ -185,9 +185,4 @@ public class itemController {
 		m.addAttribute("item",item);
 		return"detail";
 	}
-	
-	@GetMapping("/header")
-	public String a() {
-		return"header";
-	}
 }
