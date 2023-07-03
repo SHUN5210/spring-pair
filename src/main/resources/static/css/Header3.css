@@ -16,6 +16,7 @@ body {
   position: fixed;
   width: 100%;
   height: 52px;
+   z-index: 20；
 }
 
 /* Nav items */
@@ -33,6 +34,8 @@ body {
   transform: scale(1, 0);
   transform-origin: top;
   font-family: 'Exo', sans-serif;
+  z-index: 20；
+ 
 }
 
 /* Hamburger menu button */
@@ -78,6 +81,7 @@ body {
   cursor: pointer;
   padding: 24px 14px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+   z-index: 20；
 }
 
 .navicon {
@@ -87,6 +91,7 @@ body {
   width: 26px;
   position: relative;
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+   z-index: 20；
 }
 
 .navicon:before,
@@ -98,6 +103,7 @@ body {
   position: absolute;
   background: #ddd;
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+   z-index: 20；
 }
 
 .navicon:before {
