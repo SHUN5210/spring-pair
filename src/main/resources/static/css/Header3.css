@@ -16,9 +16,11 @@ body {
   position: fixed;
   width: 100%;
   height: 52px;
-   z-index: 20；
+  z-index: 20；
 }
-
+.footer {
+  text-align: center;
+}
 /* Nav items */
 .menu {
   list-style: none;
@@ -35,16 +37,13 @@ body {
   transform-origin: top;
   font-family: 'Exo', sans-serif;
   z-index: 20；
- 
 }
-
 /* Hamburger menu button */
 .menu-btn:checked ~ .menu {
   transform: scale(1, 1);
   transform-origin: top;
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
 }
-
 /* Hamburger menbu text */
 .menu a {
   text-decoration: none;
@@ -56,7 +55,6 @@ body {
   opacity: 0;
   transition: 0.5s;
 }
-
 .menu li {
   border-top: 1px solid rgb(75, 75, 75);
   padding: 15px 0;
@@ -64,26 +62,22 @@ body {
   opacity: 0;
   transition: 0.5s;
 }
-
 .menu-btn:checked ~ .menu a,
 .menu-btn:checked ~ .menu li {
   opacity: 1;
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
 }
-
 .menu-btn {
   display: none;
 }
-
 .menu-icon {
   display: inline-block;
   position: relative;
   cursor: pointer;
   padding: 24px 14px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-   z-index: 20；
+  z-index: 20；
 }
-
 .navicon {
   background: #ddd;
   display: block;
@@ -91,9 +85,8 @@ body {
   width: 26px;
   position: relative;
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-   z-index: 20；
+  z-index: 20；
 }
-
 .navicon:before,
 .navicon:after {
   content: "";
@@ -103,33 +96,27 @@ body {
   position: absolute;
   background: #ddd;
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-   z-index: 20；
+  z-index: 20；
 }
-
 .navicon:before {
   top: 9px;
 }
-
 .navicon:after {
   bottom: 9px;
 }
-
 /* Hamburger Menu Animation Start */
 .menu-btn:checked ~ .menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
-
 .menu-btn:checked ~ .menu-icon .navicon:after {
   transform: rotate(45deg);
 }
-
 .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
   top: 0;
 }
 .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   bottom: 0;
 }
-
 .menu-btn:checked ~ .menu-icon .navicon {
   background: rgba(0, 0, 0, 0);
   transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
@@ -146,7 +133,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 /* Navbar Text */
 .navtext {
   position: absolute;
@@ -155,4 +141,5 @@ body {
   letter-spacing: 4px;
   font-size: 20px;
   font-family: 'Exo', sans-serif;
+  text-align: center;
 }

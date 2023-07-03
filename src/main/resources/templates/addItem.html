@@ -3,42 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <title>食材登録</title>
+<header th:replace="header"></header>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
+<br>
+<br>
 <h1>食材登録</h1>
 <hr>
 	<p th:each="err:${err}">[[${err}]]</p>
 
-<<<<<<< HEAD
 <a href="/items/add">全食材</a>
-=======
 <a href="/items/add">全商品</a>
->>>>>>> refs/remotes/origin/おてらーん
 		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
 <form action="/items/confirm" method="post">
 <table border="1">
 	<tr>
-<<<<<<< HEAD
 		<th>入力日</th><td>[[${data}]]</td>
 		<input type="hidden" name="today" th:value="${data}">
-=======
 		<th>食材名</th><td>
 <!--			<input type="text" name="name"></td>-->
 			<select name="categoryId">
     		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>
 			</select></td>
->>>>>>> refs/remotes/origin/おてらーん
 	</tr>
-	<tr>
-		<th>食材名</th><td>
-			<select name="categoryId">
-    		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>
-			</select></td>
-		</td>
-	</tr>
+
 	<tr>
 		<th>賞味期限</th><td><input type="date" name="care"></td>
 	</tr>

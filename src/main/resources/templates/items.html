@@ -1,192 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<style>
-
-.flat-table {
-  display: block;
-  font-family: sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-size: 115%;
-  overflow: auto;
-  width: auto;
- }
-  th {
-    background-color: rgb(112, 196, 105);
-    color: black;
-    font-weight: normal;
-    padding: 20px 30px;
-    text-align: center;
-  }
-  td {
-    background-color: rgb(238, 238, 238);
-    color: rgb(111, 111, 111);
-    padding: 20px 30px;
-    text-align: center;
-  }
-
-@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
-body{
-	background-color: #FFEDB3;
-	
-}
-table {
-  border-collapse: collapse;
-  width:100%;
-  margin: auto;
-  
-}
-tr {
-  background: wheat;
-}
-.price{
-  text-align: center;
-  color: #000;
-  font-weight: bold;
-}
-
-h1 {
-	font-family: 'Exo', sans-serif;
-  padding: 1rem 2rem;
-  color: #000;
-  letter-spacing: .1em;
-  
-}
-
-.example{
-    overflow: auto;
-    width: 90%;
-    height: 500px;
-    
-     margin-left: auto;
-    margin-right: auto;
-}
-.example table{
-    margin: 0;
-    border-spacing: 0;
-}
-.example td {
-    white-space: nowrap;
-    border-right: 1px solid #999;
-    border-bottom: 1px solid #999;
-    background: #FFF;
-    padding: 5px;
-}
-.example th{
-    white-space: nowrap;
-    border-right: 1px solid #999;
-    border-bottom: 1px solid #999;
-    background: #f2f2f2;
-    position: sticky;
-    z-index: 0;
-    top: 0;
-    left: 0;
-}
-.example tr:first-child th{
-    border-top: 1px solid #999;
-}
-.example th:first-child{
-    border-left: 1px solid #999;
-}
-.example tr:first-child th:first-child{
-    z-index: 0;
-}
-header{
-<<<<<<< HEAD
-	 top: 5px;
-=======
-	top:0;
->>>>>>> branch 'master' of https://github.com/SHUN5210/spring-pair.git
-	 z-index: 100;
-}
-
-
-.news-list{
-  list-style: none outside;
-  margin: 0;
-  padding: 0;
-}
-.news-list .item a{
-  display: flex;
-  flex-wrap: wrap;
-  flex-wrap: nowrap;
-  text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid #CCC;
-  padding: 20px 20px;
-}
-.news-list .item:first-child a{
-  border-top: 1px solid #CCC;
-}
-.news-list .item .date{
-  margin: 0;
-  min-width: 180px;
-  font-size: 16px;
-  color: #999;
-  padding: 0 40px 0 0;
-}
-.news-list .item .category{
-  margin: 0;
-  min-width: 140px;
-  padding: 0 20px 0 0;
-}
-.news-list .item .category span{
-  background: #999;
-  color: #FFF;
-  text-align: center;
-  display: inline-block;
-  padding: 5px 20px;
-  font-size: 12px;
-  line-height: 1;
-}
-.news-list .item .title{
-  margin: 0;
-  width: 100%;
-  color: red;
-}
-
-
-@media screen and (max-width: 767px){
-.news-list .item a{
-  flex-wrap: wrap;
-}
-.news-list .item .date{
-  
-
-  width: 30px;
-}
-.news-list .item .title{
-  margin-top: 10px;
-}
-}
-</style>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 <head>
 <meta charset="UTF-8">
 <title>食材一覧</title>
 <header th:replace="header"></header>
-
 </head>
 <body>
-	<h1>Food</h1>
-  <ul class="news-list">
-    <li class="item" th:each="i : ${#numbers.sequence(0, err1.size() -1)}" >
-        <a href="#">
-            <p class="category"><span>[[${name1.get(i)}]]</span></p>
-            <p class="date">賞味期限：[[${data1.get(i)}]]</p>
-            <p class="title">[[${err1.get(i)}]]</p>
-        </a>
-    </li>
-    </ul>
-    
+	<br>
+	<br>
+	<h1>What's in the Fridge Now</h1>
+    <div class="tag">
     <a href="/items" class="active">All</a>
 	     <a  th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
-		
+	</div>
+	
 <div class="example">
 <table border="1">
 			<tr>
-				
 				<th>食材名</th>
 				<th>購入日</th>
 				<th>賞味期限</th>
@@ -204,17 +37,24 @@ header{
 				</td>
 			</tr>
 		</table>
-</div>	
-	
+</div>
 
-	<input type="hidden" name="today" th:value="${today}">
-    <form action="/items/enn" method="get">	
-	<button>消費額</button>
-    </form>
-    
-    
-    
+<br>
+<br>
 
-
+  <ul class="news-list">
+    <li class="item" th:each="i : ${#numbers.sequence(0, err1.size() -1)}" >
+        <a href="#">
+            <p class="category"><span>[[${name1.get(i)}]]</span></p>
+            <p class="date">賞味期限：[[${data1.get(i)}]]</p>
+            <p class="title">[[${err1.get(i)}]]</p>
+        </a>
+    </li>
+    </ul>
+    
+<br>
+<br>
+<br>	
 </body>
+<footer th:replace="footer"></footer>
 </html>
