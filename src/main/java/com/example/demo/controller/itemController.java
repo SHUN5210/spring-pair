@@ -52,12 +52,13 @@ public class itemController {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
 			item = itemRepository.findByCategoryId(categoryId);
 		}
-		m.addAttribute("item",item);
+		
 		
 		
 		LocalDate date= LocalDate.now();//今日の日にち
 		List <String> err1 = new ArrayList<>();//エラー
 		List <String> data1 = new ArrayList<>();//エラーがある日にち
+		List <String> name1 = new ArrayList<>();//エラーがある食材
 		
 		
 		final String FORMAT = "yyyy-MM-dd";
@@ -68,21 +69,32 @@ public class itemController {
 		LocalDate date3 = LocalDate.parse
 				(item.get(i).getCare(), DateTimeFormatter.ofPattern(FORMAT));
 		
-		boolean d1 = date1.isBefore(date3);
-		if(d1==false) {
-			err1.add("賞味期限が近いです。");
-			data1.add(item.get(i).getCare());
-		}
-		
 		boolean d2 = date2.isBefore(date3);
 		if(d2==false) {
 			err1.add("賞味期限が切れています。");
 			data1.add(item.get(i).getCare());
-		}
+			name1.add(item.get(i).getName());
+			continue;
 		}
 		
-		m.addAttribute("err1",err1);
-		m.addAttribute("data1",data1);
+		boolean d1 = date1.isBefore(date3);
+		if(d1==false) {
+			err1.add("賞味期限が近いです。");
+			data1.add(item.get(i).getCare());
+			name1.add(item.get(i).getName());
+			
+		}
+		
+		
+		}
+		
+		if(err1.isEmpty()==false) {
+			m.addAttribute("err1",err1);
+			m.addAttribute("data1",data1);
+			m.addAttribute("name1",name1);
+		}
+		
+		m.addAttribute("item",item);
 		return"items";
 	}
 	
