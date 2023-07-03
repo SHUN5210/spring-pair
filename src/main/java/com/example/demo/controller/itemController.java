@@ -70,6 +70,53 @@ public class itemController {
 			@RequestParam(name = "price", required=false) String price,
 			Model m) {
 		
+		
+		
+		
+		Item item=new Item(categoryId,name,itemId,today,care,price);
+		itemRepository.save(item);
+		return "redirect:/items";
+	}
+	
+	
+	
+	@GetMapping("/items/add")
+	public String store(
+			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
+			Model m) {
+		
+	List<ItemsList> list = null;
+		
+//		// 全カテゴリー一覧を取得
+		List<Category> categoryList = categoryRepository.findAll();
+		m.addAttribute("categories", categoryList);
+		
+		LocalDate data= LocalDate.now();
+		
+		
+		if (categoryId == null) {
+			//categoryIdに値がないとき商品一覧情報の取得
+			list=itemListRepository.findAll();
+			} else {
+			// itemsテーブルをカテゴリーIDを指定して一覧を取得
+			list = itemListRepository.findByCategoryId(categoryId);
+		}
+		m.addAttribute("data",data);
+		m.addAttribute("list",list);
+		return "addItem";
+	}
+	@PostMapping("/items/confirm")
+	public String confirm(
+			@RequestParam(name = "categoryId", defaultValue = "") Integer categoryId,
+			@RequestParam(name = "care", defaultValue = "") String care,
+			@RequestParam(name = "price", defaultValue = "") String price,
+			@RequestParam(name="detail", defaultValue = "") String detail,
+			@RequestParam(name = "today", defaultValue = "") String today,
+			Model m
+			) {
+		
+		
+		
 		List <String> err = new ArrayList<>();
 		if(care.equals("")) {
 			err.add("賞味期限を選択してください");
@@ -118,55 +165,7 @@ public class itemController {
 			m.addAttribute("list",list);
 			 return "addItem";
 		 }
-		
-		
-		
-		Item item=new Item(categoryId,name,itemId,today,care,price);
-		itemRepository.save(item);
-		return "redirect:/items";
-	}
-	
-	
-	
-	@GetMapping("/items/add")
-	public String store(
-			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
-			Model m) {
-		
-	List<ItemsList> list = null;
-		
-//		// 全カテゴリー一覧を取得
-		List<Category> categoryList = categoryRepository.findAll();
-		m.addAttribute("categories", categoryList);
-		
-		LocalDate data= LocalDate.now();
-		
-		
-		if (categoryId == null) {
-			//categoryIdに値がないとき商品一覧情報の取得
-			list=itemListRepository.findAll();
-			} else {
-			// itemsテーブルをカテゴリーIDを指定して一覧を取得
-			list = itemListRepository.findByCategoryId(categoryId);
-		}
-		m.addAttribute("data",data);
-		m.addAttribute("list",list);
-		return "addItem";
-	}
-	@PostMapping("/items/confirm")
-	public String confirm(
-			@RequestParam(name = "categoryId", defaultValue = "") Integer categoryId,
-			@RequestParam(name = "care", defaultValue = "") String care,
-			@RequestParam(name = "price", defaultValue = "") String price,
-			@RequestParam(name="detail", defaultValue = "") String detail,
-			@RequestParam(name = "today", defaultValue = "") String today,
-			Model m
-			) {
-		
-		ItemsList data = itemListRepository.findById(categoryId).get();
-		
-		
-		
+		 ItemsList data = itemListRepository.findById(categoryId).get();
 		m.addAttribute("data",data);
 		m.addAttribute("care",care);
 		m.addAttribute("price",price);

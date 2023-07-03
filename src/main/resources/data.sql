@@ -333,9 +333,15 @@ INSERT INTO element(chahan_id,name) VALUES(62,27);
 
 --items
 
+INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-01','2023-12-28',220);
+INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-15','2023-12-28',480);
+INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-20','2023-12-28',300);
+INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-11','2023-08-22',500);
+INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-21','2023-08-22',1000);
+INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-22','2023-08-22',200);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(1,'豚バラ',1,'2023-05-15','2023-06-28',500);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-15','2023-12-28',500);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-10','2023-08-22',500);
+INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(4,'にんにく',52,'2023-05-16','2023-07-12',500);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'キムチ',22,'2023-06-01','2023-08-30',500);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(4,'にんにく',52,'2023-05-15','2023-07-12',500);
+INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'キムチ',22,'2023-06-30','2023-08-30',800);
+
 

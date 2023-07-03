@@ -36,6 +36,9 @@ public class priceController {
 		
 		List<String> month = new ArrayList<>();
 		
+		List<String> monthPrice = new ArrayList<>();//グラフポイント
+		List<String> monthToday = new ArrayList<>();//グラフラベル
+		
 		for(int i = 1;i<=12;i++) {
 			System.out.println(i);
 			num="0"+i;
@@ -43,7 +46,6 @@ public class priceController {
 			list = itemRepository.findByTodayLike(mm);
 			if(list.isEmpty()==false) {
 				month.add(num);
-				System.out.println(num);
 			}
 			
 			num2=Integer.toString(i);
@@ -51,60 +53,46 @@ public class priceController {
 			list = itemRepository.findByTodayLike(mm2);
 			if(list.isEmpty()==false) {
 				month.add(num2);
-				System.out.println(num2);
+				
 			}
 		}
 		
 		if(month1!=null) {
 			mm ="____-"+month1+"-__";
 			List<Item> item  = itemRepository.findByTodayLike(mm);
+			for(int i = 0 ; i<=item.size()-1;i++) {
+//				mmmm= mmmm+Integer.valueOf(all.get(i).getPrice());
+				monthPrice.add(item.get(i).getPrice());
+				monthToday.add(item.get(i).getToday());
+				}
+				
+				m.addAttribute("label",monthToday);
+		        m.addAttribute("point",monthPrice);
 			m.addAttribute("list",item);
 			m.addAttribute("month",month);
 			return"mouth";
 			}
 		
+		
+		
+		
 		all = itemRepository.findAll();
+		for(int i = 0 ; i<=all.size()-1;i++) {
+//		mmmm= mmmm+Integer.valueOf(all.get(i).getPrice());
+		monthPrice.add(all.get(i).getPrice());
+		monthToday.add(all.get(i).getToday());
+		}
+		
+		m.addAttribute("label",monthToday);
+        m.addAttribute("point",monthPrice);
+		
 		m.addAttribute("month",month);
 		m.addAttribute("list",all);
 		
 		return"mouth";
 	}
-//	@PostMapping("/items/enn")
-//	public String engel(
-//			@RequestParam(name = "today", defaultValue = "") String today,
-//			Model m) {
-//		
-//		List<Item> list = null;
-//		List<Item> all = null;
-//		String mm ;
-//		String mm2;
-//		String num;
-//		String num2;
-//		
-//		List<String> month = new ArrayList<>();
-//		
-//		for(int i = 1;i<=12;i++) {
-//			System.out.println(i);
-//			num="0"+i;
-//			mm ="____-"+num+"-__";
-//			list = itemRepository.findByTodayLike(mm);
-//			if(list.isEmpty()==false) {
-//				month.add(num);
-//				System.out.println(num);
-//			}
-//			
-//			num2=Integer.toString(i);
-//			mm2 ="____-"+num2+"-__";
-//			list = itemRepository.findByTodayLike(mm2);
-//			if(list.isEmpty()==false) {
-//				month.add(num2);
-//				System.out.println(num2);
-//			}
-//		}
-//
-//		all = itemRepository.findAll();
-//		m.addAttribute("month",month);
-//		m.addAttribute("list",all);
-//		return"mouth";
-//	}
+
+
+	
+	
 }
