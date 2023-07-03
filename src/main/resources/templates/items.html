@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <style>
+body{
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  right: 0px;
+  bottom: -40px;
+  width: auto;
+  height: auto;
+  background-image: url(/css/chahan.jpg);
+  background-size: cover;
+  z-index: 0;
+}
+.flat-table {
+  display: block;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 115%;
+  overflow: auto;
+  width: auto;
+ }
+  th {
+    background-color: rgb(112, 196, 105);
+    color: white;
+    font-weight: normal;
+    padding: 20px 30px;
+    text-align: center;
+  }
+  td {
+    background-color: rgb(238, 238, 238);
+    color: rgb(111, 111, 111);
+    padding: 20px 30px;
+  }
+
 @import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
 body{
@@ -13,21 +46,8 @@ table {
   margin: auto;
   
 }
- th {
-  background: #ccc;
-  height: 30px;
-}
-
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  height: 30px;
- text-align: center;
-  
-}
-
 tr {
-  background: sandybrown;
+  background: wheat;
 }
 .price{
   text-align: center;
@@ -54,9 +74,8 @@ h1 {
 .example table{
     margin: 0;
     border-spacing: 0;
-
 }
-.example td{
+.example td {
     white-space: nowrap;
     border-right: 1px solid #999;
     border-bottom: 1px solid #999;
@@ -91,13 +110,12 @@ header{
 <meta charset="UTF-8">
 <title>食材一覧</title>
 <header th:replace="header"></header>
-
 <br><br>
 <h1>Food</h1>
 </head>
 <body>
   
-    <a href="/items" class="active">全商品</a>
+    <a href="/items" class="active">All</a>
 	     <a  th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
@@ -125,20 +143,22 @@ header{
 		</table>
 </div>	
 	
+
 	<input type="hidden" name="today" th:value="${today}">
     <form action="/items/enn" method="get">	
 	<button>消費額</button>
     </form>
     
 <!--    <ul class="news-list">-->
-<!--    <li class="item" th:each="err : ${#numbars.sequence(0.err1.size()-1)}" >-->
+<!--    <li class="item" th:each="i : ${#numbars.sequence(0.err1.size()-1)}" >-->
 <!--        <a href="#">-->
-<!--            <p class="date"></p>-->
+<!--            <p class="date">[[${data1.get(i)}]]</p>-->
 <!--            <p class="category"><span>お知らせ</span></p>-->
-<!--            <p class="title">[[${err}]]</p>-->
+<!--            <p class="title">[[${err1.get(i)}]]</p>-->
 <!--        </a>-->
 <!--    </li>-->
-    </ul>
+<!--    </ul>-->
+
 
 </body>
 </html>
