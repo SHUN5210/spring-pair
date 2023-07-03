@@ -5,6 +5,8 @@ DROP TABLE IF EXISTS chahan;
 DROP TABLE IF EXISTS element;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS items_list;
+DROP TABLE IF EXISTS graph1;
+DROP TABLE IF EXISTS dateprice1;
 
 
 	-- カテゴリーテーブル
@@ -54,7 +56,7 @@ CREATE TABLE items_list
 );
 
 -- グラフテーブル
-CREATE TABLE graph
+CREATE TABLE graph1
 (
    id SERIAL PRIMARY KEY,
    name TEXT,
@@ -63,7 +65,7 @@ CREATE TABLE graph
 );
 
 -- 日付価格テーブル
-CREATE TABLE dateprice
+CREATE TABLE dateprice1
 (
    id SERIAL PRIMARY KEY,
    today TEXT,

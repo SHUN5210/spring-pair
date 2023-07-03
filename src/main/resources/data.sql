@@ -345,61 +345,61 @@ INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'キムチ
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'キムチ',22,'2023-06-30','2023-08-30',800);
 
 --グラフ
-INSERT INTO graph(name,today,price) VALUES('ささみ','2023-05-06',190);
-INSERT INTO graph(name,today,price) VALUES('もやし','2023-05-06',70);
-INSERT INTO graph(name,today,price) VALUES('さつま揚げ','2023-05-06',300);
+INSERT INTO graph1(name,today,price) VALUES('ささみ','2023-05-06',190);
+INSERT INTO graph1(name,today,price) VALUES('もやし','2023-05-06',70);
+INSERT INTO graph1(name,today,price) VALUES('さつま揚げ','2023-05-06',300);
 
-INSERT INTO graph(name,today,price) VALUES('ツナ','2023-05-11',200);
-INSERT INTO graph(name,today,price) VALUES('ハム','2023-05-11',300);
-INSERT INTO graph(name,today,price) VALUES('ソーセージ','2023-05-11',450);
+INSERT INTO graph1(name,today,price) VALUES('ツナ','2023-05-11',200);
+INSERT INTO graph1(name,today,price) VALUES('ハム','2023-05-11',300);
+INSERT INTO graph1(name,today,price) VALUES('ソーセージ','2023-05-11',450);
 
-INSERT INTO graph(name,today,price) VALUES('ニラ','2023-05-17',200);
-INSERT INTO graph(name,today,price) VALUES('みそ','2023-05-17',250);
-INSERT INTO graph(name,today,price) VALUES('カレー粉','2023-05-17',450);
+INSERT INTO graph1(name,today,price) VALUES('ニラ','2023-05-17',200);
+INSERT INTO graph1(name,today,price) VALUES('みそ','2023-05-17',250);
+INSERT INTO graph1(name,today,price) VALUES('カレー粉','2023-05-17',450);
 
-INSERT INTO graph(name,today,price) VALUES('なす','2023-05-23',150);
-INSERT INTO graph(name,today,price) VALUES('トマト','2023-05-23',180);
-INSERT INTO graph(name,today,price) VALUES('にんじん','2023-05-23',200);
+INSERT INTO graph1(name,today,price) VALUES('なす','2023-05-23',150);
+INSERT INTO graph1(name,today,price) VALUES('トマト','2023-05-23',180);
+INSERT INTO graph1(name,today,price) VALUES('にんじん','2023-05-23',200);
 
-INSERT INTO graph(name,today,price) VALUES('にんにく','2023-05-26',230);
-INSERT INTO graph(name,today,price) VALUES('バター','2023-05-26',250);
-INSERT INTO graph(name,today,price) VALUES('チーズ','2023-05-26',200);
+INSERT INTO graph1(name,today,price) VALUES('にんにく','2023-05-26',230);
+INSERT INTO graph1(name,today,price) VALUES('バター','2023-05-26',250);
+INSERT INTO graph1(name,today,price) VALUES('チーズ','2023-05-26',200);
 
-INSERT INTO graph(name,today,price) VALUES('キムチ','2023-05-29',210);
-INSERT INTO graph(name,today,price) VALUES('納豆','2023-05-29',80);
-INSERT INTO graph(name,today,price) VALUES('鮭','2023-05-29',330);
+INSERT INTO graph1(name,today,price) VALUES('キムチ','2023-05-29',210);
+INSERT INTO graph1(name,today,price) VALUES('納豆','2023-05-29',80);
+INSERT INTO graph1(name,today,price) VALUES('鮭','2023-05-29',330);
 
-INSERT INTO graph(name,today,price) VALUES('まいたけ','2023-06-03',230);
-INSERT INTO graph(name,today,price) VALUES('ゴボウ','2023-06-03',200);
-INSERT INTO graph(name,today,price) VALUES('ちくわ','2023-06-03',160);
+INSERT INTO graph1(name,today,price) VALUES('まいたけ','2023-06-03',230);
+INSERT INTO graph1(name,today,price) VALUES('ゴボウ','2023-06-03',200);
+INSERT INTO graph1(name,today,price) VALUES('ちくわ','2023-06-03',160);
 
-INSERT INTO graph(name,today,price) VALUES('しめじ','2023-06-08',180);
-INSERT INTO graph(name,today,price) VALUES('えのき','2023-06-08',170);
+INSERT INTO graph1(name,today,price) VALUES('しめじ','2023-06-08',180);
+INSERT INTO graph1(name,today,price) VALUES('えのき','2023-06-08',170);
 
-INSERT INTO graph(name,today,price) VALUES('しいたけ','2023-06-10',190);
-INSERT INTO graph(name,today,price) VALUES('ベーコン','2023-06-10',210);
+INSERT INTO graph1(name,today,price) VALUES('しいたけ','2023-06-10',190);
+INSERT INTO graph1(name,today,price) VALUES('ベーコン','2023-06-10',210);
 
-INSERT INTO graph(name,today,price) VALUES('たくあん','2023-06-19',200);
-INSERT INTO graph(name,today,price) VALUES('とんかつ','2023-06-19',320);
-INSERT INTO graph(name,today,price) VALUES('エビ','2023-06-19',410);
+INSERT INTO graph1(name,today,price) VALUES('たくあん','2023-06-19',200);
+INSERT INTO graph1(name,today,price) VALUES('とんかつ','2023-06-19',320);
+INSERT INTO graph1(name,today,price) VALUES('エビ','2023-06-19',410);
 
-INSERT INTO graph(name,today,price) VALUES('玉ねぎ','2023-06-22',120);
-INSERT INTO graph(name,today,price) VALUES('豚バラ','2023-06-22',370);
+INSERT INTO graph1(name,today,price) VALUES('玉ねぎ','2023-06-22',120);
+INSERT INTO graph1(name,today,price) VALUES('豚バラ','2023-06-22',370);
 
-INSERT INTO graph(name,today,price) VALUES('たけのこ','2023-06-27',220);
-INSERT INTO graph(name,today,price) VALUES('ホウレンソウ','2023-06-27',200);
-INSERT INTO graph(name,today,price) VALUES('じゃこ','2023-06-27',250);
+INSERT INTO graph1(name,today,price) VALUES('たけのこ','2023-06-27',220);
+INSERT INTO graph1(name,today,price) VALUES('ホウレンソウ','2023-06-27',200);
+INSERT INTO graph1(name,today,price) VALUES('じゃこ','2023-06-27',250);
 
-INSERT INTO dateprice(today,price) VALUES('2023-05-06',560);
-INSERT INTO dateprice(today,price) VALUES('2023-05-11',950);
-INSERT INTO dateprice(today,price) VALUES('2023-05-17',900);
-INSERT INTO dateprice(today,price) VALUES('2023-05-23',530);
-INSERT INTO dateprice(today,price) VALUES('2023-05-26',680);
-INSERT INTO dateprice(today,price) VALUES('2023-05-29',620);
-INSERT INTO dateprice(today,price) VALUES('2023-06-03',590);
-INSERT INTO dateprice(today,price) VALUES('2023-06-08',350);
-INSERT INTO dateprice(today,price) VALUES('2023-06-10',300);
-INSERT INTO dateprice(today,price) VALUES('2023-06-19',930);
-INSERT INTO dateprice(today,price) VALUES('2023-06-22',490);
-INSERT INTO dateprice(today,price) VALUES('2023-06-27',670);
+INSERT INTO dateprice1(today,price) VALUES('2023-05-06',560);
+INSERT INTO dateprice1(today,price) VALUES('2023-05-11',950);
+INSERT INTO dateprice1(today,price) VALUES('2023-05-17',900);
+INSERT INTO dateprice1(today,price) VALUES('2023-05-23',530);
+INSERT INTO dateprice1(today,price) VALUES('2023-05-26',680);
+INSERT INTO dateprice1(today,price) VALUES('2023-05-29',620);
+INSERT INTO dateprice1(today,price) VALUES('2023-06-03',590);
+INSERT INTO dateprice1(today,price) VALUES('2023-06-08',350);
+INSERT INTO dateprice1(today,price) VALUES('2023-06-10',300);
+INSERT INTO dateprice1(today,price) VALUES('2023-06-19',930);
+INSERT INTO dateprice1(today,price) VALUES('2023-06-22',490);
+INSERT INTO dateprice1(today,price) VALUES('2023-06-27',670);
 

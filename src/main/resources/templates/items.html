@@ -149,15 +149,16 @@ header{
 	<button>消費額</button>
     </form>
     
-<!--    <ul class="news-list">-->
-<!--    <li class="item" th:each="i : ${#numbars.sequence(0.err1.size()-1)}" >-->
-<!--        <a href="#">-->
-<!--            <p class="date">[[${data1.get(i)}]]</p>-->
-<!--            <p class="category"><span>お知らせ</span></p>-->
-<!--            <p class="title">[[${err1.get(i)}]]</p>-->
-<!--        </a>-->
-<!--    </li>-->
-<!--    </ul>-->
+    
+    <ul class="news-list">
+    <li class="item" th:each="i : ${#numbers.sequence(0, err1.size() -1)}" >
+        <a href="#">
+            <p class="date">[[${data1.get(i)}]]</p>
+            <p class="category"><span>お知らせ</span></p>
+            <p class="title">[[${err1.get(i)}]]</p>
+        </a>
+    </li>
+    </ul>
 
 
 </body>
