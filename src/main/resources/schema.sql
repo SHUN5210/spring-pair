@@ -53,7 +53,7 @@ CREATE TABLE items_list
    name TEXT
 );
 
--- グラフ
+-- グラフテーブル
 CREATE TABLE graph
 (
    id SERIAL PRIMARY KEY,
@@ -63,7 +63,7 @@ CREATE TABLE graph
 );
 
 -- 日付価格テーブル
-CREATE TABLE graph2
+CREATE TABLE dateprice
 (
    id SERIAL PRIMARY KEY,
    today TEXT,
