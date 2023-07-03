@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <style>
-body{
-  position: absolute;
-  top: -20px;
-  left: 0px;
-  right: 0px;
-  bottom: -40px;
-  width: auto;
-  height: auto;
-  background-image: url(/css/chahan.jpg);
-  background-size: cover;
-  z-index: 0;
-}
+
 table {
   border-collapse: collapse;
   width:100%;
   margin: auto;
+  
 }
  th {
   background: #ccc;
@@ -39,13 +29,23 @@ tr {
   color: #000;
   font-weight: bold;
 }
+
+h1 {
+  font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'Hiragino Mincho ProN', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif;
+  padding: 1rem 2rem;
+  color: #000;
+  letter-spacing: .1em;
+  
+
+}
+
+
 </style>
 <head>
 <meta charset="UTF-8">
 <title>食材一覧</title>
-<h1><header th:replace="header"></header></h1>
-<br>
-<br>
+<header th:replace="header"></header>
+<br><br>
 <h1>食材一覧</h1>
 </head>
 <body>
