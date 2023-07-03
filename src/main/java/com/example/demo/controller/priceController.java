@@ -9,14 +9,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.entity.Item;
+import com.example.demo.entity.price;
+import com.example.demo.entity.priceDate;
 import com.example.demo.repository.ItemRepository;
+import com.example.demo.repository.PriceDateRepository;
+import com.example.demo.repository.PriceRepository;
 
 @Controller
 public class priceController {
 	
 	@Autowired
 	ItemRepository itemRepository;
+	@Autowired
+	PriceRepository priceRepository;
+	@Autowired
+	PriceDateRepository priceDateRepository;
 	
 	//____-06-__
 	
@@ -28,8 +35,8 @@ public class priceController {
 		
 		String mm=null;
 		
-		List<Item> list = null;
-		List<Item> all = null;
+		List<price> list = null;
+		List<priceDate> all = null;
 		String mm2;
 		String num;
 		String num2;
@@ -43,14 +50,14 @@ public class priceController {
 			System.out.println(i);
 			num="0"+i;
 			mm ="____-"+num+"-__";
-			list = itemRepository.findByTodayLike(mm);
+			list = priceRepository.findByTodayLike(mm);
 			if(list.isEmpty()==false) {
 				month.add(num);
 			}
 			
 			num2=Integer.toString(i);
 			mm2 ="____-"+num2+"-__";
-			list = itemRepository.findByTodayLike(mm2);
+			list = priceRepository.findByTodayLike(mm2);
 			if(list.isEmpty()==false) {
 				month.add(num2);
 				
@@ -59,11 +66,12 @@ public class priceController {
 		
 		if(month1!=null) {
 			mm ="____-"+month1+"-__";
-			List<Item> item  = itemRepository.findByTodayLike(mm);
-			for(int i = 0 ; i<=item.size()-1;i++) {
+			List<price> item  = priceRepository.findByTodayLike(mm);
+			all = priceDateRepository.findByTodayLike(mm);
+			for(int i = 0 ; i<=all.size()-1;i++) {
 //				mmmm= mmmm+Integer.valueOf(all.get(i).getPrice());
-				monthPrice.add(item.get(i).getPrice());
-				monthToday.add(item.get(i).getToday());
+				monthPrice.add(all.get(i).getPrice());
+				monthToday.add(all.get(i).getToday());
 				}
 				
 				m.addAttribute("label",monthToday);
@@ -76,7 +84,7 @@ public class priceController {
 		
 		
 		
-		all = itemRepository.findAll();
+		all = priceDateRepository.findAll();
 		for(int i = 0 ; i<=all.size()-1;i++) {
 //		mmmm= mmmm+Integer.valueOf(all.get(i).getPrice());
 		monthPrice.add(all.get(i).getPrice());
@@ -86,8 +94,10 @@ public class priceController {
 		m.addAttribute("label",monthToday);
         m.addAttribute("point",monthPrice);
 		
+        List<price> data  = priceRepository.findAll();
+        
 		m.addAttribute("month",month);
-		m.addAttribute("list",all);
+		m.addAttribute("list",data);
 		
 		return"mouth";
 	}

@@ -11,6 +11,7 @@
 	<br>
 	<h1>What's in the Fridge Now</h1>
     <div class="tag">
+	<th:block th:if="${err1}!=null"></th:block>
     <a href="/items" class="active">All</a>
 	     <a  th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>

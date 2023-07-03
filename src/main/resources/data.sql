@@ -342,7 +342,7 @@ INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',1
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-15','2023-12-28',480);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-20','2023-12-28',300);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-11','2023-08-22',500);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-11','2023-07-04',600);
+INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-11','2023-07-03',600);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-21','2023-08-22',1000);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-22','2023-08-22',200);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(1,'豚バラ',1,'2023-05-15','2023-06-28',500);
