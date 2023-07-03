@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.entity.Category;
 import com.example.demo.entity.ItemsList;
 import com.example.demo.repository.CategoryRepository;
-import com.example.demo.repository.ItemListRepository;
 import com.example.demo.repository.ItemRepository;
+import com.example.demo.repository.ItemsListRepository;
 
 @Controller
 public class ItemAdminController {
@@ -24,7 +24,7 @@ public class ItemAdminController {
 	@Autowired
 	CategoryRepository categoryRepository;
 	@Autowired
-	ItemListRepository itemListRepository;
+	ItemsListRepository itemsListRepository;
 	
 	@GetMapping("/admin/items")
 	public String index(@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
@@ -38,10 +38,10 @@ public class ItemAdminController {
 		
 		if (categoryId == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
-			list=itemListRepository.findAll();
+			list=itemsListRepository.findAll();
 			} else {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
-			list = itemListRepository.findByCategoryId(categoryId);
+			list = itemsListRepository.findByCategoryId(categoryId);
 		}
 		m.addAttribute("list",list);
 		return "/admin/items";
@@ -62,14 +62,14 @@ public class ItemAdminController {
 			@RequestParam(name = "name", required=false) String name,
 			Model m) {
 		ItemsList item=new ItemsList(categoryId,name);
-		itemListRepository.save(item);
+		itemsListRepository.save(item);
 		return "redirect:/admin/items";
 	}
 
 	//削除
 	@GetMapping("/admin/items/{id}/detail")
 	public String delete(@PathVariable("id") Integer id, Model m) {
-		itemListRepository.deleteById(id);
+		itemsListRepository.deleteById(id);
 		return "redirect:/admin/items";
 	}
 

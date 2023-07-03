@@ -10,7 +10,6 @@ INSERT INTO categories(name) VALUES('調味料');
 
 --食材
 INSERT INTO items_list(category_id,name) VALUES(1,'豚バラ');
-<<<<<<< HEAD
 INSERT INTO items_list(category_id,name) VALUES(1,'ひき肉');
 INSERT INTO items_list(category_id,name) VALUES(1,'ベーコン');
 INSERT INTO items_list(category_id,name) VALUES(1,'ハム');
@@ -18,15 +17,12 @@ INSERT INTO items_list(category_id,name) VALUES(1,'ささみ');
 INSERT INTO items_list(category_id,name) VALUES(1,'ソーセージ');
 INSERT INTO items_list(category_id,name) VALUES(1,'とんかつ');
 INSERT INTO items_list(category_id,name) VALUES(1,'豚こま切れ肉');
-=======
 INSERT INTO items_list(category_id,name) VALUES(1,'肩ロース');
 INSERT INTO items_list(category_id,name) VALUES(1,'ひき肉');
 INSERT INTO items_list(category_id,name) VALUES(1,'ベーコン');
 INSERT INTO items_list(category_id,name) VALUES(1,'チャーシュー');
 INSERT INTO items_list(category_id,name) VALUES(1,'ハム');
 INSERT INTO items_list(category_id,name) VALUES(1,'ささみ');
->>>>>>> refs/remotes/origin/おてらーん
-
 INSERT INTO items_list(category_id,name) VALUES(2,'明太子');
 INSERT INTO items_list(category_id,name) VALUES(2,'カニ');
 INSERT INTO items_list(category_id,name) VALUES(2,'エビ');
@@ -35,16 +31,12 @@ INSERT INTO items_list(category_id,name) VALUES(2,'あさり');
 INSERT INTO items_list(category_id,name) VALUES(2,'ホタテ');
 INSERT INTO items_list(category_id,name) VALUES(2,'じゃこ');
 INSERT INTO items_list(category_id,name) VALUES(2,'タコ');
-<<<<<<< HEAD
 INSERT INTO items_list(category_id,name) VALUES(2,'うなぎ');
 INSERT INTO items_list(category_id,name) VALUES(2,'ちくわ');
 INSERT INTO items_list(category_id,name) VALUES(2,'ツナ');
 INSERT INTO items_list(category_id,name) VALUES(2,'さつま揚げ');
 INSERT INTO items_list(category_id,name) VALUES(2,'アンチョビ');
-=======
 INSERT INTO items_list(category_id,name) VALUES(2,'イカゲソ');
->>>>>>> refs/remotes/origin/おてらーん
-
 INSERT INTO items_list(category_id,name) VALUES(3,'キムチ');
 INSERT INTO items_list(category_id,name) VALUES(3,'納豆');
 INSERT INTO items_list(category_id,name) VALUES(3,'レタス');
@@ -57,7 +49,6 @@ INSERT INTO items_list(category_id,name) VALUES(3,'コーン');
 INSERT INTO items_list(category_id,name) VALUES(3,'たけのこ');
 INSERT INTO items_list(category_id,name) VALUES(3,'ピーマン');
 INSERT INTO items_list(category_id,name) VALUES(3,'ニラ');
-<<<<<<< HEAD
 INSERT INTO items_list(category_id,name) VALUES(3,'大葉');
 INSERT INTO items_list(category_id,name) VALUES(3,'なす');
 INSERT INTO items_list(category_id,name) VALUES(3,'トマト');
@@ -76,12 +67,8 @@ INSERT INTO items_list(category_id,name) VALUES(3,'カリフラワー');
 INSERT INTO items_list(category_id,name) VALUES(3,'枝豆');
 INSERT INTO items_list(category_id,name) VALUES(3,'厚揚げ');
 INSERT INTO items_list(category_id,name) VALUES(3,'もやし');
-=======
->>>>>>> refs/remotes/origin/おてらーん
-
 INSERT INTO items_list(category_id,name) VALUES(4,'にんにく');
 INSERT INTO items_list(category_id,name) VALUES(4,'生姜');
-<<<<<<< HEAD
 INSERT INTO items_list(category_id,name) VALUES(4,'バター');
 INSERT INTO items_list(category_id,name) VALUES(4,'チーズ');
 INSERT INTO items_list(category_id,name) VALUES(4,'マヨネーズ');
@@ -422,11 +409,5 @@ INSERT INTO dateprice1(today,price) VALUES('2023-06-19',930);
 INSERT INTO dateprice1(today,price) VALUES('2023-06-22',490);
 INSERT INTO dateprice1(today,price) VALUES('2023-06-27',670);
 
-=======
-INSERT INTO items_list(category_id,name) VALUES(4,'わさび');
-INSERT INTO items_list(category_id,name) VALUES(4,'バター');
-INSERT INTO items_list(category_id,name) VALUES(4,'チーズ');
-INSERT INTO items_list(category_id,name) VALUES(4,'マヨネーズ');
-INSERT INTO items_list(category_id,name) VALUES(4,'梅肉');
---チャーハン
->>>>>>> refs/remotes/origin/おてらーん
+
+

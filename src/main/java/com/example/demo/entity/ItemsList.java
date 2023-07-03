@@ -15,37 +15,23 @@ public class ItemsList {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Getter
 	private Integer id; // 食材ID
-
-	@Column(name = "category_id")
+	
 	@Getter
+	@Column(name = "category_id")
 	private Integer categoryId; // カテゴリーID
 
 	@Getter
-<<<<<<< HEAD
 	private String name; // 食材名
 
 	public ItemsList() {
 		
 	}
 
-=======
-	private String name;
-	
-	public ItemsList() {
-		
-	}
->>>>>>> refs/remotes/origin/おてらーん
+
 	public ItemsList(Integer categoryId, String name) {
 		this.categoryId = categoryId;
 		this.name = name;
-<<<<<<< HEAD
-		
 	}
-
 }
-=======
-	} // 食材名
-	
-	
-	} 
->>>>>>> refs/remotes/origin/おてらーん
+
+

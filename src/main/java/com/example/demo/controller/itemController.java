@@ -129,32 +129,25 @@ public class itemController {
 		List<Category> categoryList = categoryRepository.findAll();
 		m.addAttribute("categories", categoryList);
 		
-<<<<<<< HEAD
+
 		LocalDate data= LocalDate.now();
-=======
->>>>>>> refs/remotes/origin/おてらーん
-		
+
 		
 		if (categoryId == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
-<<<<<<< HEAD
-			list=itemListRepository.findAll();
-=======
+
 			list=itemsListRepository.findAll();
->>>>>>> refs/remotes/origin/おてらーん
+
 			} else {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
 			list = itemsListRepository.findByCategoryId(categoryId);
-		}
-<<<<<<< HEAD
+			}
+
 		m.addAttribute("data",data);
 		m.addAttribute("list",list);
-=======
-//		
-		m.addAttribute("list",list);
-		
->>>>>>> refs/remotes/origin/おてらーん
+
 		return "addItem";
+		
 	}
 	@PostMapping("/items/confirm")
 	public String confirm(
@@ -207,16 +200,16 @@ public class itemController {
 			List<ItemsList> list =null;
 			if (categoryId == null) {
 				//categoryIdに値がないとき商品一覧情報の取得
-				list=itemListRepository.findAll();
+				list=itemsListRepository.findAll();
 				} else {
 				// itemsテーブルをカテゴリーIDを指定して一覧を取得
-				list = itemListRepository.findByCategoryId(categoryId);
+				list = itemsListRepository.findByCategoryId(categoryId);
 			}
 			m.addAttribute("data",data);
 			m.addAttribute("list",list);
 			 return "addItem";
 		 }
-		 ItemsList data = itemListRepository.findById(categoryId).get();
+		 ItemsList data = itemsListRepository.findById(categoryId).get();
 		m.addAttribute("data",data);
 		m.addAttribute("care",care);
 		m.addAttribute("price",price);

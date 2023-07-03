@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.entity.Chahan;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ChahanRepository;
-import com.example.demo.repository.ItemListRepository;
 import com.example.demo.repository.ItemRepository;
+import com.example.demo.repository.ItemsListRepository;
 
 @Controller
 public class MenuAdminController {
@@ -24,7 +24,7 @@ public class MenuAdminController {
 	@Autowired
 	CategoryRepository categoryRepository;
 	@Autowired
-	ItemListRepository itemListRepository;
+	ItemsListRepository itemsListRepository;
 	@Autowired
 	ChahanRepository chahanRepository;
 	
