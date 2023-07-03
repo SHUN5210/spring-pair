@@ -16,9 +16,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.demo.entity.Category;
 import com.example.demo.entity.Item;
 import com.example.demo.entity.ItemsList;
+import com.example.demo.entity.price;
+import com.example.demo.entity.priceDate;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ItemRepository;
 import com.example.demo.repository.ItemsListRepository;
+import com.example.demo.repository.PriceDateRepository;
+import com.example.demo.repository.PriceRepository;
 
 
 @Controller
@@ -32,6 +36,11 @@ public class itemController {
 	@Autowired
 	CategoryRepository categoryRepository;
 	
+	@Autowired
+	PriceRepository priceRepository;
+	
+	@Autowired
+	PriceDateRepository priceDateRepository;
 
 	
 	@GetMapping("/items")
@@ -79,7 +88,7 @@ public class itemController {
 		
 		boolean d1 = date1.isBefore(date3);
 		if(d1==false) {
-			err1.add("賞味期限が近いです。");
+			err1.add("賞味期限が2日以内です。");
 			data1.add(item.get(i).getCare());
 			name1.add(item.get(i).getName());
 			
@@ -109,10 +118,23 @@ public class itemController {
 			Model m) {
 		
 		
-		
+		price price1=new price(name,today,price);
 		
 		Item item=new Item(categoryId,name,itemId,today,care,price);
 		itemRepository.save(item);
+		priceRepository.save(price1);
+		List<priceDate> pdate = null;
+		pdate=priceDateRepository.findByTodayLike(today);
+		if(pdate.isEmpty()) {
+			priceDate pd1= new priceDate(today,price);
+			priceDateRepository.save(pd1);
+			}else  {
+				int id = pdate.get(0).getId();
+				int nedan=Integer.valueOf(price) + Integer.valueOf(pdate.get(0).getPrice());
+				priceDate pd2= new priceDate(id,today,String.valueOf(nedan));
+				priceDateRepository.save(pd2);
+			
+			}
 		return "redirect:/items";
 	}
 	
@@ -156,6 +178,8 @@ public class itemController {
 			@RequestParam(name = "price", defaultValue = "") String price,
 			@RequestParam(name="detail", defaultValue = "") String detail,
 			@RequestParam(name = "today", defaultValue = "") String today,
+			@RequestParam(name = "save", defaultValue = "") String save,
+			@RequestParam(name = "range", defaultValue = "") String range,
 			Model m
 			) {
 		
@@ -205,6 +229,8 @@ public class itemController {
 				// itemsテーブルをカテゴリーIDを指定して一覧を取得
 				list = itemsListRepository.findByCategoryId(categoryId);
 			}
+			m.addAttribute("care",care);
+			m.addAttribute("price",price);
 			m.addAttribute("data",data);
 			m.addAttribute("list",list);
 			 return "addItem";
@@ -215,6 +241,9 @@ public class itemController {
 		m.addAttribute("price",price);
 		m.addAttribute("detail",detail);
 		m.addAttribute("today",today);
+		m.addAttribute("save",save);
+		m.addAttribute("range",range);
+		
 		
 		return "confirm";
 	}

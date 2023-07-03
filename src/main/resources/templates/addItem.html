@@ -10,27 +10,18 @@
 <hr>
 	<p th:each="err:${err}">[[${err}]]</p>
 
-<<<<<<< HEAD
-<a href="/items/add">全食材</a>
-=======
-<a href="/items/add">全商品</a>
->>>>>>> refs/remotes/origin/おてらーん
+		<a href="/items/add">全食材</a>
+
 		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
 <form action="/items/confirm" method="post">
 <table border="1">
 	<tr>
-<<<<<<< HEAD
+
 		<th>入力日</th><td>[[${data}]]</td>
 		<input type="hidden" name="today" th:value="${data}">
-=======
-		<th>食材名</th><td>
-<!--			<input type="text" name="name"></td>-->
-			<select name="categoryId">
-    		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>
-			</select></td>
->>>>>>> refs/remotes/origin/おてらーん
+
 	</tr>
 	<tr>
 		<th>食材名</th><td>
@@ -40,24 +31,24 @@
 		</td>
 	</tr>
 	<tr>
-		<th>賞味期限</th><td><input type="date" name="care"></td>
+		<th>賞味期限</th><td><input type="date" name="care" th:value="${care}"></td>
 	</tr>
 	<tr>
-		<th>価格</th><td><input type="text" name="price" >円</td>
+		<th>価格</th><td><input type="text" name="price" th:value="${price}">円</td>
 	</tr>
 	<tr>
 		<th>保存場所</th>
 		<td>
-			<input type="radio" name="save" value="1" checked>冷蔵庫<br>
-			<input type="radio" name="save" value="2">冷凍庫<br>
-			<input type="radio" name="save" value="3">野菜室<br>
-			<input type="radio" name="save" value="4">常温<br>
+			<input type="radio" name="save" value="冷蔵庫" checked>冷蔵庫<br>
+			<input type="radio" name="save" value="冷凍庫">冷凍庫<br>
+			<input type="radio" name="save" value="野菜室">野菜室<br>
+			<input type="radio" name="save" value="常温">常温<br>
 		</td>
 	</tr>
 	<tr>
 		<th>残量</th>
 		<td>
-			0%<input type="range" list="markers"
+			0%<input type="range" list="markers" name="range"
 			min="0" max="100" value="50" step="10">100%
 			<datalist id="markers">
 				<option value="10"></option>
