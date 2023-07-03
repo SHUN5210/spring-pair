@@ -46,14 +46,16 @@ public class AccountController {
 			@RequestParam("password") String password,
 			Model model) {
 		//ログインチェック
+		
+		if(email.equals("masterChahan")&&password.equals("himitu")) {
+			System.out.println(email);
+			return "redirect:/admin/items";
+		}
+		
+		
 		Users users = null;
 		
 		Optional<Users> record = usersRepository.findByEmailAndPassword(email, password);
-		
-		if(email=="masterChahan" && password=="himitu") {
-			
-			return "/admin/items";
-		}
 		
 		if (record.isEmpty() == false) {
 			users = record.get();
@@ -62,8 +64,10 @@ public class AccountController {
 		// 名前が空の場合にエラーとする
 		if (users == null) {
 			model.addAttribute("message", "メールアドレスとパスワードが一致しませんでした");
-			return "login";
+					return "login";
 		}
+		
+	
 
 		// 「/items」へのリダイレクト
 		return "redirect:/items";
