@@ -52,3 +52,20 @@ CREATE TABLE items_list
    category_id INTEGER,
    name TEXT
 );
+
+-- グラフ
+CREATE TABLE graph
+(
+   id SERIAL PRIMARY KEY,
+   name TEXT,
+   today TEXT,
+   price TEXT
+);
+
+-- 日付価格テーブル
+CREATE TABLE graph2
+(
+   id SERIAL PRIMARY KEY,
+   today TEXT,
+   price TEXT
+);
