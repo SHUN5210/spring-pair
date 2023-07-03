@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <style>
-body{
-  position: absolute;
-  top: -20px;
-  left: 0px;
-  right: 0px;
-  bottom: -40px;
-  width: auto;
-  height: auto;
-  background-image: url(/css/chahan.jpg);
-  background-size: cover;
-  z-index: 0;
-}
+
 .flat-table {
   display: block;
   font-family: sans-serif;
@@ -23,7 +12,7 @@ body{
  }
   th {
     background-color: rgb(112, 196, 105);
-    color: white;
+    color: black;
     font-weight: normal;
     padding: 20px 30px;
     text-align: center;
@@ -32,6 +21,7 @@ body{
     background-color: rgb(238, 238, 238);
     color: rgb(111, 111, 111);
     padding: 20px 30px;
+    text-align: center;
   }
 
 @import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
@@ -102,19 +92,92 @@ h1 {
     z-index: 0;
 }
 header{
+<<<<<<< HEAD
 	 top: 5px;
+=======
+	top:0;
+>>>>>>> branch 'master' of https://github.com/SHUN5210/spring-pair.git
 	 z-index: 100;
+}
+
+
+.news-list{
+  list-style: none outside;
+  margin: 0;
+  padding: 0;
+}
+.news-list .item a{
+  display: flex;
+  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #CCC;
+  padding: 20px 20px;
+}
+.news-list .item:first-child a{
+  border-top: 1px solid #CCC;
+}
+.news-list .item .date{
+  margin: 0;
+  min-width: 180px;
+  font-size: 16px;
+  color: #999;
+  padding: 0 40px 0 0;
+}
+.news-list .item .category{
+  margin: 0;
+  min-width: 140px;
+  padding: 0 20px 0 0;
+}
+.news-list .item .category span{
+  background: #999;
+  color: #FFF;
+  text-align: center;
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 12px;
+  line-height: 1;
+}
+.news-list .item .title{
+  margin: 0;
+  width: 100%;
+  color: red;
+}
+
+
+@media screen and (max-width: 767px){
+.news-list .item a{
+  flex-wrap: wrap;
+}
+.news-list .item .date{
+  
+
+  width: 30px;
+}
+.news-list .item .title{
+  margin-top: 10px;
+}
 }
 </style>
 <head>
 <meta charset="UTF-8">
 <title>食材一覧</title>
 <header th:replace="header"></header>
-<br><br>
-<h1>Food</h1>
+
 </head>
 <body>
-  
+	<h1>Food</h1>
+  <ul class="news-list">
+    <li class="item" th:each="i : ${#numbers.sequence(0, err1.size() -1)}" >
+        <a href="#">
+            <p class="category"><span>[[${name1.get(i)}]]</span></p>
+            <p class="date">賞味期限：[[${data1.get(i)}]]</p>
+            <p class="title">[[${err1.get(i)}]]</p>
+        </a>
+    </li>
+    </ul>
+    
     <a href="/items" class="active">All</a>
 	     <a  th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
@@ -150,15 +213,7 @@ header{
     </form>
     
     
-    <ul class="news-list">
-    <li class="item" th:each="i : ${#numbers.sequence(0, err1.size() -1)}" >
-        <a href="#">
-            <p class="date">[[${data1.get(i)}]]</p>
-            <p class="category"><span>お知らせ</span></p>
-            <p class="title">[[${err1.get(i)}]]</p>
-        </a>
-    </li>
-    </ul>
+    
 
 
 </body>

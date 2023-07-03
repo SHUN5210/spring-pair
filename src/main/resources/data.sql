@@ -17,7 +17,12 @@ INSERT INTO items_list(category_id,name) VALUES(1,'ささみ');
 INSERT INTO items_list(category_id,name) VALUES(1,'ソーセージ');
 INSERT INTO items_list(category_id,name) VALUES(1,'とんかつ');
 INSERT INTO items_list(category_id,name) VALUES(1,'豚こま切れ肉');
-
+INSERT INTO items_list(category_id,name) VALUES(1,'肩ロース');
+INSERT INTO items_list(category_id,name) VALUES(1,'ひき肉');
+INSERT INTO items_list(category_id,name) VALUES(1,'ベーコン');
+INSERT INTO items_list(category_id,name) VALUES(1,'チャーシュー');
+INSERT INTO items_list(category_id,name) VALUES(1,'ハム');
+INSERT INTO items_list(category_id,name) VALUES(1,'ささみ');
 INSERT INTO items_list(category_id,name) VALUES(2,'明太子');
 INSERT INTO items_list(category_id,name) VALUES(2,'カニ');
 INSERT INTO items_list(category_id,name) VALUES(2,'エビ');
@@ -31,7 +36,7 @@ INSERT INTO items_list(category_id,name) VALUES(2,'ちくわ');
 INSERT INTO items_list(category_id,name) VALUES(2,'ツナ');
 INSERT INTO items_list(category_id,name) VALUES(2,'さつま揚げ');
 INSERT INTO items_list(category_id,name) VALUES(2,'アンチョビ');
-
+INSERT INTO items_list(category_id,name) VALUES(2,'イカゲソ');
 INSERT INTO items_list(category_id,name) VALUES(3,'キムチ');
 INSERT INTO items_list(category_id,name) VALUES(3,'納豆');
 INSERT INTO items_list(category_id,name) VALUES(3,'レタス');
@@ -62,7 +67,6 @@ INSERT INTO items_list(category_id,name) VALUES(3,'カリフラワー');
 INSERT INTO items_list(category_id,name) VALUES(3,'枝豆');
 INSERT INTO items_list(category_id,name) VALUES(3,'厚揚げ');
 INSERT INTO items_list(category_id,name) VALUES(3,'もやし');
-
 INSERT INTO items_list(category_id,name) VALUES(4,'にんにく');
 INSERT INTO items_list(category_id,name) VALUES(4,'生姜');
 INSERT INTO items_list(category_id,name) VALUES(4,'バター');
@@ -334,9 +338,11 @@ INSERT INTO element(chahan_id,name) VALUES(62,27);
 --items
 
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-01','2023-12-28',220);
+INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-01','2023-06-28',220);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-15','2023-12-28',480);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-20','2023-12-28',300);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-11','2023-08-22',500);
+INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-11','2023-07-04',600);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-21','2023-08-22',1000);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-22','2023-08-22',200);
 INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(1,'豚バラ',1,'2023-05-15','2023-06-28',500);
@@ -402,4 +408,6 @@ INSERT INTO dateprice1(today,price) VALUES('2023-06-10',300);
 INSERT INTO dateprice1(today,price) VALUES('2023-06-19',930);
 INSERT INTO dateprice1(today,price) VALUES('2023-06-22',490);
 INSERT INTO dateprice1(today,price) VALUES('2023-06-27',670);
+
+
 

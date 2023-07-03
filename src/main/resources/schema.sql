@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS graph1;
 DROP TABLE IF EXISTS dateprice1;
 
 
+
 	-- カテゴリーテーブル
 CREATE TABLE categories
 (

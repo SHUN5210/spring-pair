@@ -15,9 +15,9 @@ public class ItemsList {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Getter
 	private Integer id; // 食材ID
-
-	@Column(name = "category_id")
+	
 	@Getter
+	@Column(name = "category_id")
 	private Integer categoryId; // カテゴリーID
 
 	@Getter
@@ -27,11 +27,11 @@ public class ItemsList {
 		
 	}
 
+
 	public ItemsList(Integer categoryId, String name) {
-		super();
 		this.categoryId = categoryId;
 		this.name = name;
-		
 	}
-
 }
+
+

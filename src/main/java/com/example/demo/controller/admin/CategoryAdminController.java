@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Category;
 import com.example.demo.repository.CategoryRepository;
-import com.example.demo.repository.ItemListRepository;
 import com.example.demo.repository.ItemRepository;
+import com.example.demo.repository.ItemsListRepository;
 
 @Controller
 public class CategoryAdminController {
@@ -23,7 +23,7 @@ public class CategoryAdminController {
 	@Autowired
 	CategoryRepository categoryRepository;
 	@Autowired
-	ItemListRepository itemListRepository;
+	ItemsListRepository itemsListRepository;
 	
 	@GetMapping("/admin/categroy")
 	public String index(@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,

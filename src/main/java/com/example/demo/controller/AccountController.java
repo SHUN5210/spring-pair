@@ -14,8 +14,10 @@ import com.example.demo.repository.UsersRepository;
 
 import jakarta.servlet.http.HttpSession;
 
+
 @Controller
 public class AccountController {
+
 
 	@Autowired
 	HttpSession session;
@@ -72,4 +74,5 @@ public class AccountController {
 		// 「/items」へのリダイレクト
 		return "redirect:/items";
 	}
+
 }
