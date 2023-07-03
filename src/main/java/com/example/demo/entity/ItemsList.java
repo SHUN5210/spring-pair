@@ -21,17 +21,31 @@ public class ItemsList {
 	private Integer categoryId; // カテゴリーID
 
 	@Getter
+<<<<<<< HEAD
 	private String name; // 食材名
 
 	public ItemsList() {
 		
 	}
 
+=======
+	private String name;
+	
+	public ItemsList() {
+		
+	}
+>>>>>>> refs/remotes/origin/おてらーん
 	public ItemsList(Integer categoryId, String name) {
-		super();
 		this.categoryId = categoryId;
 		this.name = name;
+<<<<<<< HEAD
 		
 	}
 
 }
+=======
+	} // 食材名
+	
+	
+	} 
+>>>>>>> refs/remotes/origin/おてらーん

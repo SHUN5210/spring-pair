@@ -1,5 +1,6 @@
 -- テーブル削除
 DROP TABLE IF EXISTS categories;
+<<<<<<< HEAD
 DROP TABLE IF EXISTS items;
 DROP TABLE IF EXISTS chahan;
 DROP TABLE IF EXISTS element;
@@ -7,6 +8,9 @@ DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS items_list;
 DROP TABLE IF EXISTS graph1;
 DROP TABLE IF EXISTS dateprice1;
+=======
+DROP TABLE IF EXISTS items_list;
+>>>>>>> refs/remotes/origin/おてらーん
 
 
 	-- カテゴリーテーブル

@@ -17,8 +17,8 @@ import com.example.demo.entity.Category;
 import com.example.demo.entity.Item;
 import com.example.demo.entity.ItemsList;
 import com.example.demo.repository.CategoryRepository;
-import com.example.demo.repository.ItemListRepository;
 import com.example.demo.repository.ItemRepository;
+import com.example.demo.repository.ItemsListRepository;
 
 
 @Controller
@@ -27,7 +27,7 @@ public class itemController {
 	ItemRepository itemRepository;
 	
 	@Autowired
-	ItemListRepository itemListRepository;
+	ItemsListRepository itemsListRepository;
 	
 	@Autowired
 	CategoryRepository categoryRepository;
@@ -117,18 +117,31 @@ public class itemController {
 		List<Category> categoryList = categoryRepository.findAll();
 		m.addAttribute("categories", categoryList);
 		
+<<<<<<< HEAD
 		LocalDate data= LocalDate.now();
+=======
+>>>>>>> refs/remotes/origin/おてらーん
 		
 		
 		if (categoryId == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
+<<<<<<< HEAD
 			list=itemListRepository.findAll();
+=======
+			list=itemsListRepository.findAll();
+>>>>>>> refs/remotes/origin/おてらーん
 			} else {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
-			list = itemListRepository.findByCategoryId(categoryId);
+			list = itemsListRepository.findByCategoryId(categoryId);
 		}
+<<<<<<< HEAD
 		m.addAttribute("data",data);
 		m.addAttribute("list",list);
+=======
+//		
+		m.addAttribute("list",list);
+		
+>>>>>>> refs/remotes/origin/おてらーん
 		return "addItem";
 	}
 	@PostMapping("/items/confirm")
