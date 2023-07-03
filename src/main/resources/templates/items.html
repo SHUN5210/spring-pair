@@ -164,6 +164,7 @@ header{
 </head>
 <body>
 	<h1>Food</h1>
+	<th:block th:if="${err1}!=null">
   <ul class="news-list">
     <li class="item" th:each="i : ${#numbers.sequence(0, err1.size() -1)}" >
         <a href="#">
@@ -173,7 +174,7 @@ header{
         </a>
     </li>
     </ul>
-    
+    </th:block>
     <a href="/items" class="active">All</a>
 	     <a  th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>

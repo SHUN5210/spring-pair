@@ -62,13 +62,13 @@ public class itemController {
 		
 		
 		final String FORMAT = "yyyy-MM-dd";
-		LocalDate date1=date.minusDays(2);
-		LocalDate date2=date.plusDays(1);
+		LocalDate date1=date.plusDays(2);
+		LocalDate date2=date.minusDays(1);
 		
 		for(int i = 0 ; i<=item.size()-1;i++) {
 		LocalDate date3 = LocalDate.parse
 				(item.get(i).getCare(), DateTimeFormatter.ofPattern(FORMAT));
-		
+		System.out.println(date1);
 		boolean d2 = date2.isBefore(date3);
 		if(d2==false) {
 			err1.add("賞味期限が切れています。");
