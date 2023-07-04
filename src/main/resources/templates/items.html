@@ -101,16 +101,16 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 				<th>食材名</th>
 				<th>購入日</th>
 				<th>賞味期限</th>
-				<th>詳細</th>
+				<th>削除</th>
 			</tr>
 			<tr th:each="data : ${item}">
 				<td td data-label="購入日"class="price" th:text="${data.name}"></td>
 				<td th:text="${data.today}"></td>
 				<td th:text="${data.care}"></td>
 				
-				<form th:action="|/items/${data.id}/detail|" method="get">
+				<form th:action="|/items/${data.id}/detele|" method="get">
 				<td>
-				<input type="submit" value="詳細">
+				<input type="submit" value="削除">
 				</form>
 				</td>
 			</tr>

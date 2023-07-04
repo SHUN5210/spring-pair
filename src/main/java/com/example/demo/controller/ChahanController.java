@@ -94,7 +94,6 @@ public class ChahanController {
 //		
 		Integer cid = data.getChahanId();
 		 idList.add(cid);
-		 
 		}
 		List<Chahan>  chahan =chahanRepository.findByIdIn(idList);
 		m.addAttribute("list",chahan);

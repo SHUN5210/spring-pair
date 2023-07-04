@@ -23,6 +23,9 @@ public class AccountController {
 	HttpSession session;
 	
 	@Autowired
+	Users account;
+	
+	@Autowired
 	UsersRepository usersRepository;
 
 	// ログイン画面を表示
@@ -61,6 +64,9 @@ public class AccountController {
 		
 		if (record.isEmpty() == false) {
 			users = record.get();
+			account.setPassword(users.getPassword());
+			account.setEmail(users.getEmail());
+			
 		}
 		
 		// 名前が空の場合にエラーとする
@@ -69,10 +75,8 @@ public class AccountController {
 					return "login";
 		}
 		
-	
-
-		// 「/items」へのリダイレクト
 		return "redirect:/items";
+
 	}
 
 }
