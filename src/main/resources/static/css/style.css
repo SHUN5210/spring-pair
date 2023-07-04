@@ -188,6 +188,51 @@ table {
   width:100%;
   margin: auto;
 }
+<<<<<<< HEAD
+=======
+.example{
+    overflow: auto;
+    width: 90%;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.example table{
+	
+    margin: 0;
+    border-spacing: 0;
+}
+.example td {
+    white-space: nowrap;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    background: #FFF;
+    padding: 5px;
+     text-align: center;
+}
+.example th{
+    white-space: nowrap;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    background: #f2f2f2;
+    position: sticky;
+    z-index: 0;
+    height:50px;
+    font-size:20px;
+    top: 0;
+    left: 0;
+   
+}
+.example tr:first-child th{
+    border-top: 1px solid #999;
+}
+.example th:first-child{
+    border-left: 1px solid #999;
+}
+.example tr:first-child th:first-child{
+    z-index: 0;
+}
+>>>>>>> branch 'master' of https://github.com/SHUN5210/spring-pair.git
 /* 送信ボタン */
 button {
 	margin: 2px;

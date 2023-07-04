@@ -7,11 +7,18 @@ DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS items_list;
 DROP TABLE IF EXISTS graph1;
 DROP TABLE IF EXISTS dateprice1;
+DROP TABLE IF EXISTS fridge;
 
 
 
 	-- カテゴリーテーブル
 CREATE TABLE categories
+(
+   id SERIAL PRIMARY KEY,
+   name TEXT
+);
+	-- 保管テーブル
+CREATE TABLE fridge
 (
    id SERIAL PRIMARY KEY,
    name TEXT
@@ -25,7 +32,8 @@ CREATE TABLE items
    item_id INTEGER,
    today TEXT,
    care TEXT,
-   price TEXT
+   price TEXT,
+   fridge INTEGER
 );
 -- メニューテーブル
 CREATE TABLE chahan

@@ -12,7 +12,13 @@
 <h1>食材登録</h1>
 <hr>
 	<p th:each="err:${err}">[[${err}]]</p>
+<<<<<<< HEAD
 		<a href="/items/add">All</a>
+=======
+
+
+		<a href="/items/add">全食材</a>
+>>>>>>> branch 'master' of https://github.com/SHUN5210/spring-pair.git
 		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
@@ -23,8 +29,13 @@
 		<input type="hidden" name="today" th:value="${data}">
 	</tr>
 	<tr>
+<<<<<<< HEAD
 		<th>食材名</th>
 		<td>
+=======
+		<th>食材名</th><td>
+<!--			<input type="text" name="name"></td>-->
+>>>>>>> branch 'master' of https://github.com/SHUN5210/spring-pair.git
 			<select name="categoryId">
     		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>
 			</select>
@@ -39,10 +50,10 @@
 	<tr>
 		<th>保存場所</th>
 		<td>
-			<input type="radio" name="save" value="冷蔵庫" checked>冷蔵庫<br>
-			<input type="radio" name="save" value="冷凍庫">冷凍庫<br>
-			<input type="radio" name="save" value="野菜室">野菜室<br>
-			<input type="radio" name="save" value="常温">常温<br>
+			<input type="radio" name="save" value=1 checked>冷蔵庫<br>
+			<input type="radio" name="save" value=2>冷凍庫<br>
+			<input type="radio" name="save" value=3>野菜室<br>
+			<input type="radio" name="save" value=4>常温<br>
 		</td>
 	</tr>
 	<tr>

@@ -8,6 +8,12 @@ INSERT INTO categories(name) VALUES('魚介');
 INSERT INTO categories(name) VALUES('野菜');
 INSERT INTO categories(name) VALUES('調味料');
 
+-- 保管テーブルデータ
+INSERT INTO fridge(name) VALUES('冷蔵庫');
+INSERT INTO fridge(name) VALUES('冷凍庫');
+INSERT INTO fridge(name) VALUES('野菜室');
+INSERT INTO fridge(name) VALUES('常温');
+
 --食材
 INSERT INTO items_list(category_id,name) VALUES(1,'豚バラ');
 INSERT INTO items_list(category_id,name) VALUES(1,'ひき肉');
@@ -337,18 +343,18 @@ INSERT INTO element(chahan_id,name) VALUES(62,27);
 
 --items
 
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-01','2023-12-28',220);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-01','2023-06-28',220);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-15','2023-12-28',480);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(2,'ツナ',19,'2023-03-20','2023-12-28',300);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-11','2023-08-22',500);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-11','2023-07-03',600);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-21','2023-08-22',1000);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'たくあん',29,'2023-04-22','2023-08-22',200);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(1,'豚バラ',1,'2023-05-15','2023-06-28',500);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(4,'にんにく',52,'2023-05-16','2023-07-12',500);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'キムチ',22,'2023-06-01','2023-08-30',500);
-INSERT INTO items(category_id,name,item_id,today,care,price) VALUES(3,'キムチ',22,'2023-06-30','2023-08-30',800);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(2,'ツナ',19,'2023-03-01','2023-12-28',220,4);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(2,'ツナ',19,'2023-03-01','2023-06-28',220,4);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(2,'ツナ',19,'2023-03-15','2023-12-28',480,4);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(2,'ツナ',19,'2023-03-20','2023-12-28',300,4);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(3,'たくあん',29,'2023-04-11','2023-08-22',500,4);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(3,'たくあん',29,'2023-04-11','2023-07-03',600,3);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(3,'たくあん',29,'2023-04-21','2023-08-22',1000,2);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(3,'たくあん',29,'2023-04-22','2023-08-22',200,1);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(1,'豚バラ',1,'2023-05-15','2023-06-28',500,2);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(4,'にんにく',52,'2023-05-16','2023-07-12',500,4);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(3,'キムチ',22,'2023-06-01','2023-08-30',500,1);
+INSERT INTO items(category_id,name,item_id,today,care,price,fridge) VALUES(3,'キムチ',22,'2023-06-30','2023-08-30',800,1);
 
 --グラフ
 INSERT INTO graph1(name,today,price) VALUES('ささみ','2023-05-06',190);

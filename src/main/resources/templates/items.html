@@ -11,9 +11,9 @@
 	<br>
 	<h1>What's in the Fridge Now</h1>
     <div class="tag">
-	<th:block th:if="${err1}!=null"></th:block>
+	
     <a href="/items" class="active">All</a>
-	     <a  th:each="c:${categories}" th:href="'/items?categoryId='+${c.id}">
+	     <a  th:each="c:${fridge}" th:href="'/items?fridge='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
 	</div>
@@ -42,7 +42,7 @@
 
 <br>
 <br>
-
+<th:block th:if="${err1}!=null">
   <ul class="news-list">
     <li class="item" th:each="i : ${#numbers.sequence(0, err1.size() -1)}" >
         <a href="#">
@@ -52,7 +52,7 @@
         </a>
     </li>
     </ul>
-    
+   </th:block>
 <br>
 <br>
 <br>	
