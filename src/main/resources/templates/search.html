@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>メニュー検索</title>
@@ -20,6 +20,7 @@
     </label>
 </div>
 		
+		<div class="example">
 		<table border="1">
 			<tr>
 				<th>食材名</th>
@@ -39,6 +40,7 @@
 				</form>
 			</tr>
 		</table>
+		</div>
 		
 		<br>
 		
@@ -46,6 +48,7 @@
 		<th:text="${element.element}"></th:text>
 		</tr>
 
+        <div class="example">
 		<table border="1">
 			<tr>
 				<th>メニュー</th>
@@ -54,5 +57,6 @@
 				<td th:text="${data.menu}"></td>
 			</tr>
 		</table>
+		</div>
 </body>
 </html>

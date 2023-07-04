@@ -16,7 +16,8 @@
 			<span th:text="${c}" style="padding-left: 10px;"></span>
 		</a>
 <!--		<input type="hidden" name="month" th:value="${month}">-->
-		
+
+<div class="example">
 <table border="1">
 			<tr>
 				<th>食材名</th>
@@ -29,10 +30,11 @@
 				<td th:text="${data.price}"></td>
 			</tr>
 		</table>
+		</div>
+		
 	<div style="  left:400px; width:800px; height:500px; 
 	 margin-left: auto; margin-right: auto;">
-
-		<canvas id="ChartDemo"></canvas>
+	<canvas id="ChartDemo"></canvas>
     <script type="text/javascript" th:inline="javascript">
     /*<![CDATA[*/
     var ctx = document.getElementById("ChartDemo").getContext('2d');
@@ -59,7 +61,6 @@
     /*]]>*/
     </script>
     <a href="/items">戻る</a>
-		</div>	
-	
+	</div>	
 </body>
 </html>
