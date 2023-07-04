@@ -17,8 +17,6 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class AccountController {
-
-
 	@Autowired
 	HttpSession session;
 	
@@ -69,8 +67,6 @@ public class AccountController {
 					return "login";
 		}
 		
-	
-
 		// 「/items」へのリダイレクト
 		return "redirect:/items";
 	}
