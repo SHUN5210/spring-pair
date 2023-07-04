@@ -43,7 +43,7 @@
 		</div>
 		
 		<br>
-		
+		<th:block th:if="${box}!=null">
 		<tr th:each="element : ${element}">
 		<th:text="${element.element}"></th:text>
 		</tr>
@@ -58,5 +58,6 @@
 			</tr>
 		</table>
 		</div>
+		</th:block>
 </body>
 </html>
