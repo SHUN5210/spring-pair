@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>消費月額</title>
+<title>消費額</title>
 <header th:replace="header"></header>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
@@ -10,12 +10,15 @@
 <body>
 	<br>
 	<br>
-	<h1>消費月額</h1>
-	<a href="/items/enn">全商品</a>
+	<h1>Monthly Consumption</h1>
+	
+	<div class="tag">
+	<a href="/items/enn">All</a>
 		<a th:each="c:${month}" th:href="'/items/enn?month1='+${c}">
 			<span th:text="${c}" style="padding-left: 10px;"></span>
 		</a>
 <!--		<input type="hidden" name="month" th:value="${month}">-->
+	</div>
 
 <div class="example">
 <table border="1">
@@ -32,6 +35,8 @@
 		</table>
 		</div>
 		
+		<br>
+		
 	<div style="  left:400px; width:800px; height:500px; 
 	 margin-left: auto; margin-right: auto;">
 	<canvas id="ChartDemo"></canvas>
@@ -45,7 +50,7 @@
             labels: /*[[ ${label} ]]*/,
             datasets: [
                 {
-                    label: "Chart-1",
+                    label: "Monthly Consumption",
                     borderColor: 'rgb(255, 0, 0)',
                     lineTension: 0,
                     fill: false,
@@ -60,7 +65,7 @@
     });
     /*]]>*/
     </script>
-    <a href="/items">戻る</a>
+    <div class="atag"><a href="/items">戻る</a></div>
 	</div>	
 </body>
 <footer th:replace="footer"></footer>

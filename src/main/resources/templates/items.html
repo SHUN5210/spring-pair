@@ -9,9 +9,9 @@
 <body>
 	<br>
 	<br>
-	<h1>What's in the Fridge Now</h1>
+	<h1>What's in the Fridge Now ?</h1>
+    
     <div class="tag">
-	
     <a href="/items" class="active">All</a>
 	     <a  th:each="c:${fridge}" th:href="'/items?fridge='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
