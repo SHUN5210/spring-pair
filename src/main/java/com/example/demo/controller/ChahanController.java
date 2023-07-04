@@ -61,17 +61,27 @@ public class ChahanController {
 	@PostMapping("/items/{id}/search")
 	public String cook (
 			@PathVariable("id") Integer id,
+			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
 			Model m) {
-
+		List<Item> item1 = null;
+		
+		if (categoryId == null) {
+			//categoryIdに値がないとき商品一覧情報の取得
+			item1=itemRepository.findAll();
+		} else {
+			// itemsテーブルをカテゴリーIDを指定して一覧を取得
+			item1 = itemRepository.findByCategoryId(categoryId);
+		}
+		m.addAttribute("item",item1);
 //		Item item =itemRepository.findById(id).get();
 //		Item item =itemRepository.findById(id).get()
-		Item item = null;
-		item =itemRepository.findById(id).get();
+		Item item2 = null;
+		item2 =itemRepository.findById(id).get();
 		
 		
-		System.out.println(item.getItemId());
+		System.out.println(item2.getItemId());
 		List<Element> list=null;
-		list =elementRepository.findByName(item.getItemId());
+		list =elementRepository.findByName(item2.getItemId());
 		
 		List<Integer> idList = new ArrayList<>();
 		
