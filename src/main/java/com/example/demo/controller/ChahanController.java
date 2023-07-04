@@ -53,7 +53,8 @@ public class ChahanController {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
 			item = itemRepository.findByCategoryId(categoryId);
 		}
-		
+		String box = null;
+		m.addAttribute("box",box);
 		m.addAttribute("item",item);
 		return "search";
 	}
@@ -63,6 +64,10 @@ public class ChahanController {
 			@PathVariable("id") Integer id,
 			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
 			Model m) {
+		
+		List<Category> categoryList = categoryRepository.findAll();
+		m.addAttribute("categories", categoryList);
+		
 		List<Item> item1 = null;
 		
 		if (categoryId == null) {
@@ -93,6 +98,9 @@ public class ChahanController {
 		}
 		List<Chahan>  chahan =chahanRepository.findByIdIn(idList);
 		m.addAttribute("list",chahan);
+		
+		String box = "full";
+		m.addAttribute("box",box);
 		return"search";
 	}
 	
