@@ -11,10 +11,10 @@
 	<h1>メニュー検索</h1>
 <div class="tab-001">
 	<label>
-		<a href="/items">All</a>
+		<a href="/items/search">All</a>
     </label>
     <label th:each="c:${categories}">
-        <a th:href="'/items?categoryId='+${c.id}">
+        <a th:href="'/items/search?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
     </label>
