@@ -6,10 +6,12 @@
 <header th:replace="header"></header>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
+<br>
+<br>
 	<h1>メニュー検索</h1>
 <div class="tab-001">
 	<label>
-		<a href="/items">全商品</a>
+		<a href="/items">All</a>
     </label>
     <label th:each="c:${categories}">
         <a th:href="'/items?categoryId='+${c.id}">
