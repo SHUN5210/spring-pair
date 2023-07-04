@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,11 +15,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Category;
+import com.example.demo.entity.Fridge;
 import com.example.demo.entity.Item;
 import com.example.demo.entity.ItemsList;
 import com.example.demo.entity.price;
 import com.example.demo.entity.priceDate;
 import com.example.demo.repository.CategoryRepository;
+import com.example.demo.repository.FridgeRepository;
 import com.example.demo.repository.ItemRepository;
 import com.example.demo.repository.ItemsListRepository;
 import com.example.demo.repository.PriceDateRepository;
@@ -37,29 +40,32 @@ public class itemController {
 	CategoryRepository categoryRepository;
 	
 	@Autowired
+	FridgeRepository fridgeRepository;
+	
+	@Autowired
 	PriceRepository priceRepository;
 	
 	@Autowired
 	PriceDateRepository priceDateRepository;
 
-	
+	//ホーム画面
 	@GetMapping("/items")
 	public String index(
-			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
+			@RequestParam(value = "fridge", defaultValue = "") Integer fridge,
 			Model m) {
 		
 		// 全カテゴリー一覧を取得
-		List<Category> categoryList = categoryRepository.findAll();
-		m.addAttribute("categories", categoryList);
+		List<Fridge> fridgeList = fridgeRepository.findAll();
+		m.addAttribute("fridge", fridgeList);
 		
 		List<Item> item = null;
 		
-		if (categoryId == null) {
+		if (fridge == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
 			item=itemRepository.findAll();
 		} else {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
-			item = itemRepository.findByCategoryId(categoryId);
+			item = itemRepository.findByFridge(fridge);
 		}
 		
 		
@@ -77,7 +83,7 @@ public class itemController {
 		for(int i = 0 ; i<=item.size()-1;i++) {
 		LocalDate date3 = LocalDate.parse
 				(item.get(i).getCare(), DateTimeFormatter.ofPattern(FORMAT));
-		System.out.println(date1);
+		
 		boolean d2 = date2.isBefore(date3);
 		if(d2==false) {
 			err1.add("賞味期限が切れています。");
@@ -107,6 +113,7 @@ public class itemController {
 		return"items";
 	}
 	
+//	ホーム画面材料を追加
 	@PostMapping("/items")
 	public String update(
 			@RequestParam(name="name", required=false) String name,
@@ -115,12 +122,17 @@ public class itemController {
 			@RequestParam(name = "care", required=false) String care,
 			@RequestParam(name = "today", required=false) String today,
 			@RequestParam(name = "price", required=false) String price,
+			@RequestParam(name = "save", required=false) Integer save,
 			Model m) {
 		
 		
 		price price1=new price(name,today,price);
 		
-		Item item=new Item(categoryId,name,itemId,today,care,price);
+//		グラフのデータに使うテーブルに挿入
+		Optional<Fridge> fridge =fridgeRepository.findById(save);
+		
+		
+		Item item=new Item(categoryId,name,itemId,today,care,price,fridge.get().getId());
 		itemRepository.save(item);
 		priceRepository.save(price1);
 		List<priceDate> pdate = null;
@@ -139,7 +151,7 @@ public class itemController {
 	}
 	
 	
-	
+	//食材を追加する画面
 	@GetMapping("/items/add")
 	public String store(
 			@RequestParam(value = "categoryId", defaultValue = "") Integer categoryId,
@@ -164,13 +176,14 @@ public class itemController {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
 			list = itemsListRepository.findByCategoryId(categoryId);
 			}
-
 		m.addAttribute("data",data);
 		m.addAttribute("list",list);
 
 		return "addItem";
 		
 	}
+	
+	//登録の確認画面
 	@PostMapping("/items/confirm")
 	public String confirm(
 			@RequestParam(name = "categoryId", defaultValue = "") Integer categoryId,
@@ -178,14 +191,14 @@ public class itemController {
 			@RequestParam(name = "price", defaultValue = "") String price,
 			@RequestParam(name="detail", defaultValue = "") String detail,
 			@RequestParam(name = "today", defaultValue = "") String today,
-			@RequestParam(name = "save", defaultValue = "") String save,
+			@RequestParam(name = "save", defaultValue = "") Integer save,
 			@RequestParam(name = "range", defaultValue = "") String range,
 			Model m
 			) {
 		
-		
-		
+//		登録エラー探す
 		List <String> err = new ArrayList<>();
+//		日にち選択のエラー
 		if(care.equals("")) {
 			err.add("賞味期限を選択してください");
 		}else {
@@ -200,7 +213,7 @@ public class itemController {
 				err.add("賞味期限が切れています。");
 			}
 		}
-		
+//		金額入力のエラー
 		if(price.equals("")) {
 			err.add("金額を入力してください");
 		}else {
@@ -212,6 +225,7 @@ public class itemController {
 			}
 		}
 		 
+//		エラーがあった場合の処理
 		 if(err.isEmpty()==false) {
 			m.addAttribute("err",err);
 			
@@ -235,7 +249,12 @@ public class itemController {
 			m.addAttribute("list",list);
 			 return "addItem";
 		 }
+		 
+//		 エラーがなかった場合
 		 ItemsList data = itemsListRepository.findById(categoryId).get();
+		 Optional<Fridge> fridge =fridgeRepository.findById(save);
+//			String box=fridge.get().getName();
+		
 		m.addAttribute("data",data);
 		m.addAttribute("care",care);
 		m.addAttribute("price",price);
@@ -243,6 +262,8 @@ public class itemController {
 		m.addAttribute("today",today);
 		m.addAttribute("save",save);
 		m.addAttribute("range",range);
+		m.addAttribute("box",fridge.get().getName());
+		
 		
 		
 		return "confirm";

@@ -13,8 +13,7 @@
 <hr>
 	<p th:each="err:${err}">[[${err}]]</p>
 
-<a href="/items/add">全食材</a>
-<a href="/items/add">全商品</a>
+
 		<a href="/items/add">全食材</a>
 		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
@@ -24,6 +23,8 @@
 	<tr>
 		<th>入力日</th><td>[[${data}]]</td>
 		<input type="hidden" name="today" th:value="${data}">
+	</tr>
+	<tr>
 		<th>食材名</th><td>
 <!--			<input type="text" name="name"></td>-->
 			<select name="categoryId">
@@ -40,10 +41,10 @@
 	<tr>
 		<th>保存場所</th>
 		<td>
-			<input type="radio" name="save" value="冷蔵庫" checked>冷蔵庫<br>
-			<input type="radio" name="save" value="冷凍庫">冷凍庫<br>
-			<input type="radio" name="save" value="野菜室">野菜室<br>
-			<input type="radio" name="save" value="常温">常温<br>
+			<input type="radio" name="save" value=1 checked>冷蔵庫<br>
+			<input type="radio" name="save" value=2>冷凍庫<br>
+			<input type="radio" name="save" value=3>野菜室<br>
+			<input type="radio" name="save" value=4>常温<br>
 		</td>
 	</tr>
 	<tr>

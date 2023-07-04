@@ -36,6 +36,9 @@ public class Item {
 	@Getter
 	private String price;//価格
 	
+	@Getter
+	private Integer fridge;//保存箇所
+	
 	public Item() {
 		
 	}
@@ -61,7 +64,7 @@ public class Item {
 
 
 	public Item(Integer categoryId, String name,Integer itemId, String today, String care, String price) {
-		super();
+
 		this.categoryId = categoryId;
 		this.name = name;
 		this.itemId = itemId;
@@ -77,6 +80,19 @@ public class Item {
 		this.id = id;
 		this.categoryId = categoryId;
 		this.name = name;
+	}
+
+
+
+	public Item(Integer categoryId, String name, Integer itemId, String today, String care, String price,
+			Integer fridge) {
+		this.categoryId = categoryId;
+		this.name = name;
+		this.itemId = itemId;
+		this.today = today;
+		this.care = care;
+		this.price = price;
+		this.fridge = fridge;
 	}
 	
 	
