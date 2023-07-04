@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>メニュー検索</title>
 <header th:replace="header"></header>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
+<body>
+<div class="body"></div>
 <br>
 <br>
-	<h1>メニュー検索</h1>
-<div class="tab-001">
+	<h1>Search the Menu !</h1>
+<div class="tag">
 	<label>
 		<a href="/items/search">All</a>
     </label>
@@ -43,6 +45,8 @@
 		</div>
 		
 		<br>
+		<br>
+		
 		<th:block th:if="${box}!=null">
 		<tr th:each="element : ${element}">
 		<th:text="${element.element}"></th:text>
@@ -60,4 +64,5 @@
 		</div>
 		</th:block>
 </body>
+<footer th:replace="footer"></footer>
 </html>

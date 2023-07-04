@@ -9,20 +9,16 @@
 <body>
 <br>
 <br>
-<h1>食材登録</h1>
-<hr>
+<h1>Register Ingredients !</h1>
+
+    <div class="tag">
 	<p th:each="err:${err}">[[${err}]]</p>
 		<a href="/items/add">All</a>
-<<<<<<< HEAD
-=======
-
-
-
-		<a href="/items/add">全食材</a>
->>>>>>> branch 'master' of https://github.com/SHUN5210/spring-pair.git
 		<a th:each="c:${categories}" th:href="'/items/add?categoryId='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
+    </div>
+		
 <form action="/items/confirm" method="post">
 <div class="example">
 <table border="1">
@@ -31,10 +27,6 @@
 		<input type="hidden" name="today" th:value="${data}">
 	</tr>
 	<tr>
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'master' of https://github.com/SHUN5210/spring-pair.git
 		<th>食材名</th><td>
 			<select name="categoryId">
     		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>
@@ -79,8 +71,9 @@
 	</tr>
 </table>
 </div>
-<input type="submit" value="登録">
+<div class="atag"><input type="submit" value="登録"></div>
 </form>
-<a href="/items">戻る</a>
+<div class="atag"><a href="/items">戻る</a></div>
 </body>
+<footer th:replace="footer"></footer>
 </html>

@@ -9,9 +9,10 @@
 <body>
 	<br>
 	<br>
-	<h1>登録確認</h1>
-	<hr>
+	<h1>Confirm Registration !</h1>
+	
 	<form action="/items" method="post">
+	<div class="example">
 	<table border="1">
 		<input type="hidden" name="categoryId" th:value="${data.categoryId}">
 		<input type="hidden" name="itemId" th:value="${data.id}">
@@ -36,38 +37,17 @@
 		<th>保存場所</th><td>[[${box}]]</td>
 		<input type="hidden" name="save" th:value="${save}">
 	</tr>
-	
-	<th>残量</th>
-		<td>
-			0%<input type="range" list="markers" name="range"
-			min="0" max="100" th:value="${range}" step="10">100%
-			<datalist id="markers">
-				<option value="10"></option>
-				<option value="20"></option>
-				<option value="30"></option>
-				<option value="40"></option>
-				<option value="50"></option>
-				<option value="60"></option>
-				<option value="70"></option>
-				<option value="80"></option>
-				<option value="90"></option>
-			</datalist>
-		</td>
-	
-	
 	<tr>
 		<th>コメント</th><td>[[${detail}]]</td>
 		<input type="hidden" name="detail" th:value="${detail}">
 	</tr>
 	</table>
+	</div>
 	
-	
-	
-	<input type="submit" value="登録完了">
-	</form>
-<!--	</form>-->
+	<div class="atag"><input type="submit" value="登録完了"></div>
 <form action="/items/add" method="get">
-	<input type="submit" value="登録内容変更">
+	<div class="atag"><input type="submit" value="登録内容変更"></div>
 	</form>
 </body>
+<footer th:replace="footer"></footer>
 </html>

@@ -14,8 +14,37 @@ body::before {
 	background-image: url(/css/refrigerator.jpg);
 	background-size: cover;
 }
+.body{
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -40px;
+  bottom: -40px;
+  width: auto;
+  height: auto;
+  background-image: url(/css/chahan.jpg);
+  background-size: cover;
+  -webkit-filter: blur(5px);
+  z-index: -1;
+}
+/*h1 {*/
+/*	font-family: 'Exo', sans-serif;*/
+/*	text-align: center;*/
+/*}*/
 h1 {
-	font-family: 'Exo', sans-serif;
+  text-align: center;
+  margin: 40px 0 40px;
+  text-align: center;
+  font-size: 30px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px #000000;
+  font-family: 'Cherry Swash', cursive;
+}
+
+.tag {
+	text-align: center;
+}
+.atag {
 	text-align: center;
 }
 
