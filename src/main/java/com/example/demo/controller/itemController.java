@@ -66,6 +66,7 @@ public class itemController {
 		} else {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
 			item = itemRepository.findByFridge(fridge);
+			
 		}
 		
 		
@@ -110,6 +111,7 @@ public class itemController {
 			m.addAttribute("err1",err1);
 			m.addAttribute("data1",data1);
 			m.addAttribute("name1",name1);
+			m.addAttribute("id1",id1);
 		}
 		
 		m.addAttribute("item",item);
