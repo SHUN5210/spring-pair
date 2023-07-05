@@ -80,8 +80,8 @@ h1 {
   padding: 0 20px 0 0;
 }
 .news-list .item .category span{
-  background: #999;
-  color: #FFF;
+  background: red;
+  color: wheat;
   text-align: center;
   display: inline-block;
   padding: 5px 20px;
