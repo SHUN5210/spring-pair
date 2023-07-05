@@ -83,4 +83,3 @@ CREATE TABLE dateprice1
    today TEXT,
    price TEXT
 );
-
