@@ -410,6 +410,3 @@ INSERT INTO dateprice1(today,price) VALUES('2023-06-10',300);
 INSERT INTO dateprice1(today,price) VALUES('2023-06-19',930);
 INSERT INTO dateprice1(today,price) VALUES('2023-06-22',490);
 INSERT INTO dateprice1(today,price) VALUES('2023-06-27',670);
-
-
-
