@@ -34,6 +34,12 @@ public class Chahan {
 	public Chahan(String menu) {
 		
 		this.menu = menu;
+	}
+	public Chahan(String menu, String name1, String name2, String name3) {
+		this.menu = menu;
+		this.name1 = name1;
+		this.name2 = name2;
+		this.name3 = name3;
 	} // カテゴリー名
 	
 
