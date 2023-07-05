@@ -74,6 +74,7 @@ public class itemController {
 		List <String> err1 = new ArrayList<>();//エラー
 		List <String> data1 = new ArrayList<>();//エラーがある日にち
 		List <String> name1 = new ArrayList<>();//エラーがある食材
+		List <Integer> id1 = new ArrayList<>();//エラーがある番号
 		
 		
 		final String FORMAT = "yyyy-MM-dd";
@@ -89,6 +90,7 @@ public class itemController {
 			err1.add("賞味期限が切れています。");
 			data1.add(item.get(i).getCare());
 			name1.add(item.get(i).getName());
+			id1.add(item.get(i).getId());
 			continue;
 		}
 		
@@ -97,6 +99,7 @@ public class itemController {
 			err1.add("賞味期限が2日以内です。");
 			data1.add(item.get(i).getCare());
 			name1.add(item.get(i).getName());
+			id1.add(item.get(i).getId());
 			
 		}
 		
@@ -269,14 +272,13 @@ public class itemController {
 		return "confirm";
 	}
 	
-	@GetMapping("/items/{id}/detail")
+	@GetMapping("/items/{id}/detele")
 	public String detail(
 			@PathVariable("id") Integer id,
 			Model m
 			) {
-		Item item =itemRepository.findById(id).get();
-		m.addAttribute("item",item);
-		return"detail";
+		itemRepository.deleteById(id);
+		return "redirect:/items";
 	}
 	
 	@GetMapping("/header")

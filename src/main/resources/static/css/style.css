@@ -40,18 +40,22 @@ h1 {
   text-shadow: 2px 2px 4px #000000;
   font-family: 'Cherry Swash', cursive;
 }
+/*.sound {*/
+	
+/*}*/
 .tag {
 	text-align: center;
 }
 .atag {
 	text-align: center;
 }
+
 .news-list {
 	 list-style: none outside;
 	 margin: 0;
 	 padding: 0;
 }
-.news-list .item a{
+.news-list .item b{
   display: flex;
   flex-wrap: wrap;
   flex-wrap: nowrap;
@@ -60,7 +64,7 @@ h1 {
   border-bottom: 1px solid #CCC;
   padding: 20px 20px;
 }
-.news-list .item:first-child a{
+.news-list .item:first-child b{
   border-top: 1px solid #CCC;
 }
 .news-list .item .date{
@@ -91,7 +95,7 @@ h1 {
 }
 
 @media screen and (max-width: 767px){
-.news-list .item a{
+.news-list .item b{
   flex-wrap: wrap;
 }
 .news-list .item .date{
@@ -140,7 +144,7 @@ h1 {
 }
 
 /* ヘッダー、ナビゲーションメニュー、フッター */
-header, nav, footer {
+header, footer {
     display: flex;
     flex-direction: column;
     position: sticky;

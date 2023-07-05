@@ -37,7 +37,7 @@
 				
 			<form th:action="|/items/${data.id}/search|" method="post">
 				<td>
-				<input type="submit" value="検索">
+				<div class="sound"><input type="submit" value="検索"></div>
 				</td>
 				</form>
 			</tr>
@@ -55,7 +55,7 @@
         <div class="example">
 		<table border="1">
 			<tr>
-				<th>メニュー</th>
+				<th>メニュー</th><th>素材1</th><th>素材2</th><th>素材3</th> 
 			</tr>
 			<tr th:each="data : ${list}">
 				<td th:text="${data.menu}"></td>
