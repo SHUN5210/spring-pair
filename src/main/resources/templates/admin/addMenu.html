@@ -27,11 +27,29 @@ body{
 	<tr>
 		<th>メニュー名</th><td><input type="text" name="menu"></td>
 	</tr>
-	<th>食材1</th><td>
-			<select name="categoryId">
-    		<option th:each="c:${categories}" th:value="${c.id}">[[${c.name}]]</option>
+	<tr>
+		<th>食材名1</th><td>
+			<select name="food1">
+    		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>
 			</select>
 		</td>
+	</tr>
+	<tr>
+		<th>食材名2</th><td>
+			<select name="food2">
+			<option value=""></option>
+    		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>食材名3</th><td>
+			<select name="food3">
+			<option value=""></option>
+    		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>
+			</select>
+		</td>
+	</tr>
 </table>
 <input type="submit" value="登録">
 </form>

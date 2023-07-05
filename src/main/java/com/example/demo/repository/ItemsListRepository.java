@@ -10,6 +10,7 @@ public interface ItemsListRepository extends JpaRepository<ItemsList, Integer> {
 	// SELECT * FROM items WHERE category_id = ?
 	List<ItemsList> findByCategoryId(Integer categoryId);
 	
+	
 	List<ItemsList> findByIdIn(List<Integer> list);
 	
 }

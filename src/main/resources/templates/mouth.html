@@ -30,7 +30,7 @@
 			<tr th:each="data : ${list}">
 				<td th:text="${data.name}"></td>
 				<td th:text="${data.today}"></td>
-				<td th:text="${data.price}"></td>
+				<td >[[${data.price}]]円</td>
 			</tr>
 		</table>
 		</div>
