@@ -87,10 +87,10 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 	<h1>What's in the Fridge Now</h1>
 	
 	<nav>
-   <a href="/items" class="active">All</a>
 	     <a  th:each="c:${fridge}" th:href="'/items?fridge='+${c.id}">
 			<span th:text="${c.name}" style="padding-left: 10px;"></span>
 		</a>
+		<a href="/items" class="active">All</a>
   <div class="animation start-home"></div>
 </nav>
 	
@@ -117,6 +117,8 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 		</table>
 </div>
 
+
+
 <br>
 <br>
 <th:block th:if="${err1}!=null">
@@ -125,7 +127,7 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 		<b>
             <p class="category"><span>[[${name1.get(i)}]]</span></p>
             <p class="date">賞味期限：[[${data1.get(i)}]]</p>
-            <p class="title">[[${err1.get(i)}]]</p>
+            <p class="title"><a th:href="|/items/${id1.get(i)}/detele|">[[${err1.get(i)}]]</a></p>
         </b>
     </li>
     </ul>
