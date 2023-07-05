@@ -15,7 +15,6 @@ import com.example.demo.entity.Category;
 import com.example.demo.entity.Chahan;
 import com.example.demo.entity.Element;
 import com.example.demo.entity.Item;
-import com.example.demo.entity.ItemsList;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ChahanRepository;
 import com.example.demo.repository.ElementRepository;
@@ -105,24 +104,24 @@ public class ChahanController {
 		m.addAttribute("list",chahan);
 		
 		//チャーハンの食材特定
-		List<Integer> CidList = new ArrayList<>();
-		List<Element> Elist=null;
-		List<String> shokuzai=null;
-		for(Chahan Clist:chahan) {
-			Elist =elementRepository.findByChahanId(Clist.getId());
-			for(Element el:Elist) {
-				Integer cid = el.getName();
-				CidList.add(cid);
-				
-			}
-			List<ItemsList> sozai =itemListRepository.findByIdIn(CidList);
-			System.out.println(Clist.getId());
-			for(int i = 0 ; i<=sozai.size()-1;i++) {
-				System.out.println(sozai.get(i).getName());
-			}
-			
-			CidList.clear();
-		}
+//		List<Integer> CidList = new ArrayList<>();
+//		List<Element> Elist=null;
+//		List<String> shokuzai=null;
+//		for(Chahan Clist:chahan) {
+//			Elist =elementRepository.findByChahanId(Clist.getId());
+//			for(Element el:Elist) {
+//				Integer cid = el.getName();
+//				CidList.add(cid);
+//				
+//			}
+//			List<ItemsList> sozai =itemListRepository.findByIdIn(CidList);
+//			System.out.println(Clist.getId());
+//			for(int i = 0 ; i<=sozai.size()-1;i++) {
+//				System.out.println(sozai.get(i).getName());
+//			}
+//			
+//			CidList.clear();
+//		}
 		
 		String box = "full";
 		m.addAttribute("box",box);
