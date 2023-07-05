@@ -39,7 +39,10 @@ CREATE TABLE items
 CREATE TABLE chahan
 (
   id SERIAL PRIMARY KEY,
-  menu TEXT
+  menu TEXT,
+  name1 TEXT,
+  name2 TEXT,
+  name3 TEXT
 );
 -- メニュー素材テーブル
 CREATE TABLE element
@@ -80,3 +83,4 @@ CREATE TABLE dateprice1
    today TEXT,
    price TEXT
 );
+
