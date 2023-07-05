@@ -12,4 +12,5 @@ public interface ItemRepository extends JpaRepository<Item, Integer> {
 	List<Item> findByFridge(Integer fridge);
 
 	List<Item> findByTodayLike(String today);
+	
 }
