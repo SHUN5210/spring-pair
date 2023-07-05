@@ -18,6 +18,16 @@ public class Chahan {
 
 	@Getter
 	private String menu;
+	
+	@Getter
+	private String name1;
+	
+	@Getter
+	private String name2;
+	
+	@Getter
+	private String name3;
+	
 	public Chahan() {
 		
 	}

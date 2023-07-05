@@ -33,6 +33,9 @@ body{
 			<tr th:each="data:${chahan}">
 				<td th:text="${data.id}"></td>
 				<td th:text="${data.menu}"></td>
+				<td th:text="${data.name1}"></td>
+				<td th:text="${data.name2}"></td>
+				<td th:text="${data.name3}"></td>
 				
 				<form th:action="|/admin/menu/${data.id}/detail|" method="get">
 				<td>
