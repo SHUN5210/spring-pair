@@ -107,7 +107,7 @@ public class priceController {
 			return"mouth";
 		}
 		if(month1!=null) {
-			System.out.println(year3);
+			
 			m.addAttribute("yy2",year3);
 			for(int i = 1;i<=12;i++) {
 				num="0"+i;
@@ -175,10 +175,7 @@ public class priceController {
 		return"mouth";
 	}
 
-	private Integer IntegerOfVaule(String price) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+
 
 
 
