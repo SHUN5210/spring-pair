@@ -349,6 +349,10 @@ INSERT INTO items(user_id,category_id,name,item_id,today,care,price,fridge) VALU
 INSERT INTO items(user_id,category_id,name,item_id,today,care,price,fridge) VALUES(1,3,'キムチ',22,'2023-06-01','2023-08-30',500,1);
 
 --グラフ
+INSERT INTO graph1(user_id,name,today,price) VALUES(1,'ささみ','2022-01-06',190);
+INSERT INTO graph1(user_id,name,today,price) VALUES(1,'もやし','2022-01-06',70);
+INSERT INTO graph1(user_id,name,today,price) VALUES(1,'さつま揚げ','2022-01-06',300);
+
 INSERT INTO graph1(user_id,name,today,price) VALUES(1,'ささみ','2023-05-06',190);
 INSERT INTO graph1(user_id,name,today,price) VALUES(1,'もやし','2023-05-06',70);
 INSERT INTO graph1(user_id,name,today,price) VALUES(1,'さつま揚げ','2023-05-06',300);
@@ -394,6 +398,7 @@ INSERT INTO graph1(user_id,name,today,price) VALUES(1,'たけのこ','2023-06-27
 INSERT INTO graph1(user_id,name,today,price) VALUES(1,'ホウレンソウ','2023-06-27',200);
 INSERT INTO graph1(user_id,name,today,price) VALUES(1,'じゃこ','2023-06-27',250);
 
+INSERT INTO dateprice1(user_id,today,price) VALUES(1,'2022-01-06',560);
 INSERT INTO dateprice1(user_id,today,price) VALUES(1,'2023-05-06',560);
 INSERT INTO dateprice1(user_id,today,price) VALUES(1,'2023-05-11',950);
 INSERT INTO dateprice1(user_id,today,price) VALUES(1,'2023-05-17',900);

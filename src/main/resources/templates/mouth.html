@@ -14,9 +14,17 @@
 	
 	<div class="tag">
 	<a href="/items/enn">All</a>
-		<a th:each="c:${month}" th:href="'/items/enn?month1='+${c}">
+	<a th:each="yy:${year1}" th:href="'/items/enn?year2='+${yy}">
+			<span style="padding-left: 10px;">[[${yy}]]年</span>
+		</a>
+		<br>
+		
+		<a th:each="c:${month}" th:href="|/items/enn?year3=${yy2}&month1=${c}|">
 			<span style="padding-left: 10px;">[[${c}]]月</span>
 		</a>
+		<br>
+		
+		
 <!--		<input type="hidden" name="month" th:value="${month}">-->
 	</div>
 
