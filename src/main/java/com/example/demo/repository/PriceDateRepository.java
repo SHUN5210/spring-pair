@@ -9,6 +9,7 @@ import com.example.demo.entity.priceDate;
 
 
 public interface PriceDateRepository extends JpaRepository<priceDate, Integer> {
-	List<priceDate> findByTodayLike(String today);
+	List<priceDate> findByUserIdAndTodayLike(Integer userId,String today);
+	List<priceDate> findByUserId(Integer userId);
 	
 }

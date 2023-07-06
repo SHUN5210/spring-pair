@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,6 +17,12 @@ public class priceDate {
 	private Integer id; // ID
 	
 	@Getter
+	@Column(name = "user_id")
+	private Integer userId;
+
+	
+
+	@Getter
 	private String today;//記入日
 	
 
@@ -31,12 +38,21 @@ public class priceDate {
 		this.price = price;
 	}
 
-	public priceDate(Integer id, String today, String price) {
-		this.id = id;
+
+	public priceDate(Integer userId, String today, String price) {
+		super();
+		this.userId = userId;
 		this.today = today;
 		this.price = price;
 	}
 
+	public priceDate(Integer id,Integer userId, String today, String price) {
+		super();
+		this.id = id;
+		this.userId = userId;
+		this.today = today;
+		this.price = price;
+	}
 
 
 }

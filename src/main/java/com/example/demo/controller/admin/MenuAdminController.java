@@ -58,25 +58,79 @@ public class MenuAdminController {
 	@PostMapping("/admin/menu/add")
 	public String create(
 			@RequestParam(name = "menu", required=false) String menu,
-			@RequestParam(name = "food1", required=false) Integer food1,
-			@RequestParam(name = "food2", required=false) Integer food2,
-			@RequestParam(name = "food3", required=false) Integer food3,
+			@RequestParam(name = "food1", defaultValue = "") Integer food1,
+			@RequestParam(name = "food2", defaultValue = "") Integer food2,
+			@RequestParam(name = "food3", defaultValue = "") Integer food3,
 			Model m) {
 		Optional<ItemsList> list1 =itemsListRepository.findById(food1);
-		Optional<ItemsList> list2 =itemsListRepository.findById(food2);
-		Optional<ItemsList> list3 =itemsListRepository.findById(food3);
-		Chahan	item=new  Chahan(menu,list1.get().getName(),list2.get().getName(),list3.get().getName());
+//		Optional<ItemsList> list2 =itemsListRepository.findById(food2);
+		Optional<ItemsList> list2 = null;
+		Optional<ItemsList> list3 = null;
+		String s2;
+		String s3;
+		
+		Chahan item=null;
+		
+		if(food2.equals(0)&&food3.equals(0)) {
+			s2="";
+			s3="";
+			item=new  Chahan(menu,list1.get().getName(),s2,s3);
+			
+		}else if(food2.equals(0)&&food3.equals(0)==false){
+			s2="";
+			 list3 =itemsListRepository.findById(food3);
+			 item=new  Chahan(menu,list1.get().getName(),s2,list3.get().getName());
+		}else if(food2.equals(0)==false&&food3.equals(0)){
+			 s3="";
+			 list2 =itemsListRepository.findById(food2);
+			 item=new  Chahan(menu,list1.get().getName(),list2.get().getName(),s3);
+		}else {
+			list2 =itemsListRepository.findById(food2);
+			list3 =itemsListRepository.findById(food3);
+			item=new  Chahan(menu,list1.get().getName(),list2.get().getName(),list3.get().getName());
+		}
+		
 		chahanRepository.save(item);
 		
-		Optional <Chahan> Cid =chahanRepository.findByMenu(menu);
+		
+		Optional<Chahan> Cid =chahanRepository.findByMenu(menu);
 		
 		Element elist1 =new Element(Cid.get().getId(),food1);
-		Element elist2 =new Element(Cid.get().getId(),food2);
-		Element elist3 =new Element(Cid.get().getId(),food3);
 		elementRepository.save(elist1);
-		elementRepository.save(elist2);
-		elementRepository.save(elist3);
 		
+		if(food2.equals(0)&&food3.equals(0)) {
+			
+		}else if(food2.equals(0)&&food3.equals(0)==false){
+			s2="";
+			Element elist3 =new Element(Cid.get().getId(),food3);
+			elementRepository.save(elist3);
+		}else if(food2.equals(0)==false&&food3.equals(0)){
+			Element elist2 =new Element(Cid.get().getId(),food3);
+			elementRepository.save(elist2);
+		}else {
+			Element elist2 =new Element(Cid.get().getId(),food3);
+			elementRepository.save(elist2);
+			Element elist3 =new Element(Cid.get().getId(),food3);
+			elementRepository.save(elist3);
+		}
+		
+//		Element elist1 =new Element(Cid.get().getId(),food1);
+//		elementRepository.save(elist1);
+//		if(food2.equals(0)==false) {
+//			Element elist2 =new Element(Cid.get().getId(),food2);
+//			elementRepository.save(elist2);
+//		}else {
+//			String s ="";
+//			Element elist2 =new Element(Cid.get().getId(),s);
+//			elementRepository.save(elist2);
+//		}
+//		if(food3.equals(null)==false) {
+//			Element elist3 =new Element(Cid.get().getId(),food3);
+//			elementRepository.save(elist3);
+//		}
+//		System.out.println();
+//		
+
 		
 		
 		return "redirect:/admin/menu";

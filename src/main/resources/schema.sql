@@ -27,6 +27,7 @@ CREATE TABLE fridge
 CREATE TABLE items
 (
    id SERIAL PRIMARY KEY,
+   user_id INTEGER,
    category_id INTEGER,
    name TEXT,
    item_id INTEGER,
@@ -54,7 +55,7 @@ CREATE TABLE element
 -- アカウントテーブル
 CREATE TABLE users
 (
-  id SERIAL PRIMARY KEY,
+  user_id SERIAL PRIMARY KEY,
   email TEXT,
   password TEXT
 ); 
@@ -71,6 +72,7 @@ CREATE TABLE items_list
 CREATE TABLE graph1
 (
    id SERIAL PRIMARY KEY,
+   user_id INTEGER,
    name TEXT,
    today TEXT,
    price TEXT
@@ -80,6 +82,7 @@ CREATE TABLE graph1
 CREATE TABLE dateprice1
 (
    id SERIAL PRIMARY KEY,
+   user_id INTEGER,
    today TEXT,
    price TEXT
 );

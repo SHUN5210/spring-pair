@@ -19,6 +19,10 @@ public class Item {
 	@Column(name = "category_id")
 	@Getter
 	private Integer categoryId; // カテゴリーID
+	
+	@Getter
+	@Column(name = "user_id")
+	private Integer userId;
 
 	@Getter
 	private String name; // 食材名
@@ -84,9 +88,11 @@ public class Item {
 
 
 
-	public Item(Integer categoryId, String name, Integer itemId, String today, String care, String price,
-			Integer fridge) {
+	public Item(Integer categoryId, Integer userId, String name, Integer itemId, String today, String care,
+			String price, Integer fridge) {
+		super();
 		this.categoryId = categoryId;
+		this.userId = userId;
 		this.name = name;
 		this.itemId = itemId;
 		this.today = today;
@@ -94,6 +100,8 @@ public class Item {
 		this.price = price;
 		this.fridge = fridge;
 	}
+
+
 	
 	
 

@@ -8,14 +8,14 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.demo.entity.Users;
+import com.example.demo.model.Account;
 
 @Aspect
 @Component
 public class CheckLoginAspect {
 
 	@Autowired
-	Users account;
+	Account account;
 
 	// ログ出力処理
 	// 全Controllerクラスの全メソッド処理前を指定

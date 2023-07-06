@@ -20,6 +20,7 @@ import com.example.demo.entity.Item;
 import com.example.demo.entity.ItemsList;
 import com.example.demo.entity.price;
 import com.example.demo.entity.priceDate;
+import com.example.demo.model.Account;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.FridgeRepository;
 import com.example.demo.repository.ItemRepository;
@@ -30,6 +31,8 @@ import com.example.demo.repository.PriceRepository;
 
 @Controller
 public class itemController {
+	@Autowired
+	Account account;
 	@Autowired
 	ItemRepository itemRepository;
 	
@@ -62,10 +65,10 @@ public class itemController {
 		
 		if (fridge == null) {
 			//categoryIdに値がないとき商品一覧情報の取得
-			item=itemRepository.findAll();
+			item=itemRepository. findByUserId(account.getUserId());
 		} else {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
-			item = itemRepository.findByFridge(fridge);
+			item = itemRepository.findByUserIdAndFridge(account.getUserId(),fridge);
 			
 		}
 		
@@ -131,24 +134,24 @@ public class itemController {
 			Model m) {
 		
 		
-		price price1=new price(name,today,price);
+		price price1=new price(account.getUserId(),name,today,price);
 		
 //		グラフのデータに使うテーブルに挿入
 		Optional<Fridge> fridge =fridgeRepository.findById(save);
 		
 		
-		Item item=new Item(categoryId,name,itemId,today,care,price,fridge.get().getId());
+		Item item=new Item(categoryId,account.getUserId(),name,itemId,today,care,price,fridge.get().getId());
 		itemRepository.save(item);
 		priceRepository.save(price1);
 		List<priceDate> pdate = null;
-		pdate=priceDateRepository.findByTodayLike(today);
+		pdate=priceDateRepository.findByUserIdAndTodayLike(account.getUserId(),today);
 		if(pdate.isEmpty()) {
-			priceDate pd1= new priceDate(today,price);
+			priceDate pd1= new priceDate(account.getUserId(),today,price);
 			priceDateRepository.save(pd1);
 			}else  {
 				int id = pdate.get(0).getId();
 				int nedan=Integer.valueOf(price) + Integer.valueOf(pdate.get(0).getPrice());
-				priceDate pd2= new priceDate(id,today,String.valueOf(nedan));
+				priceDate pd2= new priceDate(id,account.getUserId(),today,String.valueOf(nedan));
 				priceDateRepository.save(pd2);
 			
 			}

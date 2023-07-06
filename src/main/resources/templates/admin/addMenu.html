@@ -37,7 +37,7 @@ body{
 	<tr>
 		<th>食材名2</th><td>
 			<select name="food2">
-			<option value=""></option>
+			<option value=0></option>
     		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>
 			</select>
 		</td>
@@ -45,7 +45,7 @@ body{
 	<tr>
 		<th>食材名3</th><td>
 			<select name="food3">
-			<option value=""></option>
+			<option value=0></option>
     		<option th:each="c:${list}" th:value="${c.id}">[[${c.name}]]</option>
 			</select>
 		</td>

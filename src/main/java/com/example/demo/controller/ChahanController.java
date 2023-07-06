@@ -15,6 +15,7 @@ import com.example.demo.entity.Category;
 import com.example.demo.entity.Chahan;
 import com.example.demo.entity.Element;
 import com.example.demo.entity.Item;
+import com.example.demo.model.Account;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ChahanRepository;
 import com.example.demo.repository.ElementRepository;
@@ -36,6 +37,8 @@ public class ChahanController {
 	@Autowired
 	ItemsListRepository itemListRepository;
 	
+	@Autowired
+	Account account;
 	
 	@Autowired
 	ChahanRepository chahanRepository;
@@ -51,13 +54,17 @@ public class ChahanController {
 		
 		List<Item> item = null;
 		
-		if (categoryId == null) {
+
+		if (categoryId == null)  {
 			//categoryIdに値がないとき商品一覧情報の取得
-			item=itemRepository.findAll();
+			item=itemRepository. findByUserId(account.getUserId());
 		} else {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
-			item = itemRepository.findByCategoryId(categoryId);
+			item = itemRepository.findByUserIdAndCategoryId(account.getUserId(),categoryId);
+			
 		}
+		
+	
 		String box = null;
 		m.addAttribute("box",box);
 		m.addAttribute("item",item);
@@ -75,13 +82,15 @@ public class ChahanController {
 		
 		List<Item> item1 = null;
 		
-		if (categoryId == null) {
+		if (categoryId == null)  {
 			//categoryIdに値がないとき商品一覧情報の取得
-			item1=itemRepository.findAll();
+			item1=itemRepository. findByUserId(account.getUserId());
 		} else {
 			// itemsテーブルをカテゴリーIDを指定して一覧を取得
-			item1 = itemRepository.findByCategoryId(categoryId);
+			item1 = itemRepository.findByUserIdAndCategoryId(account.getUserId(),categoryId);
+			
 		}
+		
 		m.addAttribute("item",item1);
 //		Item item =itemRepository.findById(id).get();
 //		Item item =itemRepository.findById(id).get()

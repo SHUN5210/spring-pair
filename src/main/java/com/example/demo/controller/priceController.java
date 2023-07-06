@@ -11,12 +11,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.price;
 import com.example.demo.entity.priceDate;
+import com.example.demo.model.Account;
 import com.example.demo.repository.ItemRepository;
 import com.example.demo.repository.PriceDateRepository;
 import com.example.demo.repository.PriceRepository;
 
 @Controller
 public class priceController {
+	
+	@Autowired
+	Account account;
 	
 	@Autowired
 	ItemRepository itemRepository;
@@ -50,14 +54,14 @@ public class priceController {
 			System.out.println(i);
 			num="0"+i;
 			mm ="____-"+num+"-__";
-			list = priceRepository.findByTodayLike(mm);
+			list = priceRepository.findByUserIdAndTodayLike(account.getUserId(),mm);
 			if(list.isEmpty()==false) {
 				month.add(num);
 			}
 			
 			num2=Integer.toString(i);
 			mm2 ="____-"+num2+"-__";
-			list = priceRepository.findByTodayLike(mm2);
+			list = priceRepository.findByUserIdAndTodayLike(account.getUserId(),mm2);
 			if(list.isEmpty()==false) {
 				month.add(num2);
 				
@@ -66,8 +70,8 @@ public class priceController {
 		
 		if(month1!=null) {
 			mm ="____-"+month1+"-__";
-			List<price> item  = priceRepository.findByTodayLike(mm);
-			all = priceDateRepository.findByTodayLike(mm);
+			List<price> item  = priceRepository.findByUserIdAndTodayLike(account.getUserId(),mm);
+			all = priceDateRepository.findByUserIdAndTodayLike(account.getUserId(),mm);
 			for(int i = 0 ; i<=all.size()-1;i++) {
 //				mmmm= mmmm+Integer.valueOf(all.get(i).getPrice());
 				monthPrice.add(all.get(i).getPrice());
@@ -84,7 +88,7 @@ public class priceController {
 		
 		
 		
-		all = priceDateRepository.findAll();
+		all = priceDateRepository.findByUserId(account.getUserId());;
 		for(int i = 0 ; i<=all.size()-1;i++) {
 //		mmmm= mmmm+Integer.valueOf(all.get(i).getPrice());
 		monthPrice.add(all.get(i).getPrice());
@@ -94,7 +98,7 @@ public class priceController {
 		m.addAttribute("label",monthToday);
         m.addAttribute("point",monthPrice);
 		
-        List<price> data  = priceRepository.findAll();
+        List<price> data  = priceRepository.findByUserId(account.getUserId());
         
 		m.addAttribute("month",month);
 		m.addAttribute("list",data);

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Users;
+import com.example.demo.model.Account;
 import com.example.demo.repository.UsersRepository;
 
 import jakarta.servlet.http.HttpSession;
@@ -21,7 +22,7 @@ public class AccountController {
 	HttpSession session;
 	
 	@Autowired
-	Users account;
+	Account account;
 	
 	@Autowired
 	UsersRepository usersRepository;
@@ -62,6 +63,7 @@ public class AccountController {
 		
 		if (record.isEmpty() == false) {
 			users = record.get();
+			account.setUserId(users.getUserId());
 			account.setPassword(users.getPassword());
 			account.setEmail(users.getEmail());
 			
