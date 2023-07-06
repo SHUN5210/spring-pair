@@ -72,12 +72,16 @@ public class priceController {
 			yy =yy2+"-__-__";
 			List<price> item  = priceRepository.findByUserIdAndTodayLike(account.getUserId(),yy);
 			all = priceDateRepository.findByUserIdAndTodayLike(account.getUserId(),yy);
+			
+			Integer totalPrice=0;
 			for(int i = 0 ; i<=all.size()-1;i++) {
-//				mmmm= mmmm+Integer.valueOf(all.get(i).getPrice());
+				
+				System.out.println( Integer.parseInt(all.get(i).getPrice()));
+				totalPrice = totalPrice+Integer.parseInt(all.get(i).getPrice());
 				monthPrice.add(all.get(i).getPrice());
 				monthToday.add(all.get(i).getToday());
 				}
-			
+			 m.addAttribute("totalPrice",totalPrice);
 			
 			for(int i = 1;i<=12;i++) {
 				num="0"+i;
@@ -124,10 +128,15 @@ public class priceController {
 			mm =year3+"-"+month1+"-__";
 			List<price> item  = priceRepository.findByUserIdAndTodayLike(account.getUserId(),mm);
 			all = priceDateRepository.findByUserIdAndTodayLike(account.getUserId(),mm);
+			
+			Integer totalPrice=0;
 			for(int i = 0 ; i<=all.size()-1;i++) {
-//				mmmm= mmmm+Integer.valueOf(all.get(i).getPrice());
+				
+				totalPrice = totalPrice+Integer.parseInt(all.get(i).getPrice());
 				monthPrice.add(all.get(i).getPrice());
 				monthToday.add(all.get(i).getToday());
+				
+				 m.addAttribute("totalPrice",totalPrice);
 				}
 		
 				
@@ -142,15 +151,21 @@ public class priceController {
 		
 		
 		
-		all = priceDateRepository.findByUserId(account.getUserId());;
+		all = priceDateRepository.findByUserId(account.getUserId());
+
+		Integer totalPrice=0;
+		
 		for(int i = 0 ; i<=all.size()-1;i++) {
 //		mmmm= mmmm+Integer.valueOf(all.get(i).getPrice());
 		monthPrice.add(all.get(i).getPrice());
+		System.out.println( Integer.parseInt(all.get(i).getPrice()));
+		totalPrice = totalPrice+Integer.parseInt(all.get(i).getPrice());
 		monthToday.add(all.get(i).getToday());
 		}
 		
 		m.addAttribute("label",monthToday);
         m.addAttribute("point",monthPrice);
+        m.addAttribute("totalPrice",totalPrice);
 		
         List<price> data  = priceRepository.findByUserId(account.getUserId());
         
@@ -158,6 +173,11 @@ public class priceController {
 		m.addAttribute("list",data);
 		
 		return"mouth";
+	}
+
+	private Integer IntegerOfVaule(String price) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
 	}
 
 
