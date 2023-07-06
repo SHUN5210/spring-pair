@@ -100,6 +100,7 @@ public class priceController {
 			m.addAttribute("point",monthPrice);
 			m.addAttribute("list",item);
 			m.addAttribute("month",month);
+			return"mouth";
 		}
 		if(month1!=null) {
 			System.out.println(year3);
