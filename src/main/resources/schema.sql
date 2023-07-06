@@ -10,14 +10,13 @@ DROP TABLE IF EXISTS dateprice1;
 DROP TABLE IF EXISTS fridge;
 
 
-
-	-- カテゴリーテーブル
+-- カテゴリーテーブル
 CREATE TABLE categories
 (
    id SERIAL PRIMARY KEY,
    name TEXT
 );
-	-- 保管テーブル
+-- 保管テーブル
 CREATE TABLE fridge
 (
    id SERIAL PRIMARY KEY,

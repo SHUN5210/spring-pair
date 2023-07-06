@@ -44,12 +44,16 @@ h1 {
 	text-align: center;
 	margin: 40px 0 40px;
 	font-size: 20px;
-	color: mediumblue;
+	color: gold;
 	text-shadow: 2px 2px 4px #000000;
 	font-family: 'Cherry Swash', cursive;
 }
 .atag {
 	text-align: center;
+	font-size: 20px;
+	color: mediumblue;
+	text-shadow: 2px 2px 4px #000000;
+	font-family: 'Cherry Swash', cursive;
 }
 
 .news-list {
