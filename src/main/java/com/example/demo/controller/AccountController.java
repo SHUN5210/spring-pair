@@ -51,10 +51,6 @@ public class AccountController {
 			Model model) {
 		//ログインチェック
 		
-		if(email.equals("masterChahan")&&password.equals("himitu")) {
-			System.out.println(email);
-			return "redirect:/admin/items";
-		}
 		
 		
 		Users users = null;
@@ -73,6 +69,11 @@ public class AccountController {
 		if (users == null) {
 			model.addAttribute("message", "メールアドレスとパスワードが一致しませんでした");
 					return "login";
+		}
+		
+		if(email.equals("masterChahan")&&password.equals("himitu")) {
+			System.out.println(email);
+			return "redirect:/admin/items";
 		}
 		
 		// 「/items」へのリダイレクト
